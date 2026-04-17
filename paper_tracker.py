@@ -34,7 +34,8 @@ KEYWORDS = [
     "Long Context",
     "Inference Optimization",
 ]
-MAX_RESULTS = 80
+OPENALEX_MAX_RESULTS = 200
+ARXIV_MAX_RESULTS = 300
 REQUEST_TIMEOUT = 25
 MAX_HTTP_RETRIES = 4
 
@@ -363,7 +364,7 @@ def fetch_openalex() -> list[dict[str, Any]]:
     )
     params = {
         "search": search_query,
-        "per-page": str(MAX_RESULTS),
+        "per-page": str(OPENALEX_MAX_RESULTS),
         "sort": "publication_date:desc",
         "filter": (
             f"from_publication_date:{MIN_PUBLICATION_DATE},"
@@ -432,7 +433,7 @@ def fetch_arxiv() -> list[dict[str, Any]]:
     encoded_query = quote_plus(joined_query)
     url = (
         "https://export.arxiv.org/api/query"
-        f"?search_query={encoded_query}&start=0&max_results={MAX_RESULTS}&sortBy=submittedDate&sortOrder=descending"
+        f"?search_query={encoded_query}&start=0&max_results={ARXIV_MAX_RESULTS}&sortBy=submittedDate&sortOrder=descending"
     )
 
     feed = feedparser.parse(request_text(url))
