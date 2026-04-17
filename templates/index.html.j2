@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LLM Paper Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Daily Research Radar</p>
+      <h1>LLM Efficiency Paper Tracker</h1>
+      <p class="sub">Auto-collected from arXiv and OpenAlex every day at 9:00 AM KST.</p>
+      <p class="meta">Generated at {{ generated_at }} | Keywords: {{ keywords|join(', ') }}</p>
+    </div>
+    <div class="bg-shape shape-a"></div>
+    <div class="bg-shape shape-b"></div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input id="searchInput" placeholder="Search title, author, affiliation, venue" aria-label="search">
+      <select id="categoryFilter" aria-label="category filter">
+        <option value="all">All categories</option>
+      </select>
+    </section>
+
+    <section>
+      <table id="paperTable">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Affiliation</th>
+            <th>Conference/Journal</th>
+            <th>Year</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in rows %}
+          {% set paper = row.paper %}
+          <tr data-category="{{ paper.category|join('|')|e }}">
+            <td><a href="{{ row.page_file }}">{{ paper.title }}</a></td>
+            <td>{{ paper.authors[:5]|join(', ') }}{% if paper.authors|length > 5 %}, ...{% endif %}</td>
+            <td>{{ paper.affiliations[:3]|join(', ') if paper.affiliations else 'N/A' }}</td>
+            <td>{{ paper.venue }}</td>
+            <td>{{ paper.year }}</td>
+            <td>{{ paper.category|join(', ') }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const rows = Array.from(document.querySelectorAll("#paperTable tbody tr"));
+    const search = document.getElementById("searchInput");
+    const category = document.getElementById("categoryFilter");
+
+    const categorySet = new Set();
+    rows.forEach((row) => {
+      row.dataset.category.split("|").forEach((c) => {
+        if (c.trim()) categorySet.add(c.trim());
+      });
+    });
+
+    [...categorySet].sort().forEach((c) => {
+      const option = document.createElement("option");
+      option.value = c;
+      option.textContent = c;
+      category.appendChild(option);
+    });
+
+    function applyFilter() {
+      const q = search.value.toLowerCase().trim();
+      const selected = category.value;
+
+      rows.forEach((row) => {
+        const textMatch = row.textContent.toLowerCase().includes(q);
+        const categoryMatch = selected === "all" || row.dataset.category.includes(selected);
+        row.style.display = textMatch && categoryMatch ? "" : "none";
+      });
+    }
+
+    search.addEventListener("input", applyFilter);
+    category.addEventListener("change", applyFilter);
+  </script>
+</body>
+</html>

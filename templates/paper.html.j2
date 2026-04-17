@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ paper.title }}</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main class="paper-container">
+    <a class="back-link" href="../index.html">Back to at-a-glance list</a>
+    <article class="paper-card">
+      <h1>{{ paper.title }}</h1>
+      <p><strong>Source:</strong> {{ paper.source }} | <strong>Venue:</strong> {{ paper.venue }} | <strong>Year:</strong> {{ paper.year }}</p>
+      <p><strong>Authors:</strong> {{ paper.authors|join(', ') if paper.authors else 'N/A' }}</p>
+      <p><strong>Affiliations:</strong> {{ paper.affiliations|join(', ') if paper.affiliations else 'N/A' }}</p>
+      <p><strong>Category:</strong> {{ paper.category|join(', ') }}</p>
+      <p><strong>Original Link:</strong> <a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.url }}</a></p>
+
+      <section>
+        <h2>Abstract</h2>
+        <p>{{ paper.abstract if paper.abstract else 'Abstract unavailable.' }}</p>
+      </section>
+
+      {% for section, bullets in paper.summary.items() %}
+      <section>
+        <h2>{{ section }}</h2>
+        <ul>
+          {% for bullet in bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endfor %}
+
+      <p class="footer-meta">Generated at {{ generated_at }}</p>
+    </article>
+  </main>
+</body>
+</html>
