@@ -40,6 +40,12 @@ MAX_HTTP_RETRIES = 4
 
 ALLOWED_VENUES = ["Preprint (arXiv)", "ICML", "NeurIPS", "ICLR"]
 OPENALEX_TARGET_VENUES = ["ICML", "NeurIPS", "ICLR"]
+OPENALEX_SOURCE_ID_ALLOWLIST = {
+    # Verified OpenAlex source IDs for target conferences.
+    "ICML": "https://openalex.org/S4306419644",
+    "NeurIPS": "https://openalex.org/S4393916742",
+    "ICLR": "https://openalex.org/S4306419637",
+}
 
 LLM_PATTERNS = [
     r"\bllm\b",
@@ -197,28 +203,7 @@ def canonicalize_allowed_venue(venue: str | None) -> str | None:
 
 
 def fetch_openalex_source_ids() -> list[str]:
-    source_ids: set[str] = set()
-
-    for venue in OPENALEX_TARGET_VENUES:
-        payload = request_json(
-            "https://api.openalex.org/sources",
-            params={
-                "search": venue,
-                "per-page": "25",
-                "mailto": "maintainer@example.com",
-            },
-        )
-
-        for item in payload.get("results", []):
-            display_name = item.get("display_name")
-            if canonicalize_allowed_venue(display_name) != venue:
-                continue
-
-            source_id = item.get("id")
-            if source_id:
-                source_ids.add(source_id)
-
-    return sorted(source_ids)
+    return [OPENALEX_SOURCE_ID_ALLOWLIST[v] for v in OPENALEX_TARGET_VENUES if v in OPENALEX_SOURCE_ID_ALLOWLIST]
 
 
 def infer_arxiv_venue_from_comment(comment: str | None) -> str | None:
