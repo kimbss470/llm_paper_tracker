@@ -394,6 +394,10 @@ def merge_papers(openalex_papers: list[dict[str, Any]], arxiv_papers: list[dict[
 
     for source_papers in (openalex_papers, arxiv_papers):
         for paper in source_papers:
+            # Final safety gate: never include papers matched only by non-LLM keywords.
+            if not is_target_llm_paper(f"{paper.get('title', '')} {paper.get('abstract', '')}"):
+                continue
+
             norm = normalize_title(paper["title"])
             if not norm:
                 continue
