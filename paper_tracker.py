@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import time
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -35,6 +36,7 @@ KEYWORDS = [
 ]
 MAX_RESULTS = 80
 REQUEST_TIMEOUT = 25
+MAX_HTTP_RETRIES = 4
 
 LLM_PATTERNS = [
     r"\bllm\b",
@@ -90,9 +92,30 @@ class Paper:
 
 def request_text(url: str, params: dict[str, Any] | None = None) -> str:
     headers = {"User-Agent": USER_AGENT}
-    response = requests.get(url, params=params, headers=headers, timeout=REQUEST_TIMEOUT)
-    response.raise_for_status()
-    return response.text
+    last_error: Exception | None = None
+
+    for attempt in range(MAX_HTTP_RETRIES):
+        try:
+            response = requests.get(url, params=params, headers=headers, timeout=REQUEST_TIMEOUT)
+
+            # Retry transient upstream/rate-limit failures.
+            if response.status_code == 429 or response.status_code >= 500:
+                if attempt < MAX_HTTP_RETRIES - 1:
+                    time.sleep(2**attempt)
+                    continue
+
+            response.raise_for_status()
+            return response.text
+        except requests.RequestException as exc:
+            last_error = exc
+            if attempt < MAX_HTTP_RETRIES - 1:
+                time.sleep(2**attempt)
+                continue
+            raise
+
+    if last_error:
+        raise last_error
+    raise RuntimeError("request_text failed unexpectedly without an exception")
 
 
 def request_json(url: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -442,10 +465,18 @@ def render_site(papers: list[Paper]) -> None:
 
 def main() -> None:
     print("Fetching OpenAlex papers...")
-    openalex_papers = fetch_openalex()
+    try:
+        openalex_papers = fetch_openalex()
+    except Exception as exc:
+        print(f"Warning: OpenAlex fetch failed: {exc}")
+        openalex_papers = []
 
     print("Fetching arXiv papers...")
-    arxiv_papers = fetch_arxiv()
+    try:
+        arxiv_papers = fetch_arxiv()
+    except Exception as exc:
+        print(f"Warning: arXiv fetch failed: {exc}")
+        arxiv_papers = []
 
     papers = merge_papers(openalex_papers, arxiv_papers)
     print(f"Merged paper count: {len(papers)}")
