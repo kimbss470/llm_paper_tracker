@@ -26,6 +26,19 @@
       </select>
     </section>
 
+    <section class="live-search" aria-label="OpenAlex live search">
+      <div class="live-search-header">
+        <h2>Live OpenAlex Search</h2>
+        <p>Search OpenAlex in real time and add results directly to this table.</p>
+      </div>
+      <div class="live-search-controls">
+        <input id="liveSearchInput" placeholder="e.g. quantization llm inference" aria-label="live openalex search">
+        <button id="liveSearchBtn" type="button">Search OpenAlex</button>
+      </div>
+      <p id="liveSearchStatus" class="live-search-status"></p>
+      <div id="liveSearchResults" class="live-search-results"></div>
+    </section>
+
     <p id="tableMeta" class="table-meta"></p>
 
     <section>
@@ -69,13 +82,18 @@
 
   <script>
     const READ_KEY = "llm-paper-tracker-read-map-v1";
+    const ADDED_KEY = "llm-paper-tracker-live-added-v1";
     const PAGE_SIZE = 50;
-    const rows = Array.from(document.querySelectorAll("#paperTable tbody tr"));
+    let rows = [];
     const search = document.getElementById("searchInput");
     const category = document.getElementById("categoryFilter");
     const pagination = document.getElementById("pagination");
     const tableMeta = document.getElementById("tableMeta");
-    const titleLinks = Array.from(document.querySelectorAll(".paper-title-link"));
+    const tableBody = document.querySelector("#paperTable tbody");
+    const liveSearchInput = document.getElementById("liveSearchInput");
+    const liveSearchBtn = document.getElementById("liveSearchBtn");
+    const liveSearchStatus = document.getElementById("liveSearchStatus");
+    const liveSearchResults = document.getElementById("liveSearchResults");
     let currentPage = 1;
 
     const abstractPreview = document.createElement("div");
@@ -104,13 +122,13 @@
       abstractPreview.hidden = true;
     }
 
-    titleLinks.forEach((link) => {
+    function attachPreviewEvents(link) {
       link.addEventListener("mouseenter", (event) => showPreview(link, event));
       link.addEventListener("mousemove", positionPreview);
       link.addEventListener("mouseleave", hidePreview);
       link.addEventListener("focus", (event) => showPreview(link, event));
       link.addEventListener("blur", hidePreview);
-    });
+    }
 
     function loadReadMap() {
       try {
@@ -124,35 +142,82 @@
       localStorage.setItem(READ_KEY, JSON.stringify(map));
     }
 
+    function loadAddedPapers() {
+      try {
+        return JSON.parse(localStorage.getItem(ADDED_KEY) || "[]");
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveAddedPapers() {
+      const addedRows = rows.filter((row) => row.dataset.isLiveAdded === "1");
+      const payload = addedRows.map((row) => ({
+        paper_id: row.dataset.paperId,
+        title: row.dataset.title || "",
+        authors: (row.dataset.authors || "").split("||").filter(Boolean),
+        affiliations: (row.dataset.affiliations || "").split("||").filter(Boolean),
+        venue: row.dataset.venue || "N/A",
+        year: Number(row.dataset.year || 0),
+        category: (row.dataset.category || "").split("|").filter(Boolean),
+        abstract: row.dataset.abstract || "",
+        url: row.dataset.url || "",
+      }));
+      localStorage.setItem(ADDED_KEY, JSON.stringify(payload));
+    }
+
     const readMap = loadReadMap();
 
-    rows.forEach((row) => {
+    function registerRow(row) {
+      if (rows.includes(row)) return;
+      rows.push(row);
       const paperId = row.dataset.paperId;
       const checkbox = row.querySelector(".read-checkbox");
       const isRead = Boolean(readMap[paperId]);
       checkbox.checked = isRead;
       row.classList.toggle("read-row", isRead);
 
+      const titleLink = row.querySelector(".paper-title-link");
+      if (titleLink) {
+        attachPreviewEvents(titleLink);
+      }
+
       checkbox.addEventListener("change", () => {
         readMap[paperId] = checkbox.checked;
         row.classList.toggle("read-row", checkbox.checked);
         saveReadMap(readMap);
       });
-    });
+    }
 
-    const categorySet = new Set();
-    rows.forEach((row) => {
-      row.dataset.category.split("|").forEach((c) => {
-        if (c.trim()) categorySet.add(c.trim());
+    function updateCategoryOptions() {
+      const selected = category.value;
+      category.innerHTML = "";
+      const allOption = document.createElement("option");
+      allOption.value = "all";
+      allOption.textContent = "All categories";
+      category.appendChild(allOption);
+
+      const categorySet = new Set();
+      rows.forEach((row) => {
+        row.dataset.category.split("|").forEach((c) => {
+          const trimmed = c.trim();
+          if (trimmed) categorySet.add(trimmed);
+        });
       });
-    });
 
-    [...categorySet].sort().forEach((c) => {
-      const option = document.createElement("option");
-      option.value = c;
-      option.textContent = c;
-      category.appendChild(option);
-    });
+      [...categorySet].sort().forEach((c) => {
+        const option = document.createElement("option");
+        option.value = c;
+        option.textContent = c;
+        category.appendChild(option);
+      });
+
+      if ([...category.options].some((o) => o.value === selected)) {
+        category.value = selected;
+      } else {
+        category.value = "all";
+      }
+    }
 
     function rowMatches(row) {
       const q = search.value.toLowerCase().trim();
@@ -220,6 +285,218 @@
 
       renderPagination(totalPages);
     }
+
+    function decodeOpenAlexAbstract(invertedIndex) {
+      if (!invertedIndex || typeof invertedIndex !== "object") return "";
+      let maxPos = -1;
+      Object.values(invertedIndex).forEach((positions) => {
+        if (!Array.isArray(positions)) return;
+        positions.forEach((pos) => {
+          if (Number.isInteger(pos) && pos > maxPos) maxPos = pos;
+        });
+      });
+      if (maxPos < 0) return "";
+      const tokens = new Array(maxPos + 1).fill("");
+      Object.entries(invertedIndex).forEach(([token, positions]) => {
+        if (!Array.isArray(positions)) return;
+        positions.forEach((pos) => {
+          if (Number.isInteger(pos) && pos >= 0 && pos < tokens.length) {
+            tokens[pos] = token;
+          }
+        });
+      });
+      return tokens.filter(Boolean).join(" ");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function inferCategories(text) {
+      const hay = text.toLowerCase();
+      const rules = [
+        ["MoE", /\bmoe\b|mixture[-\s]of[-\s]experts/],
+        ["KV Cache Compression", /kv\s*cache|cache\s*compression|cache\s*eviction/],
+        ["Quantization", /quantiz|low[-\s]?bit|int4|int8|fp8|gptq|awq/],
+        ["Efficient Attention", /flashattention|linear\s+attention|sparse\s+attention/],
+        ["Long Context", /long\s+context|context\s+window|rope|position\s+interpolation/],
+        ["Distillation", /distill/],
+        ["Inference Optimization", /inference|latency|throughput|serving/],
+      ];
+      const hits = rules.filter(([_, pattern]) => pattern.test(hay)).map(([name]) => name);
+      return hits.length ? hits : ["General"];
+    }
+
+    function canonicalizeVenue(venue) {
+      const value = (venue || "").trim();
+      const lowered = value.toLowerCase();
+      if (lowered.includes("international conference on machine learning") || lowered === "icml") return "ICML";
+      if (lowered.includes("neural information processing systems") || lowered.includes("neurips")) return "NeurIPS";
+      if (lowered.includes("international conference on learning representations") || lowered === "iclr") return "ICLR";
+      if (lowered.includes("arxiv")) return "Preprint (arXiv)";
+      return value || "OpenAlex Indexed Venue";
+    }
+
+    function buildPaperFromOpenAlex(item) {
+      const id = String(item.id || "").split("/").pop() || `live-${Date.now()}`;
+      const authorships = Array.isArray(item.authorships) ? item.authorships : [];
+      const authors = [];
+      const affSet = new Set();
+      authorships.forEach((authorship) => {
+        const name = authorship && authorship.author && authorship.author.display_name;
+        if (name) authors.push(name);
+        const institutions = Array.isArray(authorship && authorship.institutions) ? authorship.institutions : [];
+        institutions.forEach((inst) => {
+          if (inst && inst.display_name) affSet.add(inst.display_name);
+        });
+      });
+
+      const abstract = decodeOpenAlexAbstract(item.abstract_inverted_index);
+      const title = String(item.display_name || "").trim();
+      const location = item.primary_location || {};
+      const source = location.source || {};
+      const venue = canonicalizeVenue(source.display_name || "");
+      const category = inferCategories(`${title} ${abstract}`);
+
+      return {
+        paper_id: `openalex-live-${id}`,
+        title,
+        authors,
+        affiliations: Array.from(affSet),
+        venue,
+        year: Number(item.publication_year || 0),
+        category,
+        abstract,
+        url: String(item.id || location.landing_page_url || ""),
+      };
+    }
+
+    function createRowElement(paper, isLiveAdded) {
+      const tr = document.createElement("tr");
+      tr.dataset.paperId = paper.paper_id;
+      tr.dataset.category = (paper.category || []).join("|");
+      tr.dataset.isLiveAdded = isLiveAdded ? "1" : "0";
+      tr.dataset.title = paper.title || "";
+      tr.dataset.authors = (paper.authors || []).join("||");
+      tr.dataset.affiliations = (paper.affiliations || []).join("||");
+      tr.dataset.venue = paper.venue || "N/A";
+      tr.dataset.year = String(paper.year || 0);
+      tr.dataset.abstract = paper.abstract || "";
+      tr.dataset.url = paper.url || "";
+
+      const authorsShort = (paper.authors || []).slice(0, 5).join(", ");
+      const authorsCell = (paper.authors || []).length > 5 ? `${authorsShort}, ...` : (authorsShort || "N/A");
+      const affCell = (paper.affiliations || []).slice(0, 3).join(", ") || "N/A";
+
+      const href = isLiveAdded ? (paper.url || "#") : (paper.page_file || "#");
+      const target = isLiveAdded ? " target=\"_blank\" rel=\"noopener noreferrer\"" : "";
+
+      tr.innerHTML = `
+        <td><input type="checkbox" class="read-checkbox" aria-label="mark as read"></td>
+        <td><a href="${escapeHtml(href)}" class="paper-title-link" data-abstract="${escapeHtml(paper.abstract || "")}"${target}>${escapeHtml(paper.title || "Untitled")}</a></td>
+        <td>${escapeHtml(authorsCell)}</td>
+        <td>${escapeHtml(affCell)}</td>
+        <td>${escapeHtml(paper.venue || "N/A")}</td>
+        <td>${escapeHtml(paper.year || 0)}</td>
+        <td>${escapeHtml((paper.category || []).join(", "))}</td>
+      `;
+      return tr;
+    }
+
+    function addPaperToTable(paper, persist) {
+      const exists = rows.some((row) => row.dataset.paperId === paper.paper_id);
+      if (exists) return false;
+      const row = createRowElement(paper, true);
+      tableBody.prepend(row);
+      registerRow(row);
+      updateCategoryOptions();
+      applyFilter();
+      if (persist) saveAddedPapers();
+      return true;
+    }
+
+    function renderLiveResults(records) {
+      liveSearchResults.innerHTML = "";
+      if (!records.length) {
+        liveSearchStatus.textContent = "No results found.";
+        return;
+      }
+
+      liveSearchStatus.textContent = `Found ${records.length} results.`;
+      records.forEach((record, idx) => {
+        const card = document.createElement("article");
+        card.className = "live-result-card";
+        card.innerHTML = `
+          <h3>${escapeHtml(record.title || "Untitled")}</h3>
+          <p>${escapeHtml(record.venue || "N/A")} | ${escapeHtml(record.year || "N/A")}</p>
+          <p class="live-result-meta">${escapeHtml((record.authors || []).slice(0, 4).join(", ") || "Author info unavailable")}</p>
+          <button type="button" data-idx="${idx}">Add</button>
+        `;
+        const button = card.querySelector("button");
+        button.addEventListener("click", () => {
+          const added = addPaperToTable(record, true);
+          button.disabled = true;
+          button.textContent = added ? "Added" : "Already added";
+        });
+        liveSearchResults.appendChild(card);
+      });
+    }
+
+    async function performLiveSearch() {
+      const query = liveSearchInput.value.trim();
+      if (!query) {
+        liveSearchStatus.textContent = "Enter a query first.";
+        liveSearchResults.innerHTML = "";
+        return;
+      }
+
+      liveSearchBtn.disabled = true;
+      liveSearchStatus.textContent = "Searching OpenAlex...";
+      liveSearchResults.innerHTML = "";
+
+      try {
+        const params = new URLSearchParams({
+          search: query,
+          "per-page": "20",
+          sort: "relevance_score:desc",
+          filter: "from_publication_date:2025-01-01",
+        });
+        const response = await fetch(`https://api.openalex.org/works?${params.toString()}`);
+        if (!response.ok) {
+          throw new Error(`OpenAlex HTTP ${response.status}`);
+        }
+        const payload = await response.json();
+        const results = Array.isArray(payload.results) ? payload.results : [];
+        const records = results
+          .map(buildPaperFromOpenAlex)
+          .filter((paper) => paper.title);
+        renderLiveResults(records);
+      } catch (error) {
+        liveSearchStatus.textContent = `Search failed: ${error.message}`;
+      } finally {
+        liveSearchBtn.disabled = false;
+      }
+    }
+
+    Array.from(document.querySelectorAll("#paperTable tbody tr")).forEach(registerRow);
+    updateCategoryOptions();
+
+    loadAddedPapers().forEach((paper) => {
+      addPaperToTable(paper, false);
+    });
+
+    liveSearchBtn.addEventListener("click", performLiveSearch);
+    liveSearchInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        performLiveSearch();
+      }
+    });
 
     search.addEventListener("input", () => {
       currentPage = 1;
