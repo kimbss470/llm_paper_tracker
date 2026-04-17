@@ -168,6 +168,23 @@ th {
   font-weight: 600;
 }
 
+.abstract-preview {
+  position: fixed;
+  z-index: 9999;
+  max-width: min(480px, calc(100vw - 24px));
+  max-height: min(240px, calc(100vh - 24px));
+  overflow: auto;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffefb;
+  color: var(--ink);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  font-size: 0.9rem;
+  line-height: 1.42;
+  pointer-events: none;
+}
+
 a {
   color: #0b4f9c;
   text-decoration: none;

@@ -46,7 +46,13 @@
           {% set paper = row.paper %}
           <tr data-category="{{ paper.category|join('|')|e }}" data-paper-id="{{ paper.paper_id|e }}">
             <td><input type="checkbox" class="read-checkbox" aria-label="mark as read"></td>
-            <td><a href="{{ row.page_file }}">{{ paper.title }}</a></td>
+            <td>
+              <a
+                href="{{ row.page_file }}"
+                class="paper-title-link"
+                data-abstract="{{ (paper.abstract if paper.abstract else 'Abstract unavailable.')|e }}"
+              >{{ paper.title }}</a>
+            </td>
             <td>{{ paper.authors[:5]|join(', ') }}{% if paper.authors|length > 5 %}, ...{% endif %}</td>
             <td>{{ paper.affiliations[:3]|join(', ') if paper.affiliations else 'N/A' }}</td>
             <td>{{ paper.venue }}</td>
@@ -69,7 +75,42 @@
     const category = document.getElementById("categoryFilter");
     const pagination = document.getElementById("pagination");
     const tableMeta = document.getElementById("tableMeta");
+    const titleLinks = Array.from(document.querySelectorAll(".paper-title-link"));
     let currentPage = 1;
+
+    const abstractPreview = document.createElement("div");
+    abstractPreview.id = "abstractPreview";
+    abstractPreview.className = "abstract-preview";
+    abstractPreview.hidden = true;
+    document.body.appendChild(abstractPreview);
+
+    function positionPreview(event) {
+      const offset = 16;
+      const maxLeft = window.innerWidth - abstractPreview.offsetWidth - 12;
+      const left = Math.min(event.clientX + offset, Math.max(12, maxLeft));
+      const top = Math.min(event.clientY + offset, window.innerHeight - abstractPreview.offsetHeight - 12);
+      abstractPreview.style.left = `${left}px`;
+      abstractPreview.style.top = `${top}px`;
+    }
+
+    function showPreview(link, event) {
+      const text = (link.dataset.abstract || "").trim() || "Abstract unavailable.";
+      abstractPreview.textContent = text;
+      abstractPreview.hidden = false;
+      positionPreview(event);
+    }
+
+    function hidePreview() {
+      abstractPreview.hidden = true;
+    }
+
+    titleLinks.forEach((link) => {
+      link.addEventListener("mouseenter", (event) => showPreview(link, event));
+      link.addEventListener("mousemove", positionPreview);
+      link.addEventListener("mouseleave", hidePreview);
+      link.addEventListener("focus", (event) => showPreview(link, event));
+      link.addEventListener("blur", hidePreview);
+    });
 
     function loadReadMap() {
       try {
