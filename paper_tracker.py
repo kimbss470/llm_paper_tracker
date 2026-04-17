@@ -39,6 +39,7 @@ REQUEST_TIMEOUT = 25
 MAX_HTTP_RETRIES = 4
 
 ALLOWED_VENUES = ["Preprint (arXiv)", "ICML", "NeurIPS", "ICLR"]
+OPENALEX_TARGET_VENUES = ["ICML", "NeurIPS", "ICLR"]
 
 LLM_PATTERNS = [
     r"\bllm\b",
@@ -195,6 +196,31 @@ def canonicalize_allowed_venue(venue: str | None) -> str | None:
     return None
 
 
+def fetch_openalex_source_ids() -> list[str]:
+    source_ids: set[str] = set()
+
+    for venue in OPENALEX_TARGET_VENUES:
+        payload = request_json(
+            "https://api.openalex.org/sources",
+            params={
+                "search": venue,
+                "per-page": "25",
+                "mailto": "maintainer@example.com",
+            },
+        )
+
+        for item in payload.get("results", []):
+            display_name = item.get("display_name")
+            if canonicalize_allowed_venue(display_name) != venue:
+                continue
+
+            source_id = item.get("id")
+            if source_id:
+                source_ids.add(source_id)
+
+    return sorted(source_ids)
+
+
 def infer_arxiv_venue_from_comment(comment: str | None) -> str | None:
     normalized = normalize_spaces(comment or "")
     if not normalized:
@@ -341,6 +367,11 @@ def decode_openalex_abstract(inverted_index: dict[str, list[int]] | None) -> str
 
 
 def fetch_openalex() -> list[dict[str, Any]]:
+    source_ids = fetch_openalex_source_ids()
+    if not source_ids:
+        print("Warning: OpenAlex source IDs for ICML/NeurIPS/ICLR were not resolved. Skipping OpenAlex fetch.")
+        return []
+
     search_query = (
         '("large language model" OR LLM) '
         'AND ("kv cache" OR MoE OR quantization OR efficient OR "long context" OR inference)'
@@ -349,7 +380,10 @@ def fetch_openalex() -> list[dict[str, Any]]:
         "search": search_query,
         "per-page": str(MAX_RESULTS),
         "sort": "publication_date:desc",
-        "filter": f"from_publication_date:{MIN_PUBLICATION_DATE}",
+        "filter": (
+            f"from_publication_date:{MIN_PUBLICATION_DATE},"
+            f"primary_location.source.id:{'|'.join(source_ids)}"
+        ),
         "mailto": "maintainer@example.com",
     }
 
