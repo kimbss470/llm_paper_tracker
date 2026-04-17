@@ -36,6 +36,29 @@ KEYWORDS = [
 MAX_RESULTS = 80
 REQUEST_TIMEOUT = 25
 
+LLM_PATTERNS = [
+    r"\bllm\b",
+    r"large\s+language\s+model",
+]
+
+FOCUS_PATTERNS = [
+    r"kv\s*cache",
+    r"cache\s*compression",
+    r"cache\s*eviction",
+    r"\bmoe\b",
+    r"mixture[-\s]of[-\s]experts",
+    r"quantiz",
+    r"low[-\s]?bit",
+    r"int4|int8|fp8|gptq|awq",
+    r"efficient",
+    r"long\s+context",
+    r"context\s+window",
+    r"inference",
+    r"latency",
+    r"throughput",
+    r"serving",
+]
+
 CATEGORY_RULES: dict[str, list[str]] = {
     "MoE": [r"\bmoe\b", r"mixture[-\s]of[-\s]experts"],
     "KV Cache Compression": [r"kv\s*cache", r"cache\s*compression", r"cache\s*eviction"],
@@ -87,6 +110,40 @@ def slugify(text: str) -> str:
     return slug[:90] if slug else "paper"
 
 
+def normalize_spaces(text: str) -> str:
+    return re.sub(r"\s+", " ", (text or "")).strip()
+
+
+def clean_affiliations(values: list[str]) -> list[str]:
+    blocked = [
+        r"\barxiv\b",
+        r"\bproceedings\b",
+        r"\bjournal\b",
+        r"\bconference\b",
+        r"\bworkshop\b",
+        r"\bvolume\b",
+        r"\bvol\.?\b",
+        r"\bissue\b",
+        r"\bissn\b",
+        r"\bdoi\b",
+    ]
+    cleaned: list[str] = []
+    for raw in values:
+        name = normalize_spaces(raw)
+        if not name:
+            continue
+        lowered = name.lower()
+        if any(re.search(pattern, lowered) for pattern in blocked):
+            continue
+        cleaned.append(name)
+    return sorted(set(cleaned))
+
+
+def infer_arxiv_venue(journal_ref: str | None) -> str:
+    normalized = normalize_spaces(journal_ref or "")
+    return normalized if normalized else "Preprint (arXiv)"
+
+
 def infer_categories(text: str) -> list[str]:
     lowered = text.lower()
     matched = [
@@ -95,6 +152,13 @@ def infer_categories(text: str) -> list[str]:
         if any(re.search(pattern, lowered) for pattern in patterns)
     ]
     return matched or ["General LLM Efficiency"]
+
+
+def is_target_llm_paper(text: str) -> bool:
+    lowered = text.lower()
+    has_llm = any(re.search(pattern, lowered) for pattern in LLM_PATTERNS)
+    has_focus = any(re.search(pattern, lowered) for pattern in FOCUS_PATTERNS)
+    return has_llm and has_focus
 
 
 def split_sentences(text: str) -> list[str]:
@@ -171,8 +235,12 @@ def decode_openalex_abstract(inverted_index: dict[str, list[int]] | None) -> str
 
 
 def fetch_openalex() -> list[dict[str, Any]]:
+    search_query = (
+        '("large language model" OR LLM) '
+        'AND ("kv cache" OR MoE OR quantization OR efficient OR "long context" OR inference)'
+    )
     params = {
-        "search": " ".join(KEYWORDS),
+        "search": search_query,
         "per-page": str(MAX_RESULTS),
         "sort": "publication_date:desc",
         "filter": f"from_publication_date:{MIN_PUBLICATION_DATE}",
@@ -206,6 +274,8 @@ def fetch_openalex() -> list[dict[str, Any]]:
 
         abstract = decode_openalex_abstract(item.get("abstract_inverted_index"))
         joined_text = f"{title} {abstract}"
+        if not is_target_llm_paper(joined_text):
+            continue
         categories = infer_categories(joined_text)
 
         record = {
@@ -213,7 +283,7 @@ def fetch_openalex() -> list[dict[str, Any]]:
             "source": "OpenAlex",
             "title": title,
             "authors": authors,
-            "affiliations": sorted(affiliations),
+            "affiliations": clean_affiliations(sorted(affiliations)),
             "venue": venue,
             "year": publication_year,
             "published_date": publication_date,
@@ -229,7 +299,10 @@ def fetch_openalex() -> list[dict[str, Any]]:
 
 
 def fetch_arxiv() -> list[dict[str, Any]]:
-    joined_query = " OR ".join([f'all:"{kw}"' if " " in kw else f"all:{kw}" for kw in KEYWORDS])
+    joined_query = (
+        '(all:"large language model" OR all:LLM) '
+        'AND (all:"KV Cache" OR all:MoE OR all:Efficient OR all:Quantization OR all:"Long Context" OR all:Inference)'
+    )
     encoded_query = quote_plus(joined_query)
     url = (
         "https://export.arxiv.org/api/query"
@@ -258,8 +331,14 @@ def fetch_arxiv() -> list[dict[str, Any]]:
                 year = 0
 
         authors = [author.name for author in getattr(entry, "authors", []) if getattr(author, "name", None)]
-        categories = infer_categories(f"{title} {abstract}")
+        joined_text = f"{title} {abstract}"
+        if not is_target_llm_paper(joined_text):
+            continue
+        categories = infer_categories(joined_text)
         arxiv_id = entry.id.rsplit("/", 1)[-1]
+        journal_ref = getattr(entry, "arxiv_journal_ref", None) or getattr(entry, "journal_ref", None)
+        venue = infer_arxiv_venue(journal_ref)
+        doi = getattr(entry, "arxiv_doi", None)
 
         record = {
             "paper_id": f"arxiv-{arxiv_id}",
@@ -267,13 +346,13 @@ def fetch_arxiv() -> list[dict[str, Any]]:
             "title": title,
             "authors": authors,
             "affiliations": [],
-            "venue": "arXiv",
+            "venue": venue,
             "year": year,
             "published_date": published_date,
             "category": categories,
             "abstract": abstract,
             "url": entry.link,
-            "doi": None,
+            "doi": doi,
         }
         record["summary"] = build_summary(record)
         papers.append(record)
@@ -299,9 +378,10 @@ def merge_papers(openalex_papers: list[dict[str, Any]], arxiv_papers: list[dict[
             if norm in merged:
                 existing = merged[norm]
                 existing["authors"] = sorted(set(existing["authors"]) | set(paper["authors"]))
-                existing["affiliations"] = sorted(set(existing["affiliations"]) | set(paper["affiliations"]))
+                merged_affiliations = sorted(set(existing["affiliations"]) | set(paper["affiliations"]))
+                existing["affiliations"] = clean_affiliations(merged_affiliations)
                 existing["category"] = sorted(set(existing["category"]) | set(paper["category"]))
-                if existing["venue"] == "arXiv" and paper["venue"] != "arXiv":
+                if existing["venue"] in {"Preprint (arXiv)", "arXiv"} and paper["venue"] not in {"Preprint (arXiv)", "arXiv"}:
                     existing["venue"] = paper["venue"]
                 if not existing.get("doi") and paper.get("doi"):
                     existing["doi"] = paper["doi"]
@@ -310,6 +390,7 @@ def merge_papers(openalex_papers: list[dict[str, Any]], arxiv_papers: list[dict[
             copied = dict(paper)
             if not copied["affiliations"] and norm in title_to_affiliations:
                 copied["affiliations"] = title_to_affiliations[norm]
+            copied["affiliations"] = clean_affiliations(copied["affiliations"])
             copied["summary"] = build_summary(copied)
             merged[norm] = copied
 

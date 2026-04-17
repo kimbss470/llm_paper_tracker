@@ -20,20 +20,23 @@
 
   <main class="container">
     <section class="controls">
-      <input id="searchInput" placeholder="Search title, author, affiliation, venue" aria-label="search">
+      <input id="searchInput" placeholder="Search title, author, affiliation, publication venue" aria-label="search">
       <select id="categoryFilter" aria-label="category filter">
         <option value="all">All categories</option>
       </select>
     </section>
 
+    <p id="tableMeta" class="table-meta"></p>
+
     <section>
       <table id="paperTable">
         <thead>
           <tr>
+            <th>Read</th>
             <th>Title</th>
             <th>Authors</th>
             <th>Affiliation</th>
-            <th>Conference/Journal</th>
+            <th>Publication Venue</th>
             <th>Year</th>
             <th>Category</th>
           </tr>
@@ -41,7 +44,8 @@
         <tbody>
           {% for row in rows %}
           {% set paper = row.paper %}
-          <tr data-category="{{ paper.category|join('|')|e }}">
+          <tr data-category="{{ paper.category|join('|')|e }}" data-paper-id="{{ paper.paper_id|e }}">
+            <td><input type="checkbox" class="read-checkbox" aria-label="mark as read"></td>
             <td><a href="{{ row.page_file }}">{{ paper.title }}</a></td>
             <td>{{ paper.authors[:5]|join(', ') }}{% if paper.authors|length > 5 %}, ...{% endif %}</td>
             <td>{{ paper.affiliations[:3]|join(', ') if paper.affiliations else 'N/A' }}</td>
@@ -53,12 +57,47 @@
         </tbody>
       </table>
     </section>
+
+    <nav id="pagination" class="pagination" aria-label="Paper pagination"></nav>
   </main>
 
   <script>
+    const READ_KEY = "llm-paper-tracker-read-map-v1";
+    const PAGE_SIZE = 50;
     const rows = Array.from(document.querySelectorAll("#paperTable tbody tr"));
     const search = document.getElementById("searchInput");
     const category = document.getElementById("categoryFilter");
+    const pagination = document.getElementById("pagination");
+    const tableMeta = document.getElementById("tableMeta");
+    let currentPage = 1;
+
+    function loadReadMap() {
+      try {
+        return JSON.parse(localStorage.getItem(READ_KEY) || "{}");
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function saveReadMap(map) {
+      localStorage.setItem(READ_KEY, JSON.stringify(map));
+    }
+
+    const readMap = loadReadMap();
+
+    rows.forEach((row) => {
+      const paperId = row.dataset.paperId;
+      const checkbox = row.querySelector(".read-checkbox");
+      const isRead = Boolean(readMap[paperId]);
+      checkbox.checked = isRead;
+      row.classList.toggle("read-row", isRead);
+
+      checkbox.addEventListener("change", () => {
+        readMap[paperId] = checkbox.checked;
+        row.classList.toggle("read-row", checkbox.checked);
+        saveReadMap(readMap);
+      });
+    });
 
     const categorySet = new Set();
     rows.forEach((row) => {
@@ -74,19 +113,82 @@
       category.appendChild(option);
     });
 
-    function applyFilter() {
+    function rowMatches(row) {
       const q = search.value.toLowerCase().trim();
       const selected = category.value;
-
-      rows.forEach((row) => {
-        const textMatch = row.textContent.toLowerCase().includes(q);
-        const categoryMatch = selected === "all" || row.dataset.category.includes(selected);
-        row.style.display = textMatch && categoryMatch ? "" : "none";
-      });
+      const textMatch = row.textContent.toLowerCase().includes(q);
+      const categoryMatch = selected === "all" || row.dataset.category.includes(selected);
+      return textMatch && categoryMatch;
     }
 
-    search.addEventListener("input", applyFilter);
-    category.addEventListener("change", applyFilter);
+    function renderPagination(totalPages) {
+      pagination.innerHTML = "";
+      if (totalPages <= 1) return;
+
+      const prev = document.createElement("button");
+      prev.type = "button";
+      prev.textContent = "Prev";
+      prev.disabled = currentPage === 1;
+      prev.addEventListener("click", () => {
+        currentPage -= 1;
+        applyFilter();
+      });
+      pagination.appendChild(prev);
+
+      for (let i = 1; i <= totalPages; i += 1) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = String(i);
+        if (i === currentPage) {
+          button.classList.add("active");
+        }
+        button.addEventListener("click", () => {
+          currentPage = i;
+          applyFilter();
+        });
+        pagination.appendChild(button);
+      }
+
+      const next = document.createElement("button");
+      next.type = "button";
+      next.textContent = "Next";
+      next.disabled = currentPage === totalPages;
+      next.addEventListener("click", () => {
+        currentPage += 1;
+        applyFilter();
+      });
+      pagination.appendChild(next);
+    }
+
+    function applyFilter() {
+      const visibleRows = rows.filter(rowMatches);
+      const totalPages = Math.max(1, Math.ceil(visibleRows.length / PAGE_SIZE));
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      rows.forEach((row) => {
+        row.style.display = "none";
+      });
+
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const end = start + PAGE_SIZE;
+      visibleRows.slice(start, end).forEach((row) => {
+        row.style.display = "";
+      });
+
+      tableMeta.textContent = `Showing ${visibleRows.length === 0 ? 0 : start + 1}-${Math.min(end, visibleRows.length)} of ${visibleRows.length} filtered papers`;
+
+      renderPagination(totalPages);
+    }
+
+    search.addEventListener("input", () => {
+      currentPage = 1;
+      applyFilter();
+    });
+    category.addEventListener("change", () => {
+      currentPage = 1;
+      applyFilter();
+    });
+    applyFilter();
   </script>
 </body>
 </html>

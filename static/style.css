@@ -96,6 +96,12 @@ h1 {
   margin-bottom: 18px;
 }
 
+.table-meta {
+  margin: 0 0 12px;
+  color: var(--subtle);
+  font-size: 0.9rem;
+}
+
 input,
 select {
   border: 1px solid var(--line);
@@ -126,6 +132,40 @@ th {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--subtle);
+}
+
+.read-row {
+  opacity: 0.72;
+}
+
+.read-row td:nth-child(2) a {
+  text-decoration: line-through;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.pagination button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 a {
@@ -159,6 +199,14 @@ a:hover {
   margin-top: 24px;
   margin-bottom: 8px;
   font-size: 1.15rem;
+}
+
+.read-toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0 14px;
+  font-weight: 600;
 }
 
 .paper-card p,

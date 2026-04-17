@@ -11,6 +11,10 @@
     <a class="back-link" href="../index.html">Back to at-a-glance list</a>
     <article class="paper-card">
       <h1>{{ paper.title }}</h1>
+      <label class="read-toggle">
+        <input id="readPaper" type="checkbox" data-paper-id="{{ paper.paper_id|e }}">
+        Mark as read
+      </label>
       <p><strong>Source:</strong> {{ paper.source }} | <strong>Venue:</strong> {{ paper.venue }} | <strong>Year:</strong> {{ paper.year }}</p>
       <p><strong>Authors:</strong> {{ paper.authors|join(', ') if paper.authors else 'N/A' }}</p>
       <p><strong>Affiliations:</strong> {{ paper.affiliations|join(', ') if paper.affiliations else 'N/A' }}</p>
@@ -36,5 +40,27 @@
       <p class="footer-meta">Generated at {{ generated_at }}</p>
     </article>
   </main>
+
+  <script>
+    const READ_KEY = "llm-paper-tracker-read-map-v1";
+    const checkbox = document.getElementById("readPaper");
+    const paperId = checkbox.dataset.paperId;
+
+    function loadReadMap() {
+      try {
+        return JSON.parse(localStorage.getItem(READ_KEY) || "{}");
+      } catch (error) {
+        return {};
+      }
+    }
+
+    const readMap = loadReadMap();
+    checkbox.checked = Boolean(readMap[paperId]);
+
+    checkbox.addEventListener("change", () => {
+      readMap[paperId] = checkbox.checked;
+      localStorage.setItem(READ_KEY, JSON.stringify(readMap));
+    });
+  </script>
 </body>
 </html>
