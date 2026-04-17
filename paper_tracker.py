@@ -38,6 +38,8 @@ MAX_RESULTS = 80
 REQUEST_TIMEOUT = 25
 MAX_HTTP_RETRIES = 4
 
+ALLOWED_VENUES = ["Preprint (arXiv)", "ICML", "NeurIPS", "ICLR"]
+
 LLM_PATTERNS = [
     r"\bllm\b",
     r"large\s+language\s+model",
@@ -174,6 +176,23 @@ def clean_affiliations(values: list[str]) -> list[str]:
 def infer_arxiv_venue(journal_ref: str | None) -> str:
     normalized = normalize_spaces(journal_ref or "")
     return normalized if normalized else "Preprint (arXiv)"
+
+
+def canonicalize_allowed_venue(venue: str | None) -> str | None:
+    normalized = normalize_spaces(venue or "")
+    if not normalized:
+        return None
+
+    lowered = normalized.lower()
+    if "arxiv" in lowered:
+        return "Preprint (arXiv)"
+    if "neurips" in lowered or "neural information processing systems" in lowered:
+        return "NeurIPS"
+    if "iclr" in lowered or "learning representations" in lowered:
+        return "ICLR"
+    if "icml" in lowered or "machine learning" in lowered:
+        return "ICML"
+    return None
 
 
 def infer_arxiv_venue_from_comment(comment: str | None) -> str | None:
@@ -354,7 +373,9 @@ def fetch_openalex() -> list[dict[str, Any]]:
                     affiliations.add(name)
 
         location = item.get("primary_location") or {}
-        venue = choose_openalex_venue(item)
+        venue = canonicalize_allowed_venue(choose_openalex_venue(item))
+        if not venue:
+            continue
         publication_year = int(item.get("publication_year") or 0)
         publication_date = item.get("publication_date") or ""
 
@@ -425,6 +446,9 @@ def fetch_arxiv() -> list[dict[str, Any]]:
         journal_ref = getattr(entry, "arxiv_journal_ref", None) or getattr(entry, "journal_ref", None)
         comment = getattr(entry, "arxiv_comment", None) or getattr(entry, "comment", None)
         venue = infer_arxiv_venue_from_comment(comment) or infer_arxiv_venue(journal_ref)
+        venue = canonicalize_allowed_venue(venue)
+        if not venue:
+            continue
         doi = getattr(entry, "arxiv_doi", None)
 
         record = {
