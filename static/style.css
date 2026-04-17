@@ -121,6 +121,33 @@ h1 {
   font-size: 0.9rem;
 }
 
+.auth-controls {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 170px 1fr 150px 100px;
+  gap: 10px;
+}
+
+.auth-controls button {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.auth-status {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+}
+
+.auth-status.ok {
+  color: #0f766e;
+}
+
+.auth-status.warn {
+  color: #b45309;
+}
+
 .live-search-controls {
   margin-top: 10px;
   display: grid;
@@ -250,6 +277,15 @@ th {
   font-weight: 600;
 }
 
+.row-delete-btn {
+  border: 1px solid #e2b4a7;
+  border-radius: 8px;
+  background: #fff5f2;
+  color: #9a3412;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
 .abstract-preview {
   position: fixed;
   z-index: 9999;
@@ -325,6 +361,10 @@ a:hover {
   }
 
   .live-search-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-controls {
     grid-template-columns: 1fr;
   }
 

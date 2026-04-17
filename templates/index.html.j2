@@ -29,8 +29,15 @@
     <section class="live-search" aria-label="OpenAlex live search">
       <div class="live-search-header">
         <h2>Live OpenAlex Search</h2>
-        <p>Search OpenAlex in real time and add results directly to this table.</p>
+        <p>Search OpenAlex in real time and add results directly to this table. Add is restricted to authenticated users.</p>
       </div>
+      <div class="auth-controls" aria-label="add authentication">
+        <input id="authUserInput" placeholder="username" aria-label="username">
+        <input id="authKeyInput" type="password" placeholder="access key" aria-label="access key">
+        <button id="authLoginBtn" type="button">Authenticate</button>
+        <button id="authLogoutBtn" type="button">Logout</button>
+      </div>
+      <p id="authStatus" class="auth-status"></p>
       <div class="live-search-controls">
         <input id="liveSearchInput" placeholder="e.g. quantization llm inference" aria-label="live openalex search">
         <button id="liveSearchBtn" type="button">Search OpenAlex</button>
@@ -52,6 +59,7 @@
             <th>Publication Venue</th>
             <th>Year</th>
             <th>Category</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -71,6 +79,7 @@
             <td>{{ paper.venue }}</td>
             <td>{{ paper.year }}</td>
             <td>{{ paper.category|join(', ') }}</td>
+            <td><button type="button" class="row-delete-btn">Delete</button></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -83,6 +92,11 @@
   <script>
     const READ_KEY = "llm-paper-tracker-read-map-v1";
     const ADDED_KEY = "llm-paper-tracker-live-added-v1";
+    const DELETED_KEY = "llm-paper-tracker-deleted-v1";
+    const AUTH_KEY = "llm-paper-tracker-auth-v1";
+    const AUTH_USERS = {
+      "admin": "tracker-admin-2026",
+    };
     const PAGE_SIZE = 50;
     let rows = [];
     const search = document.getElementById("searchInput");
@@ -94,7 +108,13 @@
     const liveSearchBtn = document.getElementById("liveSearchBtn");
     const liveSearchStatus = document.getElementById("liveSearchStatus");
     const liveSearchResults = document.getElementById("liveSearchResults");
+    const authUserInput = document.getElementById("authUserInput");
+    const authKeyInput = document.getElementById("authKeyInput");
+    const authLoginBtn = document.getElementById("authLoginBtn");
+    const authLogoutBtn = document.getElementById("authLogoutBtn");
+    const authStatus = document.getElementById("authStatus");
     let currentPage = 1;
+    let isAuthenticated = false;
 
     const abstractPreview = document.createElement("div");
     abstractPreview.id = "abstractPreview";
@@ -150,6 +170,30 @@
       }
     }
 
+    function loadDeletedSet() {
+      try {
+        return new Set(JSON.parse(localStorage.getItem(DELETED_KEY) || "[]"));
+      } catch (error) {
+        return new Set();
+      }
+    }
+
+    function saveDeletedSet(set) {
+      localStorage.setItem(DELETED_KEY, JSON.stringify(Array.from(set)));
+    }
+
+    function loadAuthState() {
+      try {
+        return localStorage.getItem(AUTH_KEY) === "1";
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function saveAuthState(value) {
+      localStorage.setItem(AUTH_KEY, value ? "1" : "0");
+    }
+
     function saveAddedPapers() {
       const addedRows = rows.filter((row) => row.dataset.isLiveAdded === "1");
       const payload = addedRows.map((row) => ({
@@ -167,9 +211,41 @@
     }
 
     const readMap = loadReadMap();
+    const deletedSet = loadDeletedSet();
+    isAuthenticated = loadAuthState();
+
+    function updateAuthUI() {
+      authStatus.textContent = isAuthenticated
+        ? "Authenticated. You can add OpenAlex papers."
+        : "Not authenticated. Add is disabled.";
+      authStatus.classList.toggle("ok", isAuthenticated);
+      authStatus.classList.toggle("warn", !isAuthenticated);
+    }
+
+    function removeRowById(paperId, persistDelete) {
+      const row = rows.find((r) => r.dataset.paperId === paperId);
+      if (!row) return;
+      row.remove();
+      rows = rows.filter((r) => r.dataset.paperId !== paperId);
+      delete readMap[paperId];
+      saveReadMap(readMap);
+      if (row.dataset.isLiveAdded === "1") {
+        saveAddedPapers();
+      }
+      if (persistDelete) {
+        deletedSet.add(paperId);
+        saveDeletedSet(deletedSet);
+      }
+      updateCategoryOptions();
+      applyFilter();
+    }
 
     function registerRow(row) {
       if (rows.includes(row)) return;
+      if (deletedSet.has(row.dataset.paperId)) {
+        row.remove();
+        return;
+      }
       rows.push(row);
       const paperId = row.dataset.paperId;
       const checkbox = row.querySelector(".read-checkbox");
@@ -187,6 +263,13 @@
         row.classList.toggle("read-row", checkbox.checked);
         saveReadMap(readMap);
       });
+
+      const deleteBtn = row.querySelector(".row-delete-btn");
+      if (deleteBtn) {
+        deleteBtn.addEventListener("click", () => {
+          removeRowById(paperId, true);
+        });
+      }
     }
 
     function updateCategoryOptions() {
@@ -404,6 +487,7 @@
         <td>${escapeHtml(paper.venue || "N/A")}</td>
         <td>${escapeHtml(paper.year || 0)}</td>
         <td>${escapeHtml((paper.category || []).join(", "))}</td>
+        <td><button type="button" class="row-delete-btn">Delete</button></td>
       `;
       return tr;
     }
@@ -439,6 +523,10 @@
         `;
         const button = card.querySelector("button");
         button.addEventListener("click", () => {
+          if (!isAuthenticated) {
+            liveSearchStatus.textContent = "Authentication required to add papers.";
+            return;
+          }
           const added = addPaperToTable(record, true);
           button.disabled = true;
           button.textContent = added ? "Added" : "Already added";
@@ -490,6 +578,35 @@
       addPaperToTable(paper, false);
     });
 
+    authLoginBtn.addEventListener("click", () => {
+      const user = authUserInput.value.trim();
+      const key = authKeyInput.value;
+      if (!user || !key) {
+        authStatus.textContent = "Enter username and access key.";
+        authStatus.classList.remove("ok");
+        authStatus.classList.add("warn");
+        return;
+      }
+      if (AUTH_USERS[user] && AUTH_USERS[user] === key) {
+        isAuthenticated = true;
+        saveAuthState(true);
+        authKeyInput.value = "";
+        updateAuthUI();
+      } else {
+        isAuthenticated = false;
+        saveAuthState(false);
+        authStatus.textContent = "Authentication failed.";
+        authStatus.classList.remove("ok");
+        authStatus.classList.add("warn");
+      }
+    });
+
+    authLogoutBtn.addEventListener("click", () => {
+      isAuthenticated = false;
+      saveAuthState(false);
+      updateAuthUI();
+    });
+
     liveSearchBtn.addEventListener("click", performLiveSearch);
     liveSearchInput.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
@@ -506,6 +623,7 @@
       currentPage = 1;
       applyFilter();
     });
+    updateAuthUI();
     applyFilter();
   </script>
 </body>
