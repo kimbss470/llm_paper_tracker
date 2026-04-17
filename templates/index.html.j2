@@ -115,6 +115,7 @@
     const authStatus = document.getElementById("authStatus");
     let currentPage = 1;
     let isAuthenticated = false;
+    let liveSearchTimer = null;
 
     const abstractPreview = document.createElement("div");
     abstractPreview.id = "abstractPreview";
@@ -537,8 +538,8 @@
 
     async function performLiveSearch() {
       const query = liveSearchInput.value.trim();
-      if (!query) {
-        liveSearchStatus.textContent = "Enter a query first.";
+      if (query.length < 2) {
+        liveSearchStatus.textContent = "Type at least 2 characters to search.";
         liveSearchResults.innerHTML = "";
         return;
       }
@@ -608,9 +609,29 @@
     });
 
     liveSearchBtn.addEventListener("click", performLiveSearch);
+    liveSearchInput.addEventListener("input", () => {
+      if (liveSearchTimer) {
+        clearTimeout(liveSearchTimer);
+      }
+
+      const query = liveSearchInput.value.trim();
+      if (query.length < 2) {
+        liveSearchStatus.textContent = "Type at least 2 characters to search.";
+        liveSearchResults.innerHTML = "";
+        return;
+      }
+
+      liveSearchStatus.textContent = "Waiting for typing to stop...";
+      liveSearchTimer = setTimeout(() => {
+        performLiveSearch();
+      }, 350);
+    });
     liveSearchInput.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         event.preventDefault();
+        if (liveSearchTimer) {
+          clearTimeout(liveSearchTimer);
+        }
         performLiveSearch();
       }
     });
