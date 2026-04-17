@@ -155,6 +155,15 @@ def clean_affiliations(values: list[str]) -> list[str]:
         name = normalize_spaces(raw)
         if not name:
             continue
+        # Drop trailing conference/journal metadata fragments from affiliation strings.
+        name = re.sub(
+            r"\s*[,;\-–—:]\s*(in\s+)?(proceedings|journal|conference|workshop|symposium|transactions?)\b.*$",
+            "",
+            name,
+            flags=re.IGNORECASE,
+        ).strip(" ,;:-")
+        if not name:
+            continue
         lowered = name.lower()
         if any(re.search(pattern, lowered) for pattern in blocked):
             continue
@@ -165,6 +174,61 @@ def clean_affiliations(values: list[str]) -> list[str]:
 def infer_arxiv_venue(journal_ref: str | None) -> str:
     normalized = normalize_spaces(journal_ref or "")
     return normalized if normalized else "Preprint (arXiv)"
+
+
+def infer_arxiv_venue_from_comment(comment: str | None) -> str | None:
+    normalized = normalize_spaces(comment or "")
+    if not normalized:
+        return None
+
+    patterns = [
+        r"accepted\s+to\s+([^.;]+)",
+        r"to\s+appear\s+in\s+([^.;]+)",
+        r"published\s+in\s+([^.;]+)",
+        r"in\s+proceedings\s+of\s+([^.;]+)",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, normalized, flags=re.IGNORECASE)
+        if match:
+            venue = normalize_spaces(match.group(1))
+            if venue:
+                return venue
+    return None
+
+
+def choose_openalex_venue(item: dict[str, Any]) -> str:
+    def source_name(location: dict[str, Any]) -> str:
+        source = location.get("source") or {}
+        return normalize_spaces(source.get("display_name") or "")
+
+    def is_preprint(name: str) -> bool:
+        lowered = name.lower()
+        return "arxiv" in lowered or "preprint" in lowered
+
+    candidates: list[str] = []
+
+    primary_location = item.get("primary_location") or {}
+    primary_name = source_name(primary_location)
+    if primary_name:
+        candidates.append(primary_name)
+
+    for location in item.get("locations", []) or []:
+        name = source_name(location)
+        if name:
+            candidates.append(name)
+
+    host_venue = item.get("host_venue") or {}
+    host_name = normalize_spaces(host_venue.get("display_name") or "")
+    if host_name:
+        candidates.append(host_name)
+
+    for venue in candidates:
+        if not is_preprint(venue):
+            return venue
+    for venue in candidates:
+        if venue:
+            return venue
+    return "OpenAlex Indexed Venue"
 
 
 def infer_categories(text: str) -> list[str]:
@@ -290,8 +354,7 @@ def fetch_openalex() -> list[dict[str, Any]]:
                     affiliations.add(name)
 
         location = item.get("primary_location") or {}
-        source = location.get("source") or {}
-        venue = source.get("display_name") or "OpenAlex Indexed Venue"
+        venue = choose_openalex_venue(item)
         publication_year = int(item.get("publication_year") or 0)
         publication_date = item.get("publication_date") or ""
 
@@ -360,7 +423,8 @@ def fetch_arxiv() -> list[dict[str, Any]]:
         categories = infer_categories(joined_text)
         arxiv_id = entry.id.rsplit("/", 1)[-1]
         journal_ref = getattr(entry, "arxiv_journal_ref", None) or getattr(entry, "journal_ref", None)
-        venue = infer_arxiv_venue(journal_ref)
+        comment = getattr(entry, "arxiv_comment", None) or getattr(entry, "comment", None)
+        venue = infer_arxiv_venue_from_comment(comment) or infer_arxiv_venue(journal_ref)
         doi = getattr(entry, "arxiv_doi", None)
 
         record = {
