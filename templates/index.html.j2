@@ -296,7 +296,7 @@
       }
       row.dataset.title = row.dataset.title || (row.querySelector(".paper-title-link")?.textContent || "").trim();
       row.dataset.addedDate = dateToKey(row.dataset.addedDate) === "0000-00-00"
-        ? todayKstKey()
+        ? nowKstDateTime()
         : row.dataset.addedDate;
       rows.push(row);
       const paperId = row.dataset.paperId;
@@ -364,8 +364,9 @@
 
     function dateToKey(rawDate) {
       const normalized = String(rawDate || "").trim();
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(normalized)) return "0000-00-00";
-      return normalized;
+      const matched = normalized.match(/^(\d{4}-\d{2}-\d{2})(?:[ T](\d{2}:\d{2}:\d{2}))?$/);
+      if (!matched) return "0000-00-00";
+      return matched[1];
     }
 
     function todayKstKey() {
@@ -375,10 +376,28 @@
       return new Date(kstMillis).toISOString().slice(0, 10);
     }
 
+    function nowKstDateTime() {
+      const now = new Date();
+      const utcMillis = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const kstMillis = utcMillis + (9 * 60 * 60 * 1000);
+      const kstDate = new Date(kstMillis);
+      const pad2 = (value) => String(value).padStart(2, "0");
+      const yyyy = kstDate.getUTCFullYear();
+      const mm = pad2(kstDate.getUTCMonth() + 1);
+      const dd = pad2(kstDate.getUTCDate());
+      const hh = pad2(kstDate.getUTCHours());
+      const mi = pad2(kstDate.getUTCMinutes());
+      const ss = pad2(kstDate.getUTCSeconds());
+      return `${yyyy}-${mm}-${dd} ${hh}:${mi}:${ss}`;
+    }
+
     function dateToTimestamp(rawDate) {
-      const key = dateToKey(rawDate);
-      if (key === "0000-00-00") return Number.NEGATIVE_INFINITY;
-      const value = Date.parse(`${key}T00:00:00Z`);
+      const normalized = String(rawDate || "").trim();
+      const matched = normalized.match(/^(\d{4}-\d{2}-\d{2})(?:[ T](\d{2}:\d{2}:\d{2}))?$/);
+      if (!matched) return Number.NEGATIVE_INFINITY;
+      const day = matched[1];
+      const time = matched[2] || "00:00:00";
+      const value = Date.parse(`${day}T${time}+09:00`);
       return Number.isNaN(value) ? Number.NEGATIVE_INFINITY : value;
     }
 
@@ -631,7 +650,7 @@
         venue,
         year: Number(item.publication_year || 0),
         published_date: String(item.publication_date || ""),
-        added_date: todayKstKey(),
+        added_date: nowKstDateTime(),
         category,
         abstract,
         url: String(item.id || location.landing_page_url || ""),
@@ -648,7 +667,7 @@
       tr.dataset.affiliations = (paper.affiliations || []).join("||");
       tr.dataset.venue = paper.venue || "N/A";
       tr.dataset.year = String(paper.year || 0);
-      tr.dataset.addedDate = String(paper.added_date || paper.published_date || "").trim() || todayKstKey();
+      tr.dataset.addedDate = String(paper.added_date || paper.published_date || "").trim() || nowKstDateTime();
       tr.dataset.abstract = paper.abstract || "";
       tr.dataset.url = paper.url || "";
 

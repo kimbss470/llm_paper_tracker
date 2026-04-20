@@ -23,6 +23,7 @@ STATIC_DIR = BASE_DIR / "static"
 SITE_DIR = BASE_DIR / "site"
 PAPER_DIR = SITE_DIR / "papers"
 HISTORY_PATH = BASE_DIR / "data" / "paper_history.json"
+ADDED_AT_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 USER_AGENT = "llm-paper-tracker/1.0 (contact: maintainer@example.com)"
 MIN_PUBLICATION_DATE = "2025-01-01"
@@ -106,6 +107,21 @@ def kst_today_str() -> str:
     return (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
 
 
+def kst_now_str() -> str:
+    return (datetime.now(timezone.utc) + timedelta(hours=9)).strftime(ADDED_AT_FORMAT)
+
+
+def normalize_added_datetime(value: Any) -> str | None:
+    text = normalize_spaces(str(value or ""))
+    if not text:
+        return None
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
+        return f"{text} 00:00:00"
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", text):
+        return text
+    return None
+
+
 def load_tracker_history() -> dict[str, Any]:
     default = {"papers": {}, "daily_additions": {}}
     if not HISTORY_PATH.exists():
@@ -138,16 +154,23 @@ def apply_tracker_history(papers: list[Paper]) -> tuple[dict[str, int], int]:
     history = load_tracker_history()
     papers_history = history["papers"]
     daily_additions = history["daily_additions"]
-    today = kst_today_str()
+    now_kst = kst_now_str()
+    today = now_kst[:10]
     new_count = 0
 
     for paper in papers:
         key = normalize_title(paper.title) or paper.paper_id
         entry = papers_history.get(key)
-        if isinstance(entry, dict) and entry.get("first_seen_date"):
-            first_seen = str(entry["first_seen_date"])
+        if isinstance(entry, dict):
+            first_seen = (
+                normalize_added_datetime(entry.get("first_seen_date"))
+                or normalize_added_datetime(entry.get("first_seen_at"))
+            )
         else:
-            first_seen = today
+            first_seen = None
+
+        if not first_seen:
+            first_seen = now_kst
             new_count += 1
 
         paper.added_date = first_seen
@@ -155,7 +178,7 @@ def apply_tracker_history(papers: list[Paper]) -> tuple[dict[str, int], int]:
             "title": paper.title,
             "paper_id": paper.paper_id,
             "first_seen_date": first_seen,
-            "last_seen_date": today,
+            "last_seen_date": now_kst,
             "latest_published_date": paper.published_date,
         }
 
