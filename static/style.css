@@ -91,9 +91,44 @@ h1 {
 
 .controls {
   display: grid;
-  grid-template-columns: 1fr 240px;
+  grid-template-columns: 1fr 220px 260px;
   gap: 10px;
   margin-bottom: 18px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tab-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.home-stat {
+  margin: 8px 0;
+  font-size: 1.03rem;
+  color: var(--ink);
 }
 
 .table-meta {
@@ -151,22 +186,8 @@ h1 {
 .live-search-controls {
   margin-top: 10px;
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr;
   gap: 10px;
-}
-
-.live-search-controls button {
-  border: 1px solid var(--accent);
-  border-radius: 12px;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.live-search-controls button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .live-search-status {
@@ -275,6 +296,55 @@ th {
   border-color: var(--accent);
   color: var(--accent);
   font-weight: 600;
+}
+
+.trend-sub {
+  margin: 0 0 10px;
+  color: var(--subtle);
+}
+
+.trend-chart {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  min-height: 220px;
+  padding: 14px 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  overflow-x: auto;
+}
+
+.trend-item {
+  min-width: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.trend-bar-wrap {
+  height: 190px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.trend-bar {
+  width: 28px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, #37a89c 0%, #0f766e 100%);
+}
+
+.trend-value {
+  font-size: 0.78rem;
+  color: var(--subtle);
+}
+
+.trend-label {
+  font-size: 0.72rem;
+  color: var(--subtle);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
 .row-delete-btn {

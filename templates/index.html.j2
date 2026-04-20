@@ -19,74 +19,106 @@
   </header>
 
   <main class="container">
-    <section class="controls">
-      <input id="searchInput" placeholder="Search title, author, affiliation, publication venue" aria-label="search">
-      <select id="categoryFilter" aria-label="category filter">
-        <option value="all">All categories</option>
-      </select>
+    <section class="tabs" aria-label="sections">
+      <button type="button" class="tab-btn active" data-tab="home">Home</button>
+      <button type="button" class="tab-btn" data-tab="papers">Paper List</button>
+      <button type="button" class="tab-btn" data-tab="trends">Daily Trends</button>
     </section>
 
-    <section class="live-search" aria-label="OpenAlex live search">
-      <div class="live-search-header">
-        <h2>Live OpenAlex Search</h2>
-        <p>Search OpenAlex in real time and add results directly to this table. Add is restricted to authenticated users.</p>
-      </div>
-      <div class="auth-controls" aria-label="add authentication">
-        <input id="authUserInput" placeholder="username" aria-label="username">
-        <input id="authKeyInput" type="password" placeholder="access key" aria-label="access key">
-        <button id="authLoginBtn" type="button">Authenticate</button>
-        <button id="authLogoutBtn" type="button">Logout</button>
-      </div>
-      <p id="authStatus" class="auth-status"></p>
-      <div class="live-search-controls">
-        <input id="liveSearchInput" placeholder="e.g. quantization llm inference" aria-label="live openalex search">
-        <button id="liveSearchBtn" type="button">Search OpenAlex</button>
-      </div>
-      <p id="liveSearchStatus" class="live-search-status"></p>
-      <div id="liveSearchResults" class="live-search-results"></div>
+    <section id="homeTab" class="tab-panel active" aria-label="home summary">
+      <h2>Home</h2>
+      <p id="todayCount" class="home-stat">Today added papers: 0</p>
+      <p id="totalCount" class="home-stat">Total papers: 0</p>
     </section>
 
-    <p id="tableMeta" class="table-meta"></p>
+    <section id="papersTab" class="tab-panel" aria-label="paper list">
+      <section class="controls">
+        <input id="searchInput" placeholder="Search title, author, affiliation, publication venue" aria-label="search">
+        <select id="categoryFilter" aria-label="category filter">
+          <option value="all">All categories</option>
+        </select>
+        <select id="sortFilter" aria-label="sort filter">
+          <option value="added_desc">Sort: Added date (Newest)</option>
+          <option value="added_asc">Sort: Added date (Oldest)</option>
+          <option value="title_asc">Sort: Title (A-Z)</option>
+          <option value="title_desc">Sort: Title (Z-A)</option>
+        </select>
+      </section>
 
-    <section>
-      <table id="paperTable">
-        <thead>
-          <tr>
-            <th>Read</th>
-            <th>Title</th>
-            <th>Authors</th>
-            <th>Affiliation</th>
-            <th>Publication Venue</th>
-            <th>Year</th>
-            <th>Category</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for row in rows %}
-          {% set paper = row.paper %}
-          <tr data-category="{{ paper.category|join('|')|e }}" data-paper-id="{{ paper.paper_id|e }}">
-            <td><input type="checkbox" class="read-checkbox" aria-label="mark as read"></td>
-            <td>
-              <a
-                href="{{ row.page_file }}"
-                class="paper-title-link"
-                data-abstract="{{ (paper.abstract if paper.abstract else 'Abstract unavailable.')|e }}"
-              >{{ paper.title }}</a>
-            </td>
-            <td>{{ paper.authors[:5]|join(', ') }}{% if paper.authors|length > 5 %}, ...{% endif %}</td>
-            <td>{{ paper.affiliations[:3]|join(', ') if paper.affiliations else 'N/A' }}</td>
-            <td>{{ paper.venue }}</td>
-            <td>{{ paper.year }}</td>
-            <td>{{ paper.category|join(', ') }}</td>
-            <td><button type="button" class="row-delete-btn">Delete</button></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <section class="live-search" aria-label="OpenAlex live search">
+        <div class="live-search-header">
+          <h2>Live OpenAlex Search</h2>
+          <p>Search OpenAlex in real time and add results directly to this table. Add is restricted to authenticated users.</p>
+        </div>
+        <div class="auth-controls" aria-label="add authentication">
+          <input id="authUserInput" placeholder="username" aria-label="username">
+          <input id="authKeyInput" type="password" placeholder="access key" aria-label="access key">
+          <button id="authLoginBtn" type="button">Authenticate</button>
+          <button id="authLogoutBtn" type="button">Logout</button>
+        </div>
+        <p id="authStatus" class="auth-status"></p>
+        <div class="live-search-controls">
+          <input id="liveSearchInput" placeholder="e.g. quantization llm inference" aria-label="live openalex search">
+        </div>
+        <p id="liveSearchStatus" class="live-search-status"></p>
+        <div id="liveSearchResults" class="live-search-results"></div>
+      </section>
+
+      <p id="tableMeta" class="table-meta"></p>
+
+      <section>
+        <table id="paperTable">
+          <thead>
+            <tr>
+              <th>Read</th>
+              <th>Title</th>
+              <th>Added Date</th>
+              <th>Authors</th>
+              <th>Affiliation</th>
+              <th>Publication Venue</th>
+              <th>Year</th>
+              <th>Category</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+            {% set paper = row.paper %}
+            <tr
+              data-category="{{ paper.category|join('|')|e }}"
+              data-paper-id="{{ paper.paper_id|e }}"
+              data-title="{{ paper.title|e }}"
+              data-added-date="{{ paper.published_date|e }}"
+            >
+              <td><input type="checkbox" class="read-checkbox" aria-label="mark as read"></td>
+              <td>
+                <a
+                  href="{{ row.page_file }}"
+                  class="paper-title-link"
+                  data-abstract="{{ (paper.abstract if paper.abstract else 'Abstract unavailable.')|e }}"
+                >{{ paper.title }}</a>
+              </td>
+              <td>{{ paper.published_date if paper.published_date else 'N/A' }}</td>
+              <td>{{ paper.authors[:5]|join(', ') }}{% if paper.authors|length > 5 %}, ...{% endif %}</td>
+              <td>{{ paper.affiliations[:3]|join(', ') if paper.affiliations else 'N/A' }}</td>
+              <td>{{ paper.venue }}</td>
+              <td>{{ paper.year }}</td>
+              <td>{{ paper.category|join(', ') }}</td>
+              <td><button type="button" class="row-delete-btn">Delete</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <nav id="pagination" class="pagination" aria-label="Paper pagination"></nav>
     </section>
 
-    <nav id="pagination" class="pagination" aria-label="Paper pagination"></nav>
+    <section id="trendsTab" class="tab-panel" aria-label="daily trends">
+      <h2>Daily Added Papers Trend</h2>
+      <p class="trend-sub">Bar chart by added date in this tracker.</p>
+      <div id="trendChart" class="trend-chart"></div>
+    </section>
   </main>
 
   <script>
@@ -101,11 +133,20 @@
     let rows = [];
     const search = document.getElementById("searchInput");
     const category = document.getElementById("categoryFilter");
+    const sortFilter = document.getElementById("sortFilter");
     const pagination = document.getElementById("pagination");
     const tableMeta = document.getElementById("tableMeta");
     const tableBody = document.querySelector("#paperTable tbody");
+    const todayCount = document.getElementById("todayCount");
+    const totalCount = document.getElementById("totalCount");
+    const trendChart = document.getElementById("trendChart");
+    const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
+    const tabPanels = {
+      home: document.getElementById("homeTab"),
+      papers: document.getElementById("papersTab"),
+      trends: document.getElementById("trendsTab"),
+    };
     const liveSearchInput = document.getElementById("liveSearchInput");
-    const liveSearchBtn = document.getElementById("liveSearchBtn");
     const liveSearchStatus = document.getElementById("liveSearchStatus");
     const liveSearchResults = document.getElementById("liveSearchResults");
     const authUserInput = document.getElementById("authUserInput");
@@ -116,6 +157,8 @@
     let currentPage = 1;
     let isAuthenticated = false;
     let liveSearchTimer = null;
+    let liveSearchAbortController = null;
+    let liveSearchRequestSeq = 0;
 
     const abstractPreview = document.createElement("div");
     abstractPreview.id = "abstractPreview";
@@ -205,6 +248,7 @@
         venue: row.dataset.venue || "N/A",
         year: Number(row.dataset.year || 0),
         category: (row.dataset.category || "").split("|").filter(Boolean),
+        published_date: row.dataset.addedDate || "",
         abstract: row.dataset.abstract || "",
         url: row.dataset.url || "",
       }));
@@ -247,6 +291,10 @@
         row.remove();
         return;
       }
+      row.dataset.title = row.dataset.title || (row.querySelector(".paper-title-link")?.textContent || "").trim();
+      row.dataset.addedDate = dateToKey(row.dataset.addedDate) === "0000-00-00"
+        ? todayKstKey()
+        : row.dataset.addedDate;
       rows.push(row);
       const paperId = row.dataset.paperId;
       const checkbox = row.querySelector(".read-checkbox");
@@ -311,6 +359,117 @@
       return textMatch && categoryMatch;
     }
 
+    function dateToKey(rawDate) {
+      const normalized = String(rawDate || "").trim();
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(normalized)) return "0000-00-00";
+      return normalized;
+    }
+
+    function todayKstKey() {
+      const now = new Date();
+      const utcMillis = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const kstMillis = utcMillis + (9 * 60 * 60 * 1000);
+      return new Date(kstMillis).toISOString().slice(0, 10);
+    }
+
+    function dateToTimestamp(rawDate) {
+      const key = dateToKey(rawDate);
+      if (key === "0000-00-00") return Number.NEGATIVE_INFINITY;
+      const value = Date.parse(`${key}T00:00:00Z`);
+      return Number.isNaN(value) ? Number.NEGATIVE_INFINITY : value;
+    }
+
+    function sortRows(inputRows) {
+      const mode = sortFilter.value;
+      const sorted = [...inputRows];
+      sorted.sort((a, b) => {
+        if (mode === "title_asc" || mode === "title_desc") {
+          const left = (a.dataset.title || "").toLowerCase();
+          const right = (b.dataset.title || "").toLowerCase();
+          const cmp = left.localeCompare(right);
+          return mode === "title_asc" ? cmp : -cmp;
+        }
+
+        const leftDate = dateToTimestamp(a.dataset.addedDate);
+        const rightDate = dateToTimestamp(b.dataset.addedDate);
+        if (leftDate === rightDate) {
+          const leftTitle = (a.dataset.title || "").toLowerCase();
+          const rightTitle = (b.dataset.title || "").toLowerCase();
+          return leftTitle.localeCompare(rightTitle);
+        }
+        return mode === "added_asc" ? leftDate - rightDate : rightDate - leftDate;
+      });
+      return sorted;
+    }
+
+    function getDateCounts(inputRows) {
+      const counts = new Map();
+      inputRows.forEach((row) => {
+        const date = dateToKey(row.dataset.addedDate);
+        if (date === "0000-00-00") return;
+        counts.set(date, (counts.get(date) || 0) + 1);
+      });
+      return Array.from(counts.entries()).sort(([a], [b]) => a.localeCompare(b));
+    }
+
+    function renderTrendChart(inputRows) {
+      trendChart.innerHTML = "";
+      const points = getDateCounts(inputRows);
+      if (!points.length) {
+        trendChart.textContent = "No date data available.";
+        return;
+      }
+      const maxCount = Math.max(...points.map(([, count]) => count), 1);
+      points.forEach(([date, count]) => {
+        const item = document.createElement("div");
+        item.className = "trend-item";
+
+        const label = document.createElement("span");
+        label.className = "trend-label";
+        label.textContent = date;
+
+        const barWrap = document.createElement("div");
+        barWrap.className = "trend-bar-wrap";
+
+        const bar = document.createElement("div");
+        bar.className = "trend-bar";
+        bar.style.height = `${Math.max(8, Math.round((count / maxCount) * 180))}px`;
+        bar.title = `${date}: ${count}`;
+
+        const value = document.createElement("span");
+        value.className = "trend-value";
+        value.textContent = String(count);
+
+        barWrap.appendChild(bar);
+        item.appendChild(value);
+        item.appendChild(barWrap);
+        item.appendChild(label);
+        trendChart.appendChild(item);
+      });
+    }
+
+    function updateHomeStats(inputRows) {
+      const today = todayKstKey();
+      const todayAdded = inputRows.filter((row) => dateToKey(row.dataset.addedDate) === today).length;
+      todayCount.textContent = `Today added papers: ${todayAdded}`;
+      totalCount.textContent = `Total papers: ${inputRows.length}`;
+    }
+
+    function switchTab(name) {
+      tabButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.tab === name);
+      });
+      Object.entries(tabPanels).forEach(([key, panel]) => {
+        panel.classList.toggle("active", key === name);
+      });
+      if (name === "trends") {
+        renderTrendChart(rows);
+      }
+      if (name === "home") {
+        updateHomeStats(rows);
+      }
+    }
+
     function renderPagination(totalPages) {
       pagination.innerHTML = "";
       if (totalPages <= 1) return;
@@ -351,12 +510,16 @@
     }
 
     function applyFilter() {
-      const visibleRows = rows.filter(rowMatches);
+      const visibleRows = sortRows(rows.filter(rowMatches));
       const totalPages = Math.max(1, Math.ceil(visibleRows.length / PAGE_SIZE));
       if (currentPage > totalPages) currentPage = totalPages;
 
       rows.forEach((row) => {
         row.style.display = "none";
+      });
+
+      visibleRows.forEach((row) => {
+        tableBody.appendChild(row);
       });
 
       const start = (currentPage - 1) * PAGE_SIZE;
@@ -368,6 +531,8 @@
       tableMeta.textContent = `Showing ${visibleRows.length === 0 ? 0 : start + 1}-${Math.min(end, visibleRows.length)} of ${visibleRows.length} filtered papers`;
 
       renderPagination(totalPages);
+      updateHomeStats(rows);
+      renderTrendChart(rows);
     }
 
     function decodeOpenAlexAbstract(invertedIndex) {
@@ -454,6 +619,7 @@
         affiliations: Array.from(affSet),
         venue,
         year: Number(item.publication_year || 0),
+        published_date: String(item.publication_date || ""),
         category,
         abstract,
         url: String(item.id || location.landing_page_url || ""),
@@ -470,6 +636,7 @@
       tr.dataset.affiliations = (paper.affiliations || []).join("||");
       tr.dataset.venue = paper.venue || "N/A";
       tr.dataset.year = String(paper.year || 0);
+      tr.dataset.addedDate = String(paper.published_date || "").trim() || todayKstKey();
       tr.dataset.abstract = paper.abstract || "";
       tr.dataset.url = paper.url || "";
 
@@ -483,6 +650,7 @@
       tr.innerHTML = `
         <td><input type="checkbox" class="read-checkbox" aria-label="mark as read"></td>
         <td><a href="${escapeHtml(href)}" class="paper-title-link" data-abstract="${escapeHtml(paper.abstract || "")}"${target}>${escapeHtml(paper.title || "Untitled")}</a></td>
+        <td>${escapeHtml(tr.dataset.addedDate || "N/A")}</td>
         <td>${escapeHtml(authorsCell)}</td>
         <td>${escapeHtml(affCell)}</td>
         <td>${escapeHtml(paper.venue || "N/A")}</td>
@@ -539,12 +707,21 @@
     async function performLiveSearch() {
       const query = liveSearchInput.value.trim();
       if (query.length < 2) {
+        if (liveSearchAbortController) {
+          liveSearchAbortController.abort();
+          liveSearchAbortController = null;
+        }
         liveSearchStatus.textContent = "Type at least 2 characters to search.";
         liveSearchResults.innerHTML = "";
         return;
       }
 
-      liveSearchBtn.disabled = true;
+      const requestSeq = ++liveSearchRequestSeq;
+      if (liveSearchAbortController) {
+        liveSearchAbortController.abort();
+      }
+      liveSearchAbortController = new AbortController();
+
       liveSearchStatus.textContent = "Searching OpenAlex...";
       liveSearchResults.innerHTML = "";
 
@@ -555,20 +732,26 @@
           sort: "relevance_score:desc",
           filter: "from_publication_date:2025-01-01",
         });
-        const response = await fetch(`https://api.openalex.org/works?${params.toString()}`);
+        const response = await fetch(`https://api.openalex.org/works?${params.toString()}`, {
+          signal: liveSearchAbortController.signal,
+        });
         if (!response.ok) {
           throw new Error(`OpenAlex HTTP ${response.status}`);
         }
         const payload = await response.json();
+        if (requestSeq !== liveSearchRequestSeq) {
+          return;
+        }
         const results = Array.isArray(payload.results) ? payload.results : [];
         const records = results
           .map(buildPaperFromOpenAlex)
           .filter((paper) => paper.title);
         renderLiveResults(records);
       } catch (error) {
+        if (error && error.name === "AbortError") {
+          return;
+        }
         liveSearchStatus.textContent = `Search failed: ${error.message}`;
-      } finally {
-        liveSearchBtn.disabled = false;
       }
     }
 
@@ -608,14 +791,19 @@
       updateAuthUI();
     });
 
-    liveSearchBtn.addEventListener("click", performLiveSearch);
     liveSearchInput.addEventListener("input", () => {
       if (liveSearchTimer) {
         clearTimeout(liveSearchTimer);
+        liveSearchTimer = null;
       }
 
       const query = liveSearchInput.value.trim();
       if (query.length < 2) {
+        if (liveSearchAbortController) {
+          liveSearchAbortController.abort();
+          liveSearchAbortController = null;
+        }
+        liveSearchRequestSeq += 1;
         liveSearchStatus.textContent = "Type at least 2 characters to search.";
         liveSearchResults.innerHTML = "";
         return;
@@ -631,6 +819,7 @@
         event.preventDefault();
         if (liveSearchTimer) {
           clearTimeout(liveSearchTimer);
+          liveSearchTimer = null;
         }
         performLiveSearch();
       }
@@ -644,7 +833,17 @@
       currentPage = 1;
       applyFilter();
     });
+    sortFilter.addEventListener("change", () => {
+      currentPage = 1;
+      applyFilter();
+    });
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        switchTab(button.dataset.tab);
+      });
+    });
     updateAuthUI();
+    switchTab("home");
     applyFilter();
   </script>
 </body>
