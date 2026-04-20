@@ -8,7 +8,7 @@ import re
 import shutil
 import time
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote_plus
@@ -22,6 +22,7 @@ TEMPLATE_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
 SITE_DIR = BASE_DIR / "site"
 PAPER_DIR = SITE_DIR / "papers"
+HISTORY_PATH = BASE_DIR / "data" / "paper_history.json"
 
 USER_AGENT = "llm-paper-tracker/1.0 (contact: maintainer@example.com)"
 MIN_PUBLICATION_DATE = "2025-01-01"
@@ -93,11 +94,82 @@ class Paper:
     venue: str
     year: int
     published_date: str
+    added_date: str
     category: list[str]
     abstract: str
     url: str
     doi: str | None
     summary: dict[str, list[str]]
+
+
+def kst_today_str() -> str:
+    return (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
+
+
+def load_tracker_history() -> dict[str, Any]:
+    default = {"papers": {}, "daily_additions": {}}
+    if not HISTORY_PATH.exists():
+        return default
+
+    try:
+        raw = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return default
+
+    papers = raw.get("papers")
+    daily_additions = raw.get("daily_additions")
+    if not isinstance(papers, dict) or not isinstance(daily_additions, dict):
+        return default
+    return {
+        "papers": papers,
+        "daily_additions": daily_additions,
+    }
+
+
+def save_tracker_history(history: dict[str, Any]) -> None:
+    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    HISTORY_PATH.write_text(
+        json.dumps(history, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def apply_tracker_history(papers: list[Paper]) -> tuple[dict[str, int], int]:
+    history = load_tracker_history()
+    papers_history = history["papers"]
+    daily_additions = history["daily_additions"]
+    today = kst_today_str()
+    new_count = 0
+
+    for paper in papers:
+        key = normalize_title(paper.title) or paper.paper_id
+        entry = papers_history.get(key)
+        if isinstance(entry, dict) and entry.get("first_seen_date"):
+            first_seen = str(entry["first_seen_date"])
+        else:
+            first_seen = today
+            new_count += 1
+
+        paper.added_date = first_seen
+        papers_history[key] = {
+            "title": paper.title,
+            "paper_id": paper.paper_id,
+            "first_seen_date": first_seen,
+            "last_seen_date": today,
+            "latest_published_date": paper.published_date,
+        }
+
+    previous = int(daily_additions.get(today, 0) or 0)
+    daily_additions[today] = previous + new_count
+
+    sorted_daily = {
+        date_key: int(daily_additions[date_key] or 0)
+        for date_key in sorted(daily_additions.keys())
+    }
+    history["papers"] = papers_history
+    history["daily_additions"] = sorted_daily
+    save_tracker_history(history)
+    return sorted_daily, int(sorted_daily.get(today, 0))
 
 
 def request_text(url: str, params: dict[str, Any] | None = None) -> str:
@@ -529,12 +601,16 @@ def merge_papers(openalex_papers: list[dict[str, Any]], arxiv_papers: list[dict[
             copied["summary"] = build_summary(copied)
             merged[norm] = copied
 
+    for record in merged.values():
+        if not record.get("added_date"):
+            record["added_date"] = record.get("published_date", "")
+
     papers = [Paper(**record) for record in merged.values()]
     papers.sort(key=lambda p: (p.published_date, p.year, p.title), reverse=True)
     return papers
 
 
-def render_site(papers: list[Paper]) -> None:
+def render_site(papers: list[Paper], daily_additions: dict[str, int], today_added_count: int) -> None:
     if SITE_DIR.exists():
         shutil.rmtree(SITE_DIR)
     SITE_DIR.mkdir(parents=True, exist_ok=True)
@@ -562,6 +638,8 @@ def render_site(papers: list[Paper]) -> None:
         rows=indexed_rows,
         keywords=KEYWORDS,
         generated_at=generated_at,
+        daily_additions=daily_additions,
+        today_added_count=today_added_count,
     )
     (SITE_DIR / "index.html").write_text(index_html, encoding="utf-8")
 
@@ -592,8 +670,10 @@ def main() -> None:
 
     papers = merge_papers(openalex_papers, arxiv_papers)
     print(f"Merged paper count: {len(papers)}")
+    daily_additions, today_added_count = apply_tracker_history(papers)
+    print(f"Today new additions (KST): {today_added_count}")
 
-    render_site(papers)
+    render_site(papers, daily_additions, today_added_count)
     print(f"Static site built at: {SITE_DIR}")
 
 

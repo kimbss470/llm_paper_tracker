@@ -88,7 +88,7 @@
               data-category="{{ paper.category|join('|')|e }}"
               data-paper-id="{{ paper.paper_id|e }}"
               data-title="{{ paper.title|e }}"
-              data-added-date="{{ paper.published_date|e }}"
+              data-added-date="{{ paper.added_date|e }}"
             >
               <td><input type="checkbox" class="read-checkbox" aria-label="mark as read"></td>
               <td>
@@ -98,7 +98,7 @@
                   data-abstract="{{ (paper.abstract if paper.abstract else 'Abstract unavailable.')|e }}"
                 >{{ paper.title }}</a>
               </td>
-              <td>{{ paper.published_date if paper.published_date else 'N/A' }}</td>
+              <td>{{ paper.added_date if paper.added_date else 'N/A' }}</td>
               <td>{{ paper.authors[:5]|join(', ') }}{% if paper.authors|length > 5 %}, ...{% endif %}</td>
               <td>{{ paper.affiliations[:3]|join(', ') if paper.affiliations else 'N/A' }}</td>
               <td>{{ paper.venue }}</td>
@@ -146,6 +146,8 @@
       papers: document.getElementById("papersTab"),
       trends: document.getElementById("trendsTab"),
     };
+    const serverDailyAdditions = {{ daily_additions | tojson }};
+    const serverTodayAddedCount = Number({{ today_added_count }} || 0);
     const liveSearchInput = document.getElementById("liveSearchInput");
     const liveSearchStatus = document.getElementById("liveSearchStatus");
     const liveSearchResults = document.getElementById("liveSearchResults");
@@ -248,6 +250,7 @@
         venue: row.dataset.venue || "N/A",
         year: Number(row.dataset.year || 0),
         category: (row.dataset.category || "").split("|").filter(Boolean),
+        added_date: row.dataset.addedDate || "",
         published_date: row.dataset.addedDate || "",
         abstract: row.dataset.abstract || "",
         url: row.dataset.url || "",
@@ -402,19 +405,29 @@
       return sorted;
     }
 
-    function getDateCounts(inputRows) {
-      const counts = new Map();
-      inputRows.forEach((row) => {
+    function getDateCounts() {
+      const entries = Object.entries(serverDailyAdditions || {})
+        .map(([date, count]) => [dateToKey(date), Number(count || 0)])
+        .filter(([date, count]) => date !== "0000-00-00" && count > 0)
+        .sort(([a], [b]) => a.localeCompare(b));
+
+      if (entries.length) {
+        return entries;
+      }
+
+      // Fallback when history file is unavailable.
+      const fallbackCounts = new Map();
+      rows.forEach((row) => {
         const date = dateToKey(row.dataset.addedDate);
         if (date === "0000-00-00") return;
-        counts.set(date, (counts.get(date) || 0) + 1);
+        fallbackCounts.set(date, (fallbackCounts.get(date) || 0) + 1);
       });
-      return Array.from(counts.entries()).sort(([a], [b]) => a.localeCompare(b));
+      return Array.from(fallbackCounts.entries()).sort(([a], [b]) => a.localeCompare(b));
     }
 
-    function renderTrendChart(inputRows) {
+    function renderTrendChart() {
       trendChart.innerHTML = "";
-      const points = getDateCounts(inputRows);
+      const points = getDateCounts();
       if (!points.length) {
         trendChart.textContent = "No date data available.";
         return;
@@ -448,11 +461,9 @@
       });
     }
 
-    function updateHomeStats(inputRows) {
-      const today = todayKstKey();
-      const todayAdded = inputRows.filter((row) => dateToKey(row.dataset.addedDate) === today).length;
-      todayCount.textContent = `Today added papers: ${todayAdded}`;
-      totalCount.textContent = `Total papers: ${inputRows.length}`;
+    function updateHomeStats() {
+      todayCount.textContent = `Today added papers: ${serverTodayAddedCount}`;
+      totalCount.textContent = `Total papers: ${rows.length}`;
     }
 
     function switchTab(name) {
@@ -463,10 +474,10 @@
         panel.classList.toggle("active", key === name);
       });
       if (name === "trends") {
-        renderTrendChart(rows);
+        renderTrendChart();
       }
       if (name === "home") {
-        updateHomeStats(rows);
+        updateHomeStats();
       }
     }
 
@@ -531,8 +542,8 @@
       tableMeta.textContent = `Showing ${visibleRows.length === 0 ? 0 : start + 1}-${Math.min(end, visibleRows.length)} of ${visibleRows.length} filtered papers`;
 
       renderPagination(totalPages);
-      updateHomeStats(rows);
-      renderTrendChart(rows);
+      updateHomeStats();
+      renderTrendChart();
     }
 
     function decodeOpenAlexAbstract(invertedIndex) {
@@ -620,6 +631,7 @@
         venue,
         year: Number(item.publication_year || 0),
         published_date: String(item.publication_date || ""),
+        added_date: todayKstKey(),
         category,
         abstract,
         url: String(item.id || location.landing_page_url || ""),
@@ -636,7 +648,7 @@
       tr.dataset.affiliations = (paper.affiliations || []).join("||");
       tr.dataset.venue = paper.venue || "N/A";
       tr.dataset.year = String(paper.year || 0);
-      tr.dataset.addedDate = String(paper.published_date || "").trim() || todayKstKey();
+      tr.dataset.addedDate = String(paper.added_date || paper.published_date || "").trim() || todayKstKey();
       tr.dataset.abstract = paper.abstract || "";
       tr.dataset.url = paper.url || "";
 
