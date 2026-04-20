@@ -53,3 +53,15 @@ GitHub Actions workflow is in `.github/workflows/daily-paper-tracker.yml`.
 
 - arXiv metadata does not consistently include affiliations. The pipeline enriches affiliations from OpenAlex matches when possible.
 - Categories are assigned using keyword-based rules and can be edited in `paper_tracker.py`.
+
+## Chat Logging
+
+- Store chat summaries in `log/chat_YYYY-MM-DD.md` (KST daily files).
+- Append one entry for every completed task with Request / Actions / Result.
+- Preferred command:
+
+  ./scripts/log_chat_summary.sh \
+    --request "<user request summary>" \
+    --actions "<what was changed>" \
+    --result "<outcome/validation>" \
+    --notes "<optional>"
