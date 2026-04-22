@@ -23,6 +23,7 @@ STATIC_DIR = BASE_DIR / "static"
 SITE_DIR = BASE_DIR / "site"
 PAPER_DIR = SITE_DIR / "papers"
 HISTORY_PATH = BASE_DIR / "data" / "paper_history.json"
+ARCHIVE_PATH = BASE_DIR / "data" / "paper_archive.json"
 ADDED_AT_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 USER_AGENT = "llm-paper-tracker/1.0 (contact: maintainer@example.com)"
@@ -148,6 +149,95 @@ def save_tracker_history(history: dict[str, Any]) -> None:
         json.dumps(history, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+
+
+def load_paper_archive() -> dict[str, dict[str, Any]]:
+    if not ARCHIVE_PATH.exists():
+        return {}
+    try:
+        raw = json.loads(ARCHIVE_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    if not isinstance(raw, dict):
+        return {}
+    return {str(k): v for k, v in raw.items() if isinstance(v, dict)}
+
+
+def save_paper_archive(archive: dict[str, dict[str, Any]]) -> None:
+    ARCHIVE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    sorted_archive = {k: archive[k] for k in sorted(archive.keys())}
+    ARCHIVE_PATH.write_text(
+        json.dumps(sorted_archive, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def restore_paper_record(record: dict[str, Any]) -> Paper | None:
+    required = {
+        "paper_id",
+        "source",
+        "title",
+        "authors",
+        "affiliations",
+        "venue",
+        "year",
+        "published_date",
+        "category",
+        "abstract",
+        "url",
+        "summary",
+    }
+    if not required.issubset(record.keys()):
+        return None
+
+    restored = dict(record)
+    restored["added_date"] = (
+        normalize_added_datetime(restored.get("added_date"))
+        or normalize_added_datetime(restored.get("published_date"))
+        or "1970-01-01 00:00:00"
+    )
+    restored["authors"] = list(restored.get("authors") or [])
+    restored["affiliations"] = list(restored.get("affiliations") or [])
+    restored["category"] = list(restored.get("category") or [])
+    restored["summary"] = dict(restored.get("summary") or {})
+    restored["year"] = int(restored.get("year") or 0)
+    restored["doi"] = restored.get("doi")
+    try:
+        return Paper(**restored)
+    except TypeError:
+        return None
+
+
+def archive_and_collect_papers(current_papers: list[Paper]) -> list[Paper]:
+    archive = load_paper_archive()
+
+    for paper in current_papers:
+        key = normalize_title(paper.title) or paper.paper_id
+        incoming = asdict(paper)
+
+        existing = archive.get(key)
+        if isinstance(existing, dict):
+            existing_added = normalize_added_datetime(existing.get("added_date"))
+            incoming_added = normalize_added_datetime(incoming.get("added_date"))
+            incoming["added_date"] = existing_added or incoming_added or kst_now_str()
+
+        archive[key] = incoming
+
+    save_paper_archive(archive)
+
+    restored_all: list[Paper] = []
+    for key in sorted(archive.keys()):
+        restored = restore_paper_record(archive[key])
+        if restored:
+            restored_all.append(restored)
+
+    def sort_key(paper: Paper) -> tuple[datetime, str, str]:
+        added_raw = normalize_added_datetime(paper.added_date) or "1970-01-01 00:00:00"
+        added_dt = datetime.strptime(added_raw, ADDED_AT_FORMAT)
+        return (added_dt, paper.published_date or "", paper.title.lower())
+
+    restored_all.sort(key=sort_key, reverse=True)
+    return restored_all
 
 
 def apply_tracker_history(papers: list[Paper]) -> tuple[dict[str, int], int]:
@@ -692,11 +782,13 @@ def main() -> None:
         arxiv_papers = []
 
     papers = merge_papers(openalex_papers, arxiv_papers)
-    print(f"Merged paper count: {len(papers)}")
+    print(f"Merged paper count (today fetch): {len(papers)}")
     daily_additions, today_added_count = apply_tracker_history(papers)
     print(f"Today new additions (KST): {today_added_count}")
+    all_papers = archive_and_collect_papers(papers)
+    print(f"Total archived paper count: {len(all_papers)}")
 
-    render_site(papers, daily_additions, today_added_count)
+    render_site(all_papers, daily_additions, today_added_count)
     print(f"Static site built at: {SITE_DIR}")
 
 
