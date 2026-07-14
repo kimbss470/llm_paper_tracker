@@ -7702,6 +7702,70 @@
       ]
     }
   },
+  "anllmpoweredagenticrecommendationsystemforconnectedtvcontentdiscovery": {
+    "paper_id": "arxiv-2607.09988v1",
+    "source": "arXiv",
+    "title": "An LLM-powered Agentic Recommendation System for Connected TV Content Discovery",
+    "authors": [
+      "Lei Shi",
+      "Di Wang",
+      "Harry Tran",
+      "Helsing Xu",
+      "Yuchen Lu",
+      "Dhara Ghodasara",
+      "Wilson Chaney",
+      "Xueting Liao",
+      "Jerry Yu",
+      "Huayu Ding",
+      "Mingze Gao",
+      "Shike Mei",
+      "Shuo Tang",
+      "Zhe Zhang",
+      "Jianming He",
+      "Abhishek Kumar",
+      "Haotian Wu",
+      "Hamed Firooz",
+      "Li Li"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-10",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Recommendation systems, from traditional multi-stage to recent unified generative architectures, face challenges in incorporating diverse contextual signals, such as trending topics, breaking news, cultural events, and cross-surface user activities, into their ranking pipelines. These systems are designed to consume structured behavioral signals with consistent schemas, and lack the reasoning capability to naturally process unstructured or heterogeneously formatted contextual information. Incorporating such signals typically requires feature engineering, bespoke data pipelines, and carefully tuned heuristics. In this paper, we present an LLM-powered agentic recommendation system designed for Connected TV (CTV) content discovery that addresses these limitations. Our system leverages the reasoning capabilities of large language models to naturally process and synthesize diverse signals across varying schemas and structures, eliminating much of the manual integration inherent in traditional ranking and retrieval systems. Recognizing that current LLM-based solutions still fall short of traditional machine learning models in several recommendation tasks, including retrieval efficiency, personalization precision, and scalability, we adopt an agentic architecture that orchestrates specialized components, allowing each sub-task to be handled by the most suitable method, whether LLM-based or traditional ML. The main contribution of this work is our engineering approach to successfully overcoming the practical limitations of enabling LLM for recommendation, particularly inference latency. We share insights from our work and discuss the trade-offs and lessons learned in building a hybrid system that combines the flexibility of LLMs with the performance of established recommendation techniques.",
+    "url": "https://arxiv.org/abs/2607.09988v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Recommendation systems, from traditional multi-stage to recent unified generative architectures, face challenges in incorporating diverse contextual signals, such as trending topics, breaking news, cultural events, and cross-surface user activities, into their ranking pipelines.",
+        "These systems are designed to consume structured behavioral signals with consistent schemas, and lack the reasoning capability to naturally process unstructured or heterogeneously formatted contextual information."
+      ],
+      "Motivation": [
+        "Recommendation systems, from traditional multi-stage to recent unified generative architectures, face challenges in incorporating diverse contextual signals, such as trending topics, breaking news, cultural events, and cross-surface user activities, into their ranking pipelines."
+      ],
+      "Key Idea": [
+        "In this paper, we present an LLM-powered agentic recommendation system designed for Connected TV (CTV) content discovery that addresses these limitations."
+      ],
+      "Experimental Results": [
+        "Incorporating such signals typically requires feature engineering, bespoke data pipelines, and carefully tuned heuristics."
+      ],
+      "Data analysis": [
+        "Incorporating such signals typically requires feature engineering, bespoke data pipelines, and carefully tuned heuristics."
+      ],
+      "Discussion (e.g., future work)": [
+        "In this paper, we present an LLM-powered agentic recommendation system designed for Connected TV (CTV) content discovery that addresses these limitations."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.09988v1"
+      ]
+    }
+  },
   "anllmsystemforautonomousvariationalquantumcircuitdesign": {
     "paper_id": "arxiv-2606.13380v1",
     "source": "arXiv",
@@ -11821,6 +11885,56 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2606.11379v1"
+      ]
+    }
+  },
+  "automatedtensorschedulingforhybridcpugpullminferenceonconsumerdevices": {
+    "paper_id": "arxiv-2607.10183v1",
+    "source": "arXiv",
+    "title": "Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices",
+    "authors": [
+      "Yangyijian Liu",
+      "Hongyi Ye",
+      "Mingyang Li",
+      "Wu-jun Li"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "MoE",
+      "Inference Optimization"
+    ],
+    "abstract": "Running large language models on consumer devices such as laptops and desktops is challenging because model weights often exceed GPU memory capacity, making offloading inference necessary to extend effective model capacity with CPU memory. Existing offloading systems, however, typically rely on coarse layer-level or expert-level scheduling, which overlooks substantial heterogeneity among tensors within the same layer and adapts poorly to changing hardware load conditions on such devices. This paper presents ATSInfer, a hybrid CPU-GPU inference system for consumer devices that performs offloading at tensor granularity. ATSInfer combines static tensor placement with load-aware dynamic transfer, and introduces asynchronous CPU-GPU coordination to efficiently schedule hardware storage, data movement, and computation across heterogeneous backends. We implement ATSInfer and evaluate it on representative consumer platforms using both dense and MoE models. Compared with existing systems, ATSInfer improves prefill throughput by up to 1.94$\\times$ and decode throughput by up to 3.29$\\times$, while also increasing GPU utilization and making more effective use of PCIe bandwidth. These results show that ATSInfer can substantially improve the user experience of local LLM deployment on personal consumer devices.",
+    "url": "https://arxiv.org/abs/2607.10183v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Running large language models on consumer devices such as laptops and desktops is challenging because model weights often exceed GPU memory capacity, making offloading inference necessary to extend effective model capacity with CPU memory.",
+        "Existing offloading systems, however, typically rely on coarse layer-level or expert-level scheduling, which overlooks substantial heterogeneity among tensors within the same layer and adapts poorly to changing hardware load conditions on such devices."
+      ],
+      "Motivation": [
+        "Running large language models on consumer devices such as laptops and desktops is challenging because model weights often exceed GPU memory capacity, making offloading inference necessary to extend effective model capacity with CPU memory."
+      ],
+      "Key Idea": [
+        "Existing offloading systems, however, typically rely on coarse layer-level or expert-level scheduling, which overlooks substantial heterogeneity among tensors within the same layer and adapts poorly to changing hardware load conditions on such devices."
+      ],
+      "Experimental Results": [
+        "Compared with existing systems, ATSInfer improves prefill throughput by up to 1.94$\\times$ and decode throughput by up to 3.29$\\times$, while also increasing GPU utilization and making more effective use of PCIe bandwidth."
+      ],
+      "Data analysis": [
+        "ATSInfer combines static tensor placement with load-aware dynamic transfer, and introduces asynchronous CPU-GPU coordination to efficiently schedule hardware storage, data movement, and computation across heterogeneous backends."
+      ],
+      "Discussion (e.g., future work)": [
+        "We implement ATSInfer and evaluate it on representative consumer platforms using both dense and MoE models."
+      ],
+      "Significance of this study": [
+        "This work contributes to MoE, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10183v1"
       ]
     }
   },
@@ -25389,6 +25503,55 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2604.27709v1"
+      ]
+    }
+  },
+  "conditionaloptimalbridgeforriemannianactivationsteering": {
+    "paper_id": "arxiv-2607.10517v1",
+    "source": "arXiv",
+    "title": "Conditional Optimal Bridge for Riemannian Activation Steering",
+    "authors": [
+      "Seyed Arshan Dalili",
+      "Ajay Narayanan Sridhar",
+      "Vijaykrishnan Narayanan",
+      "Mehrdad Mahdavi"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Activation steering offers a lightweight alternative to fine-tuning for controlling large language models at inference time. While many existing methods implicitly optimize a log-density-ratio objective between desired and undesired activation distributions, they do so heuristically rather than deriving it from a principled optimization problem. Moreover, these methods produce query-independent steering directions that can degrade performance on both in-distribution and out-of-distribution (OOD) inputs. We introduce \\textsc{Cobras} (Conditional Optimal Bridge for Riemannian Activation Steering), which addresses both limitations by casting activation steering as a Schrödinger Bridge on the residual-stream hypersphere. This formulation yields, to our knowledge, the first principled derivation of the log-density-ratio steering objective from a well-posed optimization problem. Solving the bridge via entropic optimal transport and extracting the probability flow ODE recovers the widely used density-ratio gradient as a special case when the Sinkhorn potentials are uniform. Crucially, the Schrödinger potentials are evaluated at the current activation, making the resulting steering direction inherently query-adaptive. Empirically, across four models and three alignment axes (helpfulness, truthfulness, and detoxification), \\textsc{Cobras} consistently outperforms prior activation steering baselines while avoiding the OOD degradation commonly observed in existing methods. The code can be found at https://github.com/arshandalili/cobras.",
+    "url": "https://arxiv.org/abs/2607.10517v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Activation steering offers a lightweight alternative to fine-tuning for controlling large language models at inference time.",
+        "While many existing methods implicitly optimize a log-density-ratio objective between desired and undesired activation distributions, they do so heuristically rather than deriving it from a principled optimization problem."
+      ],
+      "Motivation": [
+        "While many existing methods implicitly optimize a log-density-ratio objective between desired and undesired activation distributions, they do so heuristically rather than deriving it from a principled optimization problem."
+      ],
+      "Key Idea": [
+        "While many existing methods implicitly optimize a log-density-ratio objective between desired and undesired activation distributions, they do so heuristically rather than deriving it from a principled optimization problem."
+      ],
+      "Experimental Results": [
+        "Crucially, the Schrödinger potentials are evaluated at the current activation, making the resulting steering direction inherently query-adaptive."
+      ],
+      "Data analysis": [
+        "We introduce \\textsc{Cobras} (Conditional Optimal Bridge for Riemannian Activation Steering), which addresses both limitations by casting activation steering as a Schrödinger Bridge on the residual-stream hypersphere."
+      ],
+      "Discussion (e.g., future work)": [
+        "We introduce \\textsc{Cobras} (Conditional Optimal Bridge for Riemannian Activation Steering), which addresses both limitations by casting activation steering as a Schrödinger Bridge on the residual-stream hypersphere."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10517v1"
       ]
     }
   },
@@ -41478,6 +41641,58 @@
       ]
     }
   },
+  "emostyleaffectiveconditioningofstylespecialistexpertsforemotionalimagegeneration": {
+    "paper_id": "arxiv-2607.10165v1",
+    "source": "arXiv",
+    "title": "EmoStyle: Affective Conditioning of Style-Specialist Experts for Emotional Image Generation",
+    "authors": [
+      "Dexiang Hong",
+      "Yijie Guo",
+      "Weidong Chen",
+      "Xinyan Liu",
+      "Zixuan Zou",
+      "Zhendong Mao",
+      "Yongdong Zhang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Emotion-aware artistic image generation requires an image to match the input prompt, follow the specified artistic style, and convey the target emotion. In this challenge, the main difficulty is that the visual and affective attributes available in the training data are not explicitly provided at test time. Without these attributes, the generator has to decide not only what to depict, but also how the target emotion should be expressed through color, lighting, brushwork, composition, line, and layout. This creates a control gap between the available test prompt and the fine-grained conditions needed for emotion-aware artistic generation. To bridge this gap, we propose EmoStyle, a Z-Image-based framework that converts the input prompt into a structured generation state. An LLM reasoner first predicts affective cues (valence-arousal, dominant emotion, and therapeutic-effect labels) and an aspect-ratio decision. Instead of using these predictions only as additional prompt text, we encode the affective fields into an affective condition vector and inject it into the denoising blocks through AdaLN-style modulation. This allows the inferred control variables to directly guide the generation of intermediate features. Since emotional expression is also style-dependent, we further train a dedicated LoRA adapter for each artistic style bucket and select the corresponding expert during inference, enabling the same affective cues to be rendered with bucket-specific priors for color, texture, brushwork, and composition. Finally, a lightweight VLM-guided candidate selection step ranks the generated images based on prompt alignment, style consistency, emotional expression, and visual quality. In Track 1 of the AffectiveArt Challenge 2026, our USTC\\_PI\\_LAB\\_TEAM submission achieved first place.",
+    "url": "https://arxiv.org/abs/2607.10165v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Emotion-aware artistic image generation requires an image to match the input prompt, follow the specified artistic style, and convey the target emotion.",
+        "In this challenge, the main difficulty is that the visual and affective attributes available in the training data are not explicitly provided at test time."
+      ],
+      "Motivation": [
+        "In this challenge, the main difficulty is that the visual and affective attributes available in the training data are not explicitly provided at test time."
+      ],
+      "Key Idea": [
+        "To bridge this gap, we propose EmoStyle, a Z-Image-based framework that converts the input prompt into a structured generation state."
+      ],
+      "Experimental Results": [
+        "Without these attributes, the generator has to decide not only what to depict, but also how the target emotion should be expressed through color, lighting, brushwork, composition, line, and layout."
+      ],
+      "Data analysis": [
+        "In this challenge, the main difficulty is that the visual and affective attributes available in the training data are not explicitly provided at test time."
+      ],
+      "Discussion (e.g., future work)": [
+        "To bridge this gap, we propose EmoStyle, a Z-Image-based framework that converts the input prompt into a structured generation state."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10165v1"
+      ]
+    }
+  },
   "emotevolvingmemoryofthoughtviasymbolicanchoringandmemorycorrosion": {
     "paper_id": "arxiv-2606.02054v1",
     "source": "arXiv",
@@ -45783,6 +45998,52 @@
       ]
     }
   },
+  "faithfulbydesignevaluatingandimprovingllmgeneratedclinicaltrialsummariesformultistakeholderaudiences": {
+    "paper_id": "arxiv-2607.09932v1",
+    "source": "arXiv",
+    "title": "Faithful by Design: Evaluating and Improving LLM-Generated Clinical Trial Summaries for Multi-Stakeholder Audiences",
+    "authors": [
+      "Robert Williams"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-10",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Large language models are increasingly used to summarize clinical trial results for healthcare providers, patients, and payers, but their tendency to hallucinate poses significant risks in this high-stakes context. This study introduces a benchmark evaluation framework for measuring the faithfulness of LLM-generated clinical trial summaries across three stakeholder audiences. The framework consists of 200 stratified trials drawn from the Aggregate Analysis of ClinicalTrials.gov database, evaluated using audience-specific prompt templates and a six-dimension faithfulness annotation schema. Baseline measurements were established for GPT-4o, Claude Sonnet 4.6, and Gemini 2.5 Flash across 1,800 generated summaries scored using a cross-encoder natural language inference (NLI) model. Unsupported Claims was identified as the dominant failure mode across all three models, with a mean annotation score of 1.55 out of three. A knowledge-graph-augmented retrieval system was developed and evaluated against the baseline, producing statistically significant improvements in NLI-based faithfulness scores (entailment +0.0125, faithfulness +0.0130, p < 0.0001). Improvement pathways were model-dependent, with GPT-4o improving primarily through contradiction reduction while Claude Sonnet 4.6 and Gemini 2.5 Flash improved through increased entailment.",
+    "url": "https://arxiv.org/abs/2607.09932v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large language models are increasingly used to summarize clinical trial results for healthcare providers, patients, and payers, but their tendency to hallucinate poses significant risks in this high-stakes context.",
+        "This study introduces a benchmark evaluation framework for measuring the faithfulness of LLM-generated clinical trial summaries across three stakeholder audiences."
+      ],
+      "Motivation": [
+        "Large language models are increasingly used to summarize clinical trial results for healthcare providers, patients, and payers, but their tendency to hallucinate poses significant risks in this high-stakes context."
+      ],
+      "Key Idea": [
+        "This study introduces a benchmark evaluation framework for measuring the faithfulness of LLM-generated clinical trial summaries across three stakeholder audiences."
+      ],
+      "Experimental Results": [
+        "Large language models are increasingly used to summarize clinical trial results for healthcare providers, patients, and payers, but their tendency to hallucinate poses significant risks in this high-stakes context."
+      ],
+      "Data analysis": [
+        "The framework consists of 200 stratified trials drawn from the Aggregate Analysis of ClinicalTrials.gov database, evaluated using audience-specific prompt templates and a six-dimension faithfulness annotation schema."
+      ],
+      "Discussion (e.g., future work)": [
+        "Unsupported Claims was identified as the dominant failure mode across all three models, with a mean annotation score of 1.55 out of three."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.09932v1"
+      ]
+    }
+  },
   "faithfulnessmetricsdontmeasurefaithfulnessametaevaluationwithgroundtruth": {
     "paper_id": "arxiv-2605.25052v1",
     "source": "arXiv",
@@ -47994,6 +48255,59 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2606.01774v1"
+      ]
+    }
+  },
+  "flashaccelleveraginghighbandwidthflashforhighthroughputllminference": {
+    "paper_id": "arxiv-2607.10186v1",
+    "source": "arXiv",
+    "title": "FlashAccel: Leveraging High-Bandwidth Flash for High-Throughput LLM Inference",
+    "authors": [
+      "Xinyu Wang",
+      "Yalong Xue",
+      "Xiaotian Sun",
+      "Xiaoyu Zhang",
+      "Chunmeng Dou",
+      "Xueqi Li",
+      "Xiaoming Chen"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "KV Cache Compression",
+      "Inference Optimization"
+    ],
+    "abstract": "Large language model (LLM) inference is increasingly limited by the capacity of High-Bandwidth Memory (HBM) in GPUs, as model weights and KV cache grow rapidly. High-Bandwidth Flash (HBF) provides higher capacity than HBM while retaining comparable bandwidth, making it a promising substrate for capacity-constrained LLM inference. However, its inherently high access latency, low bandwidth utilization, and lack of support for heterogeneous resource management make it difficult to integrate HBF into GPUs for LLM inference. We present FlashAccel, a co-designed system that enables efficient LLM inference using HBF. FlashAccel integrates HBF into HBM-based GPUs, providing architectural support to mitigate access latency. It improves bandwidth utilization through specialized data layouts for both model weights and KV cache, and introduces an HBF-aware storage management layer together with a programming model to organize persistent data in HBF and coordinate heterogeneous memory resources at the system level. Experimental results demonstrate that integrating six HBF stacks into the GPU enables FlashAccel to deliver an average improvement of 2.54$\\times$ and 1.93$\\times$ in throughput per GPU and energy efficiency over the HBM-only GPU under 100ms latency constraint, respectively.",
+    "url": "https://arxiv.org/abs/2607.10186v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large language model (LLM) inference is increasingly limited by the capacity of High-Bandwidth Memory (HBM) in GPUs, as model weights and KV cache grow rapidly.",
+        "High-Bandwidth Flash (HBF) provides higher capacity than HBM while retaining comparable bandwidth, making it a promising substrate for capacity-constrained LLM inference."
+      ],
+      "Motivation": [
+        "Large language model (LLM) inference is increasingly limited by the capacity of High-Bandwidth Memory (HBM) in GPUs, as model weights and KV cache grow rapidly."
+      ],
+      "Key Idea": [
+        "We present FlashAccel, a co-designed system that enables efficient LLM inference using HBF."
+      ],
+      "Experimental Results": [
+        "It improves bandwidth utilization through specialized data layouts for both model weights and KV cache, and introduces an HBF-aware storage management layer together with a programming model to organize persistent data in HBF and coordinate heterogeneous memory resources at the system level."
+      ],
+      "Data analysis": [
+        "It improves bandwidth utilization through specialized data layouts for both model weights and KV cache, and introduces an HBF-aware storage management layer together with a programming model to organize persistent data in HBF and coordinate heterogeneous memory resources at the system level."
+      ],
+      "Discussion (e.g., future work)": [
+        "FlashAccel integrates HBF into HBM-based GPUs, providing architectural support to mitigate access latency."
+      ],
+      "Significance of this study": [
+        "This work contributes to KV Cache Compression, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10186v1"
       ]
     }
   },
@@ -53272,6 +53586,53 @@
       ]
     }
   },
+  "gaegraphaugmentedevolutionforscientificdiscoveryviareinforcementoptimization": {
+    "paper_id": "arxiv-2607.10127v1",
+    "source": "arXiv",
+    "title": "GAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization",
+    "authors": [
+      "Xuanzhou Chen",
+      "Taoli Cheng"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Evolutionary program search guided by Large Language Models (LLMs) has emerged as a powerful paradigm for automated scientific discovery. However, current approaches are fundamentally constrained by three bottlenecks: structurally blind parent selection, sparse whole-program evaluation rewards, and static mutation operators that fail to adapt during search. We present GAE (Graph-Augmented Evolution), a framework that resolves these limitations through a tightly coupled, three-pillar architecture. First, a relational graph neural network (GNN) parses programs into typed computation graphs, producing structure-aware embeddings. Second, an RL-optimized meta-controller leverages these embeddings to replace blind evolutionary sampling with a directed policy, dynamically selecting optimal parents and mutation directions based on reward history. Third, an online GRPO fine-tuning loop continuously updates the LLM mutation operator at test-time using group-normalized evaluation rewards, directly aligning the model's generation distribution with high-fitness structural edits. We evaluate GAE on a challenging scientific discovery task: symbolic regression for complex nonlinear oscillator systems. By transforming stochastic search into a directed, self-improving trajectory, GAE efficiently discovers closed-form physical equations, consistently matching or outperforming static LLM-driven baselines and achieving state-of-the-art out-of-distribution performance.",
+    "url": "https://arxiv.org/abs/2607.10127v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Evolutionary program search guided by Large Language Models (LLMs) has emerged as a powerful paradigm for automated scientific discovery.",
+        "However, current approaches are fundamentally constrained by three bottlenecks: structurally blind parent selection, sparse whole-program evaluation rewards, and static mutation operators that fail to adapt during search."
+      ],
+      "Motivation": [
+        "Evolutionary program search guided by Large Language Models (LLMs) has emerged as a powerful paradigm for automated scientific discovery."
+      ],
+      "Key Idea": [
+        "We present GAE (Graph-Augmented Evolution), a framework that resolves these limitations through a tightly coupled, three-pillar architecture."
+      ],
+      "Experimental Results": [
+        "By transforming stochastic search into a directed, self-improving trajectory, GAE efficiently discovers closed-form physical equations, consistently matching or outperforming static LLM-driven baselines and achieving state-of-the-art out-of-distribution performance."
+      ],
+      "Data analysis": [
+        "First, a relational graph neural network (GNN) parses programs into typed computation graphs, producing structure-aware embeddings."
+      ],
+      "Discussion (e.g., future work)": [
+        "We present GAE (Graph-Augmented Evolution), a framework that resolves these limitations through a tightly coupled, three-pillar architecture."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10127v1"
+      ]
+    }
+  },
   "gammafacommonframeworkforgraphbasedanomalymonitoringbenchmarkinginllmmultiagentsystems": {
     "paper_id": "arxiv-2604.24477v1",
     "source": "arXiv",
@@ -53464,6 +53825,52 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2607.08894v1"
+      ]
+    }
+  },
+  "gaugedependenceandstructuredoutputcorruptioninsignbranchedrepetitionpenaltiesmeasurementsacrossmodelsinferencestacksandalternativerepetitioncontrols": {
+    "paper_id": "arxiv-2607.09791v1",
+    "source": "arXiv",
+    "title": "Gauge dependence and structured-output corruption in sign-branched repetition penalties: measurements across models, inference stacks, and alternative repetition controls",
+    "authors": [
+      "Peter Hollows"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-09",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "The multiplicative repetition penalty shipped across the LLM inference ecosystem (HuggingFace, vLLM, llama.cpp, and a dozen further engines) branches on the sign of each raw logit (divide positives by theta, multiply negatives). But the softmax is unchanged by adding a constant to every logit, so a model's logit zero-point is arbitrary, and the sign-branch reads that arbitrary point. The sign-branch is itself the accepted fix for an earlier bug, so the accepted fix branches on a quantity the training objective leaves unconstrained. Two measurable consequences follow. (1) The penalty is not well-defined: re-centring a model's logits by a constant is a provable no-op at theta=1, yet at a routine theta=1.3 it changes 58-96% of greedy tokens, where subtractive and normalized penalties change none; real checkpoints sit at widely different zero-points, so a fixed repetition_penalty is a different operation on every model. (2) It corrupts structured output: on 200 real-world JSON schemas, theta=1.3 drops the rate of valid, schema-conformant output from 97% to 23%. In our measurements, applying the penalty to normalized log-probabilities instead of raw logits removes both effects. HuggingFace already ships that operator (LogitNormalization); today it is off by default and applied after the penalty. This note gives the mechanism, the measurements (five models up to 7B, base and RLHF, on WikiText-103 prefixes; two code models on HumanEval and JSONSchemaBench; both effects replicated inside vLLM and llama.cpp through their own samplers on the same inputs), and the normalized variant.",
+    "url": "https://arxiv.org/abs/2607.09791v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "The multiplicative repetition penalty shipped across the LLM inference ecosystem (HuggingFace, vLLM, llama.cpp, and a dozen further engines) branches on the sign of each raw logit (divide positives by theta, multiply negatives).",
+        "But the softmax is unchanged by adding a constant to every logit, so a model's logit zero-point is arbitrary, and the sign-branch reads that arbitrary point."
+      ],
+      "Motivation": [
+        "The multiplicative repetition penalty shipped across the LLM inference ecosystem (HuggingFace, vLLM, llama.cpp, and a dozen further engines) branches on the sign of each raw logit (divide positives by theta, multiply negatives)."
+      ],
+      "Key Idea": [
+        "But the softmax is unchanged by adding a constant to every logit, so a model's logit zero-point is arbitrary, and the sign-branch reads that arbitrary point."
+      ],
+      "Experimental Results": [
+        "The sign-branch is itself the accepted fix for an earlier bug, so the accepted fix branches on a quantity the training objective leaves unconstrained."
+      ],
+      "Data analysis": [
+        "Two measurable consequences follow."
+      ],
+      "Discussion (e.g., future work)": [
+        "(1) The penalty is not well-defined: re-centring a model's logits by a constant is a provable no-op at theta=1, yet at a routine theta=1.3 it changes 58-96% of greedy tokens, where subtractive and normalized penalties change none; real checkpoints sit at widely different zero-points, so a fixed repetition_penalty is a different operation on every model."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.09791v1"
       ]
     }
   },
@@ -70048,6 +70455,61 @@
       ]
     }
   },
+  "largelanguagemodelenhanceddifferentiabletrajectoryplanningforiotenabledautonomousdriving": {
+    "paper_id": "arxiv-2607.10438v1",
+    "source": "arXiv",
+    "title": "Large Language Model Enhanced Differentiable Trajectory Planning for IoT-Enabled Autonomous Driving",
+    "authors": [
+      "Shihao Zhang",
+      "Jing Yang",
+      "Ziyu Song",
+      "Zheng Lin",
+      "Sunil Prajapat",
+      "Zhaochen Xia",
+      "Hemant Ghayvat",
+      "Haitao Ding",
+      "Lip Yee Por",
+      "Ashok Kumar Das"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Autonomous driving planning is a key component of IoT-enabled intelligent transportation systems, requiring vehicles to generate safe, efficient, and executable trajectories in complex urban environments from multi-source contextual information. While imitation learning (IL) has shown promise on large-scale datasets, IL-based planners still suffer from limited coverage of complex long-tail interactions, weak consistency with downstream constrained refinement, and insufficient use of high level scene semantics under real time constraints. To address these issues, this paper proposes a large language model (LLM) enhanced differentiable trajectory planning framework for IoT-enabled autonomous driving. Specifically, we introduce a surrounding agent centric data augmentation strategy to reorganize sur rounding agent trajectories as additional planning supervision, thereby improving the training distribution without collecting additional raw data. We further design a complexity-aware asyn chronous LLM-based semantic enhancement module to extract scene-related high-level semantic features with controlled online overhead. In addition, a differentiable optimization module is incorporated to refine generated trajectories with explicit residual penalties while backpropagating optimization gradients to the upstream planner. Experiments show that the proposed method achieves the best overall scores of 83.63 and 78.29 on the nuPlan closed-loop nonreactive and reactive Hard20 benchmarks, respectively, and CARLA-ROS tests further verify its online deployment and real time closed-loop execution capability.",
+    "url": "https://arxiv.org/abs/2607.10438v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Autonomous driving planning is a key component of IoT-enabled intelligent transportation systems, requiring vehicles to generate safe, efficient, and executable trajectories in complex urban environments from multi-source contextual information.",
+        "While imitation learning (IL) has shown promise on large-scale datasets, IL-based planners still suffer from limited coverage of complex long-tail interactions, weak consistency with downstream constrained refinement, and insufficient use of high level scene semantics under real time constraints."
+      ],
+      "Motivation": [
+        "Autonomous driving planning is a key component of IoT-enabled intelligent transportation systems, requiring vehicles to generate safe, efficient, and executable trajectories in complex urban environments from multi-source contextual information."
+      ],
+      "Key Idea": [
+        "Specifically, we introduce a surrounding agent centric data augmentation strategy to reorganize sur rounding agent trajectories as additional planning supervision, thereby improving the training distribution without collecting additional raw data."
+      ],
+      "Experimental Results": [
+        "Specifically, we introduce a surrounding agent centric data augmentation strategy to reorganize sur rounding agent trajectories as additional planning supervision, thereby improving the training distribution without collecting additional raw data."
+      ],
+      "Data analysis": [
+        "While imitation learning (IL) has shown promise on large-scale datasets, IL-based planners still suffer from limited coverage of complex long-tail interactions, weak consistency with downstream constrained refinement, and insufficient use of high level scene semantics under real time constraints."
+      ],
+      "Discussion (e.g., future work)": [
+        "We further design a complexity-aware asyn chronous LLM-based semantic enhancement module to extract scene-related high-level semantic features with controlled online overhead."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10438v1"
+      ]
+    }
+  },
   "largelanguagemodelforunifiedandaccuratedescriptionofmultidimensionalnuclearproperties": {
     "paper_id": "arxiv-2605.29408v1",
     "source": "arXiv",
@@ -70354,6 +70816,53 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.20849v1"
+      ]
+    }
+  },
+  "largelanguagemodelsfortokenefficientandsemanticpreservingopinionsummarization": {
+    "paper_id": "arxiv-2607.10825v1",
+    "source": "arXiv",
+    "title": "Large Language Models for Token-Efficient and Semantic-Preserving Opinion Summarization",
+    "authors": [
+      "Fabrizio Marozzo",
+      "Stefano Iannicelli"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Opinionated text - spanning product reviews, hotel feedback, and social posts - captures rich signals about user experiences, preferences, and concerns. However, the scale, redundancy, and imbalance of such corpora make it challenging to analyze opinions effectively, particularly when the goal is to generate summaries that remain faithful to the diversity of viewpoints expressed. This paper presents a framework that preserves semantics in LLM-based opinion summarization while minimizing token usage. We combine multidimensional classification (e.g., sentiment, topics) with a family of stratified sampling strategies to select compact yet representative subsets of opinions before prompting the LLM. Tailored prompts then produce balanced summaries that surface the salient aspects expressed in the opinions (e.g., strengths and weaknesses of products/hotels). Experiments on Amazon product reviews, Tripadvisor hotel reviews, and X/Twitter posts demonstrate that our method significantly reduces token usage and computational cost while consistently outperforming traditional AI-based and standard LLM summarization baselines in terms of content coverage, balance, and semantic preservation.",
+    "url": "https://arxiv.org/abs/2607.10825v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Opinionated text - spanning product reviews, hotel feedback, and social posts - captures rich signals about user experiences, preferences, and concerns.",
+        "However, the scale, redundancy, and imbalance of such corpora make it challenging to analyze opinions effectively, particularly when the goal is to generate summaries that remain faithful to the diversity of viewpoints expressed."
+      ],
+      "Motivation": [
+        "Opinionated text - spanning product reviews, hotel feedback, and social posts - captures rich signals about user experiences, preferences, and concerns."
+      ],
+      "Key Idea": [
+        "Experiments on Amazon product reviews, Tripadvisor hotel reviews, and X/Twitter posts demonstrate that our method significantly reduces token usage and computational cost while consistently outperforming traditional AI-based and standard LLM summarization baselines in terms of content coverage, balance, and semantic preservation."
+      ],
+      "Experimental Results": [
+        "Experiments on Amazon product reviews, Tripadvisor hotel reviews, and X/Twitter posts demonstrate that our method significantly reduces token usage and computational cost while consistently outperforming traditional AI-based and standard LLM summarization baselines in terms of content coverage, balance, and semantic preservation."
+      ],
+      "Data analysis": [
+        "We combine multidimensional classification (e.g., sentiment, topics) with a family of stratified sampling strategies to select compact yet representative subsets of opinions before prompting the LLM."
+      ],
+      "Discussion (e.g., future work)": [
+        "Tailored prompts then produce balanced summaries that surface the salient aspects expressed in the opinions (e.g., strengths and weaknesses of products/hotels)."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10825v1"
       ]
     }
   },
@@ -77474,6 +77983,52 @@
       ]
     }
   },
+  "llmsasajurycrossmodelconsensuscanoutperformprocessrewardmodelsforllmreasoning": {
+    "paper_id": "arxiv-2607.10139v1",
+    "source": "arXiv",
+    "title": "LLMs as a Jury: Cross-Model Consensus Can Outperform Process Reward Models for LLM Reasoning",
+    "authors": [
+      "Ning Liu"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Selecting the correct answer from a pool of candidate reasoning chains is the engine of test-time scaling, yet the standard selectors each carry a cost: self-consistency inherits the errors of the single model it resamples, and trained reward models need labeled data and transfer poorly off-distribution. We study a third signal, free at inference time: cross-model consensus, the degree to which independently trained models, each solving the problem once, agree on a final answer. We treat the panel as an LLM-jury, in which the structure of agreement, not any model's score of another, is the verification signal. Across seven benchmarks it selects correct answers better than self-consistency and far better than a model scoring its own candidates: on competition math it closes the entire gap to an oracle selector, while self-scoring closes almost none. The mechanism is error decorrelation: independently trained models err differently, so their wrong answers scatter while the correct one accumulates agreement. We make this precise with a parameter-free law, derived in closed form, that predicts consensus accuracy from three measured panel statistics to a mean absolute error of $0.03$ and exposes the method's ceiling: a shared-error floor where models share a misconception, near zero on math but non-trivial on science. Against four trained verifiers spanning discriminative, outcome, and generative reward models, the free LLM-jury matches the strongest inside their math training domain and is the top selector outside it. Cross-model consensus is thus a verifier we can characterize in advance: a law that says when to trust it, and a floor that marks where it cannot.",
+    "url": "https://arxiv.org/abs/2607.10139v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Selecting the correct answer from a pool of candidate reasoning chains is the engine of test-time scaling, yet the standard selectors each carry a cost: self-consistency inherits the errors of the single model it resamples, and trained reward models need labeled data and transfer poorly off-distribution.",
+        "We study a third signal, free at inference time: cross-model consensus, the degree to which independently trained models, each solving the problem once, agree on a final answer."
+      ],
+      "Motivation": [
+        "We study a third signal, free at inference time: cross-model consensus, the degree to which independently trained models, each solving the problem once, agree on a final answer."
+      ],
+      "Key Idea": [
+        "We make this precise with a parameter-free law, derived in closed form, that predicts consensus accuracy from three measured panel statistics to a mean absolute error of $0.03$ and exposes the method's ceiling: a shared-error floor where models share a misconception, near zero on math but non-trivial on science."
+      ],
+      "Experimental Results": [
+        "Across seven benchmarks it selects correct answers better than self-consistency and far better than a model scoring its own candidates: on competition math it closes the entire gap to an oracle selector, while self-scoring closes almost none."
+      ],
+      "Data analysis": [
+        "Selecting the correct answer from a pool of candidate reasoning chains is the engine of test-time scaling, yet the standard selectors each carry a cost: self-consistency inherits the errors of the single model it resamples, and trained reward models need labeled data and transfer poorly off-distribution."
+      ],
+      "Discussion (e.g., future work)": [
+        "The mechanism is error decorrelation: independently trained models err differently, so their wrong answers scatter while the correct one accumulates agreement."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10139v1"
+      ]
+    }
+  },
   "llmsasnoisychannelsashannonperspectiveonmodelcapacityandscalinglaws": {
     "paper_id": "arxiv-2605.23901v1",
     "source": "arXiv",
@@ -82244,6 +82799,54 @@
       ]
     }
   },
+  "memdecayregionawarekvcacheevictionforefficientllmagentinference": {
+    "paper_id": "arxiv-2607.10582v1",
+    "source": "arXiv",
+    "title": "MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference",
+    "authors": [
+      "Venkatesha Matam",
+      "Keon Kim"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "KV Cache Compression",
+      "Inference Optimization"
+    ],
+    "abstract": "Large language model (LLM) agents accumulate heterogeneous context, including system instructions, plans, user turns, retrieved documents, tool outputs, and intermediate reasoning, whose key-value (KV) cache can become a major memory bottleneck. Existing eviction policies generally apply the same attention- or recency-based rule to every token, ignoring semantic structure already available to the agent orchestrator. We introduce MemDecay, a training-free, region-aware KV-cache eviction policy. MemDecay assigns tokens region-specific base priorities and decay rates, refreshes retention scores when tokens receive attention, and evicts the lowest-scoring pages under a fixed cache budget while allowing critical regions to be pinned. We also provide a procedure for calibrating decay rates from measured attention lifetimes. We evaluate MemDecay at approximately 450 and 1,700 token contexts using Qwen2.5-1.5B and 3B. Across all settings, attention lifetimes differ by an order of magnitude across regions: system-token half-lives range from 148 to 189 decoding steps, compared with 14 to 16 for scratchpad tokens. Pinning preserves system-region facts at full-cache accuracy in every setting, while no baseline preserves more than 13 of 24. Region-aware retention remains effective as context grows, whereas recency-based retention collapses. Accumulated-attention retention performs better on unpinned content, however, and ablations identify attention-score normalization as the main limitation of the current formulation. These results establish semantic prompt structure as a robust signal for KV-cache management while clarifying how it should be combined with attention-based importance.",
+    "url": "https://arxiv.org/abs/2607.10582v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large language model (LLM) agents accumulate heterogeneous context, including system instructions, plans, user turns, retrieved documents, tool outputs, and intermediate reasoning, whose key-value (KV) cache can become a major memory bottleneck.",
+        "Existing eviction policies generally apply the same attention- or recency-based rule to every token, ignoring semantic structure already available to the agent orchestrator."
+      ],
+      "Motivation": [
+        "Large language model (LLM) agents accumulate heterogeneous context, including system instructions, plans, user turns, retrieved documents, tool outputs, and intermediate reasoning, whose key-value (KV) cache can become a major memory bottleneck."
+      ],
+      "Key Idea": [
+        "We introduce MemDecay, a training-free, region-aware KV-cache eviction policy."
+      ],
+      "Experimental Results": [
+        "These results establish semantic prompt structure as a robust signal for KV-cache management while clarifying how it should be combined with attention-based importance."
+      ],
+      "Data analysis": [
+        "Accumulated-attention retention performs better on unpinned content, however, and ablations identify attention-score normalization as the main limitation of the current formulation."
+      ],
+      "Discussion (e.g., future work)": [
+        "Accumulated-attention retention performs better on unpinned content, however, and ablations identify attention-score normalization as the main limitation of the current formulation."
+      ],
+      "Significance of this study": [
+        "This work contributes to KV Cache Compression, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10582v1"
+      ]
+    }
+  },
   "memefficientonlinememoryforlargelanguagemodels": {
     "paper_id": "arxiv-2605.12357v1",
     "source": "arXiv",
@@ -85344,6 +85947,57 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.21954v1"
+      ]
+    }
+  },
+  "mlpsarehebbiansconstructingefficientfactstoringmlpsfortransformers": {
+    "paper_id": "arxiv-2607.10034v1",
+    "source": "arXiv",
+    "title": "MLPs are Hebbians: Constructing Efficient Fact-Storing MLPs for Transformers",
+    "authors": [
+      "Roberto Garcia",
+      "Jerry Liu",
+      "Ronny Junkins",
+      "Sabri Eyuboglu",
+      "Atri Rudra",
+      "Christopher Ré"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-10",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Long Context"
+    ],
+    "abstract": "Large language models (LLMs) store factual knowledge in their parameters. While recent work has shown that this knowledge resides in MLP layers, existing constructive and mechanistic interpretability models of fact-storage in LLMs fail to explain the surprising empirical phenomenon that they store facts at an information-theoretically optimal rate. In this work, we develop a theoretical account of this phenomenon. We develop the first Transformer-compatible fact-storing MLP closed-form construction that satisfies the following three properties empirically observed in LLMs: it (i) attains optimal fact storage scaling, (ii) handles arbitrary input/output geometries, and (iii) works inside Transformers. Key to our work is to analyze the decoding margin of MLPs, whereas prior work only studies MLP fact storage. Under isotropic embeddings, our construction achieves information-theoretically optimal storage capacity scaling and requires $10$-$104\\times$ fewer parameters at matched fact count than prior constructions. For arbitrary key and value embeddings, we show that our construction attains the same storage capacity scaling, up to penalization factors depending on the embedding geometries. Moreover, we demonstrate that our constructed MLPs can be used within Transformer blocks for factual recall tasks at optimal capacity scaling, requiring $15$-$63\\times$ fewer parameters at matched fact count than prior constructions. Finally, as a proof-of-concept, we show that fact-storing MLPs enable modular fact editing by swapping a Transformer's MLP with a new one.",
+    "url": "https://arxiv.org/abs/2607.10034v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large language models (LLMs) store factual knowledge in their parameters.",
+        "While recent work has shown that this knowledge resides in MLP layers, existing constructive and mechanistic interpretability models of fact-storage in LLMs fail to explain the surprising empirical phenomenon that they store facts at an information-theoretically optimal rate."
+      ],
+      "Motivation": [
+        "Large language models (LLMs) store factual knowledge in their parameters."
+      ],
+      "Key Idea": [
+        "While recent work has shown that this knowledge resides in MLP layers, existing constructive and mechanistic interpretability models of fact-storage in LLMs fail to explain the surprising empirical phenomenon that they store facts at an information-theoretically optimal rate."
+      ],
+      "Experimental Results": [
+        "In this work, we develop a theoretical account of this phenomenon."
+      ],
+      "Data analysis": [
+        "We develop the first Transformer-compatible fact-storing MLP closed-form construction that satisfies the following three properties empirically observed in LLMs: it (i) attains optimal fact storage scaling, (ii) handles arbitrary input/output geometries, and (iii) works inside Transformers."
+      ],
+      "Discussion (e.g., future work)": [
+        "Key to our work is to analyze the decoding margin of MLPs, whereas prior work only studies MLP fact storage."
+      ],
+      "Significance of this study": [
+        "This work contributes to Long Context in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10034v1"
       ]
     }
   },
@@ -92324,6 +92978,52 @@
       ]
     }
   },
+  "onetokenisenoughfingerprintingandverifyinglargelanguagemodelsfromsingletokenoutputdistributions": {
+    "paper_id": "arxiv-2607.10252v1",
+    "source": "arXiv",
+    "title": "One Token Is Enough: Fingerprinting and Verifying Large Language Models from Single-Token Output Distributions",
+    "authors": [
+      "Tomas Bruckner"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Large language models (LLMs) are increasingly consumed through opaque serving chains - API aggregators, resellers, and inference providers - in which the client has no technical means to confirm that the model answering is the model advertised, and recent audits show that a substantial fraction of commercial endpoints deviate from the vendor's reference weights. Existing identification techniques require long generated texts, token-level log-probabilities, adversarially crafted prompts, or the model owner's cooperation. We show that far weaker evidence suffices. We define a behavioral fingerprint of an LLM as the empirical distribution of its answers to trivial one-word prompts - \"name a random number between 1 and 100\" - collected across four languages at a cost of one output token per query. Measuring 165 models served via a large commercial aggregator (OpenRouter), we find that (i) these distributions are highly non-uniform (median cell entropy 1.0 bit) and model-specific: split halves of the same model's samples lie an order of magnitude closer than samples of different models; (ii) Jensen-Shannon divergence between fingerprints recovers model lineage, assigning a model to its documented family with 59.5% leave-one-out accuracy against an 18.4% chance rate; and (iii) a biometric-style verification protocol achieves a 7.3% equal error rate with the full 40-cell battery, and below 11% with eight probe cells - roughly a hundred single-token queries per audit. We further report ecosystem anomalies, including a proprietary-branded flagship endpoint distributionally indistinguishable from an open-weight Qwen model. The protocol, prompts, raw data, and analysis code are released for reproduction and operational use.",
+    "url": "https://arxiv.org/abs/2607.10252v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large language models (LLMs) are increasingly consumed through opaque serving chains - API aggregators, resellers, and inference providers - in which the client has no technical means to confirm that the model answering is the model advertised, and recent audits show that a substantial fraction of commercial endpoints deviate from the vendor's reference weights.",
+        "Existing identification techniques require long generated texts, token-level log-probabilities, adversarially crafted prompts, or the model owner's cooperation."
+      ],
+      "Motivation": [
+        "Large language models (LLMs) are increasingly consumed through opaque serving chains - API aggregators, resellers, and inference providers - in which the client has no technical means to confirm that the model answering is the model advertised, and recent audits show that a substantial fraction of commercial endpoints deviate from the vendor's reference weights."
+      ],
+      "Key Idea": [
+        "Existing identification techniques require long generated texts, token-level log-probabilities, adversarially crafted prompts, or the model owner's cooperation."
+      ],
+      "Experimental Results": [
+        "We show that far weaker evidence suffices."
+      ],
+      "Data analysis": [
+        "The protocol, prompts, raw data, and analysis code are released for reproduction and operational use."
+      ],
+      "Discussion (e.g., future work)": [
+        "Measuring 165 models served via a large commercial aggregator (OpenRouter), we find that (i) these distributions are highly non-uniform (median cell entropy 1.0 bit) and model-specific: split halves of the same model's samples lie an order of magnitude closer than samples of different models; (ii) Jensen-Shannon divergence between fingerprints recovers model lineage, assigning a model to its documented family with 59.5% leave-one-out accuracy against an 18.4% chance rate; and (iii) a biometric-style verification protocol achieves a 7.3% equal error rate with the full 40-cell battery, and below 11% with eight probe cells - roughly a hundred single-token queries per audit."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10252v1"
+      ]
+    }
+  },
   "onetokenperhighlyselectiveframetowardsextremecompressionforlongvideounderstanding": {
     "paper_id": "arxiv-2604.14149v2",
     "source": "arXiv",
@@ -93793,6 +94493,57 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2604.17535v1"
+      ]
+    }
+  },
+  "optiagentbenchbenchmarkingendtoendoptimizationrdagentsonrealworldbusinessproblems": {
+    "paper_id": "arxiv-2607.10768v1",
+    "source": "arXiv",
+    "title": "Opti-Agent-Bench: Benchmarking End-to-End Optimization R&D Agents on Real-World Business Problems",
+    "authors": [
+      "Yongchang Fu",
+      "Xinjie Huang",
+      "Chengjun Dai",
+      "Chengzhe Feng",
+      "Junshao Zhang",
+      "Hong Zhu"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "LLM-based agents are increasingly deployed to solve optimization problems, yet existing benchmarks evaluate them on pre-structured mathematical formulations that bypass the most critical challenge: translating complex business requirements into correct models and solve efficiently. We introduce Opti-Agent-Bench, an end-to-end benchmark that evaluates Large Language Models (LLMs) across the complete optimization R&D pipeline, from understanding business-language descriptions through mathematical modeling, algorithm selection, and code implementation, to solution report generation. Our design rests on three pillars: (1) businesssemantic authenticity with anti-template traps that defeat pattern matching; (2) modular evaluation with cross-module consistency checking across Problem Understanding, Formal Modeling, Implementation, and Reporting; and (3) the ORAC bi-level validity framework that simultaneously ensures task quality and scoring integrity. Across several industrialscale tasks spanning integer programming, robust optimization, stochastic programming, and non-convex optimization, we expose critical failure modes of current models, including constraint omission, model-code inconsistency, and report-implementation divergence, that remain invisible under conventional single-metric evaluation.",
+    "url": "https://arxiv.org/abs/2607.10768v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "LLM-based agents are increasingly deployed to solve optimization problems, yet existing benchmarks evaluate them on pre-structured mathematical formulations that bypass the most critical challenge: translating complex business requirements into correct models and solve efficiently.",
+        "We introduce Opti-Agent-Bench, an end-to-end benchmark that evaluates Large Language Models (LLMs) across the complete optimization R&D pipeline, from understanding business-language descriptions through mathematical modeling, algorithm selection, and code implementation, to solution report generation."
+      ],
+      "Motivation": [
+        "LLM-based agents are increasingly deployed to solve optimization problems, yet existing benchmarks evaluate them on pre-structured mathematical formulations that bypass the most critical challenge: translating complex business requirements into correct models and solve efficiently."
+      ],
+      "Key Idea": [
+        "We introduce Opti-Agent-Bench, an end-to-end benchmark that evaluates Large Language Models (LLMs) across the complete optimization R&D pipeline, from understanding business-language descriptions through mathematical modeling, algorithm selection, and code implementation, to solution report generation."
+      ],
+      "Experimental Results": [
+        "LLM-based agents are increasingly deployed to solve optimization problems, yet existing benchmarks evaluate them on pre-structured mathematical formulations that bypass the most critical challenge: translating complex business requirements into correct models and solve efficiently."
+      ],
+      "Data analysis": [
+        "Across several industrialscale tasks spanning integer programming, robust optimization, stochastic programming, and non-convex optimization, we expose critical failure modes of current models, including constraint omission, model-code inconsistency, and report-implementation divergence, that remain invisible under conventional single-metric evaluation."
+      ],
+      "Discussion (e.g., future work)": [
+        "Across several industrialscale tasks spanning integer programming, robust optimization, stochastic programming, and non-convex optimization, we expose critical failure modes of current models, including constraint omission, model-code inconsistency, and report-implementation divergence, that remain invisible under conventional single-metric evaluation."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10768v1"
       ]
     }
   },
@@ -95893,6 +96644,56 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2606.17082v1"
+      ]
+    }
+  },
+  "partialcontractssufficesoundllminferredregressionverification": {
+    "paper_id": "arxiv-2607.10291v1",
+    "source": "arXiv",
+    "title": "Partial Contracts Suffice: Sound, LLM-Inferred Regression Verification",
+    "authors": [
+      "Yiannis Charalambous",
+      "Rafael Menezes",
+      "Youcheng Sun",
+      "Lucas C. Cordeiro"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Long Context",
+      "Inference Optimization"
+    ],
+    "abstract": "Software evolves continuously, yet ensuring that a patch preserves intended behavior without re-verifying an entire codebase remains difficult. Regression verification addresses this problem, but existing techniques require expensive whole-program reasoning or rely on manually written specifications that are rarely available in practice. We present the first contract-based regression verification tool. Contract soundness is ensured by proving all function versions match the behavior. The contract then verifies program flow via assume-guarantee. We ask whether a partial, caller-sufficient contract, rather than a full behavioral specification, is enough. On Frama-C-Problems we strengthen each inferred contract past what the caller needs and measure how much tighter it becomes. It barely moves: for most targets in every model the caller-sufficient contract is already the tightest the loop reaches, and our tightness comparator rates the partial and strengthened contracts equivalent for the large majority of targets it can compare. Partial-spec contracts thus capture nearly all the attainable tightness, so stopping at caller-sufficiency costs almost nothing. The regression check underneath is sound: on the third-party EqBench-C suite it never fabricates an equivalence, returning zero false proofs and reporting an unprovable difference instead. It also surfaced nine pairs that EqBench mislabels as equivalent, more than a concurrent tool reports. The contracts themselves are inferred automatically from the checker's own counterexamples, with no separate specification step; on Frama-C-Problems and the ANSSI X509 parser this reaches a verification rate comparable to tools AutoSpec and Preguss, while a passing result certifies at least as strong a property, which we call \\emph{safety-preserving conditional equivalence}: enforcement plus caller-sufficiency.",
+    "url": "https://arxiv.org/abs/2607.10291v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Software evolves continuously, yet ensuring that a patch preserves intended behavior without re-verifying an entire codebase remains difficult.",
+        "Regression verification addresses this problem, but existing techniques require expensive whole-program reasoning or rely on manually written specifications that are rarely available in practice."
+      ],
+      "Motivation": [
+        "Regression verification addresses this problem, but existing techniques require expensive whole-program reasoning or rely on manually written specifications that are rarely available in practice."
+      ],
+      "Key Idea": [
+        "We present the first contract-based regression verification tool."
+      ],
+      "Experimental Results": [
+        "The contracts themselves are inferred automatically from the checker's own counterexamples, with no separate specification step; on Frama-C-Problems and the ANSSI X509 parser this reaches a verification rate comparable to tools AutoSpec and Preguss, while a passing result certifies at least as strong a property, which we call \\emph{safety-preserving conditional equivalence}: enforcement plus caller-sufficiency."
+      ],
+      "Data analysis": [
+        "Contract soundness is ensured by proving all function versions match the behavior."
+      ],
+      "Discussion (e.g., future work)": [
+        "The contract then verifies program flow via assume-guarantee."
+      ],
+      "Significance of this study": [
+        "This work contributes to Long Context, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10291v1"
       ]
     }
   },
@@ -101637,6 +102438,56 @@
       ]
     }
   },
+  "promptgraphgraphguidedpromptsanitizationforbalancingprivacyandutilityinllminference": {
+    "paper_id": "arxiv-2607.10709v1",
+    "source": "arXiv",
+    "title": "PromptGraph: Graph-Guided Prompt Sanitization for Balancing Privacy and Utility in LLM Inference",
+    "authors": [
+      "Chen Gu",
+      "Hui Wan",
+      "Donghui Hu",
+      "Hui Wang",
+      "Zhuoer Gu"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Large Language Model (LLM) services introduce a fundamental privacy challenge. Sensitive information may be inferred not only from explicit identifiers, such as names or phone numbers, but also from contextual associations among otherwise innocuous spans. Existing sanitizers typically assign privacy or utility signals to individual spans without explicitly modeling pairwise relationships among them. In this paper, we propose PromptGraph, a graph-guided prompt-sanitization approach for privacy-preserving LLM inference. PromptGraph estimates privacy leakage at the span level and utility-relevant contextual dependencies between pairs of spans. It represents each prompt as an attributed graph, in which nodes carry span-level privacy scores and edges encode contextual dependencies needed to preserve utility. The sanitization objective selects a protected span set that maximizes privacy gain while penalizing the loss of contextual dependencies. This formulation explicitly balances privacy and utility when contextual evidence is hidden. Protected spans are sanitized locally, and returned placeholders are restored only after passing local consistency checks. We conduct extensive experiments showing that PromptGraph achieves a more favorable balance between privacy and utility than prompt-privacy baselines.",
+    "url": "https://arxiv.org/abs/2607.10709v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large Language Model (LLM) services introduce a fundamental privacy challenge.",
+        "Sensitive information may be inferred not only from explicit identifiers, such as names or phone numbers, but also from contextual associations among otherwise innocuous spans."
+      ],
+      "Motivation": [
+        "Large Language Model (LLM) services introduce a fundamental privacy challenge."
+      ],
+      "Key Idea": [
+        "In this paper, we propose PromptGraph, a graph-guided prompt-sanitization approach for privacy-preserving LLM inference."
+      ],
+      "Experimental Results": [
+        "We conduct extensive experiments showing that PromptGraph achieves a more favorable balance between privacy and utility than prompt-privacy baselines."
+      ],
+      "Data analysis": [
+        "In this paper, we propose PromptGraph, a graph-guided prompt-sanitization approach for privacy-preserving LLM inference."
+      ],
+      "Discussion (e.g., future work)": [
+        "PromptGraph estimates privacy leakage at the span level and utility-relevant contextual dependencies between pairs of spans."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10709v1"
+      ]
+    }
+  },
   "promptingisallyouneedmultiviewpromptinglargelanguagemodelsforaspectbasedsentimentanalysis": {
     "paper_id": "arxiv-2605.28058v1",
     "source": "arXiv",
@@ -102486,6 +103337,55 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2606.09697v1"
+      ]
+    }
+  },
+  "pteiintegratingpersonalitytraitstoenhanceemotionalintelligenceinlargelanguagemodels": {
+    "paper_id": "arxiv-2607.10245v1",
+    "source": "arXiv",
+    "title": "PTEI: Integrating Personality Traits to Enhance Emotional Intelligence in Large Language Models",
+    "authors": [
+      "Amir Reza Jafari",
+      "Praboda Rajapaksha",
+      "Reza Farahbakhsh",
+      "Noel Crespi"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Despite advances in Emotional Intelligence (EI), Large Language Models (LLMs) still significantly underperform humans in complex emotional reasoning. This gap originates partly from the limited incorporation of individual differences, particularly personality traits, which are fundamental to human emotional inference. To address this, we propose PTEI, a novel framework for integrating Personality Traits into Emotional Intelligence tasks using LLMs. In PTEI, MBTI and OCEAN personality traits are first extracted directly from the given emotional scenarios and then utilized as contextual knowledge within personality-aware prompts, guiding LLMs to accurately infer emotions and their underlying causes. To ensure optimal contextual grounding, we employ Contrastive Learning to construct an optimized retrieval system that surfaces emotionally and personally aligned scenarios, enhancing reasoning quality. Extensive experiments on established EI benchmarks show that PTEI enhances the Emotional Understanding (EU) capabilities of various LLMs, with the strongest improvement observed in GPT models. Combining PTEI with Chain-of-Thought (CoT) reasoning yields an additional 4 percent increase in accuracy. These findings underscore PTEI's contribution toward advancing AI systems with more sophisticated social and psychological grounding.",
+    "url": "https://arxiv.org/abs/2607.10245v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Despite advances in Emotional Intelligence (EI), Large Language Models (LLMs) still significantly underperform humans in complex emotional reasoning.",
+        "This gap originates partly from the limited incorporation of individual differences, particularly personality traits, which are fundamental to human emotional inference."
+      ],
+      "Motivation": [
+        "Despite advances in Emotional Intelligence (EI), Large Language Models (LLMs) still significantly underperform humans in complex emotional reasoning."
+      ],
+      "Key Idea": [
+        "To address this, we propose PTEI, a novel framework for integrating Personality Traits into Emotional Intelligence tasks using LLMs."
+      ],
+      "Experimental Results": [
+        "Extensive experiments on established EI benchmarks show that PTEI enhances the Emotional Understanding (EU) capabilities of various LLMs, with the strongest improvement observed in GPT models."
+      ],
+      "Data analysis": [
+        "In PTEI, MBTI and OCEAN personality traits are first extracted directly from the given emotional scenarios and then utilized as contextual knowledge within personality-aware prompts, guiding LLMs to accurately infer emotions and their underlying causes."
+      ],
+      "Discussion (e.g., future work)": [
+        "To ensure optimal contextual grounding, we employ Contrastive Learning to construct an optimized retrieval system that surfaces emotionally and personally aligned scenarios, enhancing reasoning quality."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10245v1"
       ]
     }
   },
@@ -105320,6 +106220,53 @@
       ]
     }
   },
+  "rdqresidualdistributionquantizationforlargelanguagemodels": {
+    "paper_id": "arxiv-2607.10137v1",
+    "source": "arXiv",
+    "title": "RDQ: Residual Distribution Quantization for Large Language Models",
+    "authors": [
+      "Prateek Singh"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Quantization",
+      "Inference Optimization"
+    ],
+    "abstract": "Post-training quantization (PTQ) of large language models degrades sharply below 4-bit precision. We identify the root cause as residual stream distributional drift: quantization noise injected at each transformer layer accumulates in the shared residual representation, causing KL divergence from the FP16 baseline to grow super-linearly with depth (Pearson r=0.999 with log-perplexity, p<0.001, confirmed across all tested methods and bit-widths). We discover that 84% of LLaMA-3-8B layers exhibit non-Gaussian residual distributions (KS test, p<=0.05), and that per-layer residual stream variance grows 6,548x across depth. We propose RDQ (Residual Distribution Quantization), a PTQ framework whose central contribution is Cascaded Error Compensation (CEC): a sequential calibration procedure that captures the actual drifted activations each layer receives (computed by running calibration data through already-quantized upstream layers) and fits per-channel AWQ-style scales against those drifted inputs, with scales folded into preceding RMSNorm weights for exact mathematical equivalence at zero inference overhead. RDQ achieves state-of-the-art results on all three tested architectures: LLaMA-3-8B: 7.55 / 5.62 PPL (W3/W4); Qwen-2.5-7B: 7.46 / 6.38 PPL; Mistral-7B: 6.88 / 5.73 PPL. RDQ beats the best published baseline (LeanQuant/SpinQuant) at every model and bit-width combination, with gains up to -46.4% vs. RTN at W3A16 on LLaMA-3-8B. All output is standard group-128 asymmetric quantization, deployable on Qualcomm AIMET, GGUF, and any standard inference stack at zero runtime overhead.",
+    "url": "https://arxiv.org/abs/2607.10137v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Post-training quantization (PTQ) of large language models degrades sharply below 4-bit precision.",
+        "We identify the root cause as residual stream distributional drift: quantization noise injected at each transformer layer accumulates in the shared residual representation, causing KL divergence from the FP16 baseline to grow super-linearly with depth (Pearson r=0.999 with log-perplexity, p<0.001, confirmed across all tested methods and bit-widths)."
+      ],
+      "Motivation": [
+        "Post-training quantization (PTQ) of large language models degrades sharply below 4-bit precision."
+      ],
+      "Key Idea": [
+        "We identify the root cause as residual stream distributional drift: quantization noise injected at each transformer layer accumulates in the shared residual representation, causing KL divergence from the FP16 baseline to grow super-linearly with depth (Pearson r=0.999 with log-perplexity, p<0.001, confirmed across all tested methods and bit-widths)."
+      ],
+      "Experimental Results": [
+        "RDQ achieves state-of-the-art results on all three tested architectures: LLaMA-3-8B: 7.55 / 5.62 PPL (W3/W4); Qwen-2.5-7B: 7.46 / 6.38 PPL; Mistral-7B: 6.88 / 5.73 PPL."
+      ],
+      "Data analysis": [
+        "We propose RDQ (Residual Distribution Quantization), a PTQ framework whose central contribution is Cascaded Error Compensation (CEC): a sequential calibration procedure that captures the actual drifted activations each layer receives (computed by running calibration data through already-quantized upstream layers) and fits per-channel AWQ-style scales against those drifted inputs, with scales folded into preceding RMSNorm weights for exact mathematical equivalence at zero inference overhead."
+      ],
+      "Discussion (e.g., future work)": [
+        "RDQ achieves state-of-the-art results on all three tested architectures: LLaMA-3-8B: 7.55 / 5.62 PPL (W3/W4); Qwen-2.5-7B: 7.46 / 6.38 PPL; Mistral-7B: 6.88 / 5.73 PPL."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10137v1"
+      ]
+    }
+  },
   "reacompcompilingllmreasoningintosymbolicsolversforefficientprogramsynthesis": {
     "paper_id": "arxiv-2605.05485v1",
     "source": "arXiv",
@@ -107841,6 +108788,56 @@
       ]
     }
   },
+  "reinforcementlearningwithverifiablephysicsposttrainingllmswithcontinuousrewards": {
+    "paper_id": "arxiv-2607.10474v1",
+    "source": "arXiv",
+    "title": "Reinforcement Learning with Verifiable Physics: Post-training LLMs with Continuous Rewards",
+    "authors": [
+      "Pengfei Cai",
+      "Utkarsh Utkarsh",
+      "Alan Edelman",
+      "Christopher Vincent Rackauckas",
+      "Rafael Gomez-Bombarelli"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Partial differential equations (PDEs) are foundational to modeling in science and engineering, but constructing reliable numerical solvers remains labor-intensive, demanding expert knowledge of discretization schemes, stability conditions, and boundary treatments. Recent work has begun to frame PDE solving as a code-generation task for large language models (LLMs), yet existing approaches operate primarily at inference time: relying on prompting, debugging, self-refinement, and test-time scaling rather than adapting the model itself. In parallel, reinforcement learning with verifiable rewards has emerged as a post-training paradigm for code and math reasoning, but its verifiers are typically binary: a compiler runs, or a test passes. Such signals discard the graded structure of scientific correctness, where two solvers may both execute and yet differ in solution accuracy by orders of magnitude. In this work, we introduce RLVP: Reinforcement Learning with Verifiable Physics, an RL post-training framework for multi-PDE solver code generation. RLVP addresses this verifiability gap with a hybrid verifier: hard program-validity checks ensure executability, while continuous physics rewards score function-space accuracy and PDE-residual consistency. A single policy is post-trained across diverse PDE families spanning hyperbolic, parabolic, elliptic, and incompressible-flow systems. RLVP improves over both pre-trained and supervised-only baselines on PDE benchmarks, and shows zero-shot improvement transfer to held-out PDEs. We show that a smaller LLM post-trained with RLVP can outperform prompting a frontier model on in-distribution PDE solver generation. The trained policy shows evidence of compositionality in numerical motifs: it recombines stencils, time-stepping schemes, and boundary-handling primitives learned from the PDEs used in training into generated solvers for unseen PDE problems.",
+    "url": "https://arxiv.org/abs/2607.10474v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Partial differential equations (PDEs) are foundational to modeling in science and engineering, but constructing reliable numerical solvers remains labor-intensive, demanding expert knowledge of discretization schemes, stability conditions, and boundary treatments.",
+        "Recent work has begun to frame PDE solving as a code-generation task for large language models (LLMs), yet existing approaches operate primarily at inference time: relying on prompting, debugging, self-refinement, and test-time scaling rather than adapting the model itself."
+      ],
+      "Motivation": [
+        "The trained policy shows evidence of compositionality in numerical motifs: it recombines stencils, time-stepping schemes, and boundary-handling primitives learned from the PDEs used in training into generated solvers for unseen PDE problems."
+      ],
+      "Key Idea": [
+        "In this work, we introduce RLVP: Reinforcement Learning with Verifiable Physics, an RL post-training framework for multi-PDE solver code generation."
+      ],
+      "Experimental Results": [
+        "RLVP improves over both pre-trained and supervised-only baselines on PDE benchmarks, and shows zero-shot improvement transfer to held-out PDEs."
+      ],
+      "Data analysis": [
+        "Such signals discard the graded structure of scientific correctness, where two solvers may both execute and yet differ in solution accuracy by orders of magnitude."
+      ],
+      "Discussion (e.g., future work)": [
+        "In this work, we introduce RLVP: Reinforcement Learning with Verifiable Physics, an RL post-training framework for multi-PDE solver code generation."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10474v1"
+      ]
+    }
+  },
   "reinforcingprivacyreasoninginllmsvianormativesimulacrafromfiction": {
     "paper_id": "arxiv-2604.20904v1",
     "source": "arXiv",
@@ -108041,6 +109038,56 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.17036v2"
+      ]
+    }
+  },
+  "reliabilityscalinglawsforquantizedlargelanguagemodels": {
+    "paper_id": "arxiv-2607.10855v1",
+    "source": "arXiv",
+    "title": "Reliability Scaling Laws for Quantized Large Language Models",
+    "authors": [
+      "Sirine Ayadi",
+      "Sándor Daróczi",
+      "Stephan Günnemann",
+      "Bertrand Charpentier"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Quantization",
+      "Inference Optimization"
+    ],
+    "abstract": "Quantization is a powerful strategy to build capable and resource-efficient large language models (LLMs) by reducing the bitwidth of the parameters. While quantized LLMs achieve state-of-the-art performance on unperturbed inputs using standard predictive metrics, their performance on perturbed inputs, measured using reliability metrics, remains underexplored, despite its importance for reliable deployment. To address this gap, we first conduct a comprehensive reliability evaluation of quantized LLMs consisting of three key components: (1) Uncertainty: We assess the trustworthiness of LLMs quantized to 2, 3, 4, and 8 bits using six different quantization methods, employing established uncertainty metrics. (2) Calibration: We assess how well-calibrated the uncertainty estimates of quantized models are across model scales and bit precisions. (3) Robustness: We design character-level and word-level input perturbations to evaluate the reliability of quantized models under semantically-preserving variations in the inputs that arise in real-world applications. Second, we characterize how reliability scales with the total number of model bits. Our study reveals that while the performance scales monotonically with the total number of bits, the reliability scalings are nonlinear. A reliability peak occurs for 4-bit quantized models, indicating that quantizing moderately sized models offers the best reliability-efficiency trade-off. Additionally, our empirical findings reveal that quantization enhances the robustness of LLMs to natural input perturbations.",
+    "url": "https://arxiv.org/abs/2607.10855v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Quantization is a powerful strategy to build capable and resource-efficient large language models (LLMs) by reducing the bitwidth of the parameters.",
+        "While quantized LLMs achieve state-of-the-art performance on unperturbed inputs using standard predictive metrics, their performance on perturbed inputs, measured using reliability metrics, remains underexplored, despite its importance for reliable deployment."
+      ],
+      "Motivation": [
+        "Quantization is a powerful strategy to build capable and resource-efficient large language models (LLMs) by reducing the bitwidth of the parameters."
+      ],
+      "Key Idea": [
+        "To address this gap, we first conduct a comprehensive reliability evaluation of quantized LLMs consisting of three key components: (1) Uncertainty: We assess the trustworthiness of LLMs quantized to 2, 3, 4, and 8 bits using six different quantization methods, employing established uncertainty metrics."
+      ],
+      "Experimental Results": [
+        "To address this gap, we first conduct a comprehensive reliability evaluation of quantized LLMs consisting of three key components: (1) Uncertainty: We assess the trustworthiness of LLMs quantized to 2, 3, 4, and 8 bits using six different quantization methods, employing established uncertainty metrics."
+      ],
+      "Data analysis": [
+        "(2) Calibration: We assess how well-calibrated the uncertainty estimates of quantized models are across model scales and bit precisions."
+      ],
+      "Discussion (e.g., future work)": [
+        "(3) Robustness: We design character-level and word-level input perturbations to evaluate the reliability of quantized models under semantically-preserving variations in the inputs that arise in real-world applications."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10855v1"
       ]
     }
   },
@@ -119624,6 +120671,54 @@
       ]
     }
   },
+  "silentfailuresinquantizedllmreasoningataxonomybasedanalysisofhollowconvergenceandfailuremodeshifts": {
+    "paper_id": "arxiv-2607.09999v1",
+    "source": "arXiv",
+    "title": "Silent Failures in Quantized LLM Reasoning: A Taxonomy-Based Analysis of Hollow Convergence and Failure Mode Shifts",
+    "authors": [
+      "Renuka Oladri",
+      "Mohan Vamsi Varadaraju Priya",
+      "Jerry Wu"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-10",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Quantization"
+    ],
+    "abstract": "We show that post-training quantization can silently alter how large language models reason even when task accuracy is preserved. Using a six-category failure taxonomy validated by two independent human annotators (Cohen's $κ$ = 0.906), we classify 30,000 chain-of-thought outputs from five instruction-tuned LLMs (3B--14B parameters) across three quantization precisions (FP32, FP16, NF4) and four reasoning benchmarks. We find that while accuracy is robust across precisions (maximum 3.1 pp drop), Hollow Convergence (correct answers reached through incomplete or unverifiable reasoning) shows a significant size-dependent shift under NF4, dropping sharply for the two smallest models tested but remaining invariant for models at 12B parameters and above. This effect is also benchmark-specific: GSM8K is categorically immune while LogiQA and ARC-Challenge show the largest shifts. Furthermore, under NF4, Shortcut Collapse rises from 44% to 78% of wrong-answer failures in LLaMA 3.2-3B while Confidence Snowballing collapses from 15.8% to near zero, a qualitative shift invisible to accuracy metrics. Finally, we show Hollow Convergence cannot be reliably detected from surface-level text features (best F1 = 0.53), establishing it as a deployment-relevant failure mode that standard evaluation pipelines cannot catch.",
+    "url": "https://arxiv.org/abs/2607.09999v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "We show that post-training quantization can silently alter how large language models reason even when task accuracy is preserved.",
+        "Using a six-category failure taxonomy validated by two independent human annotators (Cohen's $κ$ = 0.906), we classify 30,000 chain-of-thought outputs from five instruction-tuned LLMs (3B--14B parameters) across three quantization precisions (FP32, FP16, NF4) and four reasoning benchmarks."
+      ],
+      "Motivation": [
+        "This effect is also benchmark-specific: GSM8K is categorically immune while LogiQA and ARC-Challenge show the largest shifts."
+      ],
+      "Key Idea": [
+        "Using a six-category failure taxonomy validated by two independent human annotators (Cohen's $κ$ = 0.906), we classify 30,000 chain-of-thought outputs from five instruction-tuned LLMs (3B--14B parameters) across three quantization precisions (FP32, FP16, NF4) and four reasoning benchmarks."
+      ],
+      "Experimental Results": [
+        "Using a six-category failure taxonomy validated by two independent human annotators (Cohen's $κ$ = 0.906), we classify 30,000 chain-of-thought outputs from five instruction-tuned LLMs (3B--14B parameters) across three quantization precisions (FP32, FP16, NF4) and four reasoning benchmarks."
+      ],
+      "Data analysis": [
+        "This effect is also benchmark-specific: GSM8K is categorically immune while LogiQA and ARC-Challenge show the largest shifts."
+      ],
+      "Discussion (e.g., future work)": [
+        "Furthermore, under NF4, Shortcut Collapse rises from 44% to 78% of wrong-answer failures in LLaMA 3.2-3B while Confidence Snowballing collapses from 15.8% to near zero, a qualitative shift invisible to accuracy metrics."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.09999v1"
+      ]
+    }
+  },
   "siliconshowdownperformanceefficiencyandecosystembarriersinconsumergradellminference": {
     "paper_id": "arxiv-2605.00519v2",
     "source": "arXiv",
@@ -128402,6 +129497,52 @@
       ]
     }
   },
+  "svdragefficienttreeorganizedretrievalaugmentedgenerationviasingularvaluedecomposition": {
+    "paper_id": "arxiv-2607.10316v1",
+    "source": "arXiv",
+    "title": "SVD-RAG: Efficient Tree-Organized Retrieval-Augmented Generation via Singular Value Decomposition",
+    "authors": [
+      "Zhihui Sun"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-11",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Retrieval-Augmented Generation (RAG) systems enhance large language models by retrieving relevant documents from external knowledge bases. Recent work by Sarthi et al. (2024) introduced RAPTOR, which organizes documents into hierarchical tree structures for efficient retrieval, but requires expensive LLM-based abstractive summarization at each internal node -- making large-scale deployment prohibitively costly. We present SVD-RAG, the first method to apply Singular Value Decomposition (SVD) on dense sentence embedding matrices for extractive summarization in hierarchical RAG. Unlike classical LSA which operates on sparse TF-IDF matrices, SVD-RAG exploits the rich semantic representations of modern embedding models, identifying the most informative sentences through their energy contribution in the principal components. Our approach is (1) deterministic -- unlike LLM-based summarization, SVD produces identical results for the same input; (2) cost-efficient -- tree construction requires no additional API calls beyond the initial embedding, reducing token consumption by ~85%; and (3) content-adaptive -- the energy-ratio threshold tau automatically adjusts compression based on content complexity. In a controlled head-to-head comparison using identical corpora, clustering, and beam search, SVD-RAG achieves retrieval quality within 1-5% of RAPTOR with LLM summarization (MRR 0.867 vs. 0.875, Recall@1 0.483 vs. 0.458) while building the tree 317x faster (0.1s vs. 31.7s). On a scaled multi-topic benchmark with 205 chunks and 100 queries across 20 topic variations, SVD-RAG achieves a 4.2x improvement in Recall@1 and 3.1x improvement in MRR over flat embedding retrieval. We provide a detailed cost analysis and parameter sensitivity study. Our implementation is released as an open-source Python package.",
+    "url": "https://arxiv.org/abs/2607.10316v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Retrieval-Augmented Generation (RAG) systems enhance large language models by retrieving relevant documents from external knowledge bases.",
+        "Recent work by Sarthi et al."
+      ],
+      "Motivation": [
+        "Retrieval-Augmented Generation (RAG) systems enhance large language models by retrieving relevant documents from external knowledge bases."
+      ],
+      "Key Idea": [
+        "We present SVD-RAG, the first method to apply Singular Value Decomposition (SVD) on dense sentence embedding matrices for extractive summarization in hierarchical RAG."
+      ],
+      "Experimental Results": [
+        "Our approach is (1) deterministic -- unlike LLM-based summarization, SVD produces identical results for the same input; (2) cost-efficient -- tree construction requires no additional API calls beyond the initial embedding, reducing token consumption by ~85%; and (3) content-adaptive -- the energy-ratio threshold tau automatically adjusts compression based on content complexity."
+      ],
+      "Data analysis": [
+        "We provide a detailed cost analysis and parameter sensitivity study."
+      ],
+      "Discussion (e.g., future work)": [
+        "Unlike classical LSA which operates on sparse TF-IDF matrices, SVD-RAG exploits the rich semantic representations of modern embedding models, identifying the most informative sentences through their energy contribution in the principal components."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10316v1"
+      ]
+    }
+  },
   "svotstateawarevisualizationofthoughtforspatialreasoningviareinforcementlearning": {
     "paper_id": "arxiv-2606.11770v1",
     "source": "arXiv",
@@ -134680,6 +135821,53 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.21883v2"
+      ]
+    }
+  },
+  "tooladaptivellmreranker": {
+    "paper_id": "arxiv-2607.10555v1",
+    "source": "arXiv",
+    "title": "Tool-Adaptive LLM Reranker",
+    "authors": [
+      "Zichuan Liu",
+      "Ruijin Hua"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Generative Large Language Models (LLMs) have revolutionized information retrieval, yet their strictly parametric nature frequently leads to severe factual hallucinations when confronted with complex queries beyond their epistemic boundaries. While external tool-calling can mitigate this, indiscriminately invoking search tools for every document during reranking incurs prohibitive latency overheads, creating an intractable accuracy-efficiency dilemma. To address this challenge, we propose TALRanker, a novel framework that formalizes pointwise relevance scoring as an agentic Markov decision process. We optimize it via a two-stage training paradigm. An initial warm-up utilizes a language-preserving hybrid loss to prevent the catastrophic forgetting of native generative capacities. Subsequently, an asymmetric cost-aware reward equipped in reinforcement learning forces the policy to autonomously bypass tools for maximum efficiency when confident, while selectively retrieving external evidence to avert severe hallucination penalties when uncertain. Extensive evaluations demonstrate that TALRanker achieves state-of-the-art performance across standard and reasoning-intensive retrieval benchmarks, matching throughput with pointwise rerankers while outperforming parameter-heavy reasoning models.",
+    "url": "https://arxiv.org/abs/2607.10555v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Generative Large Language Models (LLMs) have revolutionized information retrieval, yet their strictly parametric nature frequently leads to severe factual hallucinations when confronted with complex queries beyond their epistemic boundaries.",
+        "While external tool-calling can mitigate this, indiscriminately invoking search tools for every document during reranking incurs prohibitive latency overheads, creating an intractable accuracy-efficiency dilemma."
+      ],
+      "Motivation": [
+        "To address this challenge, we propose TALRanker, a novel framework that formalizes pointwise relevance scoring as an agentic Markov decision process."
+      ],
+      "Key Idea": [
+        "To address this challenge, we propose TALRanker, a novel framework that formalizes pointwise relevance scoring as an agentic Markov decision process."
+      ],
+      "Experimental Results": [
+        "Extensive evaluations demonstrate that TALRanker achieves state-of-the-art performance across standard and reasoning-intensive retrieval benchmarks, matching throughput with pointwise rerankers while outperforming parameter-heavy reasoning models."
+      ],
+      "Data analysis": [
+        "We optimize it via a two-stage training paradigm."
+      ],
+      "Discussion (e.g., future work)": [
+        "An initial warm-up utilizes a language-preserving hybrid loss to prevent the catastrophic forgetting of native generative capacities."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10555v1"
       ]
     }
   },
@@ -142166,6 +143354,59 @@
       ]
     }
   },
+  "unlockingparallelisminautoregressivelanguagemodelsviaspeculativedecodingwithprogressivetreedrafting": {
+    "paper_id": "arxiv-2607.10661v1",
+    "source": "arXiv",
+    "title": "Unlocking Parallelism in Autoregressive Language Models via Speculative Decoding with Progressive Tree Drafting",
+    "authors": [
+      "Zipeng Gao",
+      "Zhi Zheng",
+      "Qingrong Xia",
+      "Junda Lin",
+      "Ziwei Zhao",
+      "Tong Xu",
+      "Zhefeng Wang",
+      "Enhong Chen"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Speculative decoding has significantly accelerated Large Language Model (LLM) inference by alleviating memory-bound bottlenecks. However, traditional speculative decoding typically relies on auxiliary draft modules, incurring significant training and communication overhead. Although recent methods attempt to generate drafts within the target model itself, they often fail to fully exploit its latent parallel capacity due to a lack of structural coordination. In this paper, we propose \\textbf{Progressive Tree Drafting (PTD)}, which employs a structured, guided parallel drafting strategy to harness the model's parallel potential. By coupling a progressive tree structure with a stepwise pruning mechanism, PTD actively guides the LLM to explore multiple semantic paths in a single forward pass, ensuring both draft diversity and coherence. Experiments demonstrate that PTD achieves up to $2\\times$ decoding speedup across various benchmarks while remaining training-free and model-agnostic. Our code is available at: https://github.com/MINE-USTC/PTD.",
+    "url": "https://arxiv.org/abs/2607.10661v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Speculative decoding has significantly accelerated Large Language Model (LLM) inference by alleviating memory-bound bottlenecks.",
+        "However, traditional speculative decoding typically relies on auxiliary draft modules, incurring significant training and communication overhead."
+      ],
+      "Motivation": [
+        "Speculative decoding has significantly accelerated Large Language Model (LLM) inference by alleviating memory-bound bottlenecks."
+      ],
+      "Key Idea": [
+        "Although recent methods attempt to generate drafts within the target model itself, they often fail to fully exploit its latent parallel capacity due to a lack of structural coordination."
+      ],
+      "Experimental Results": [
+        "Experiments demonstrate that PTD achieves up to $2\\times$ decoding speedup across various benchmarks while remaining training-free and model-agnostic."
+      ],
+      "Data analysis": [
+        "In this paper, we propose \\textbf{Progressive Tree Drafting (PTD)}, which employs a structured, guided parallel drafting strategy to harness the model's parallel potential."
+      ],
+      "Discussion (e.g., future work)": [
+        "By coupling a progressive tree structure with a stepwise pruning mechanism, PTD actively guides the LLM to explore multiple semantic paths in a single forward pass, ensuring both draft diversity and coherence."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10661v1"
+      ]
+    }
+  },
   "unlockingtheedgedeploymentandondeviceaccelerationofmultiloraenabledoneforallfoundationalllm": {
     "paper_id": "arxiv-2604.18655v2",
     "source": "arXiv",
@@ -145104,6 +146345,57 @@
       ]
     }
   },
+  "wasteassistantregulationguidedvisualquestionansweringframeworkforintelligentwastesegregationandsustainablemanagemen": {
+    "paper_id": "arxiv-2607.10610v1",
+    "source": "arXiv",
+    "title": "WasteAssistant: Regulation-Guided Visual Question Answering Framework for Intelligent Waste Segregation and Sustainable Managemen",
+    "authors": [
+      "Khush Kataruka",
+      "Harshit Maurya",
+      "Anuja Vats",
+      "Murari Mandal",
+      "Kiran Raja",
+      "Praveen Kumar Chandaliya"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Efficient waste segregation is critical for sustainable urban management and environmental governance. Existing automated systems are limited by single-modality visual processing, insufficient contextual understanding, and weak regulatory alignment. To address these issues, we propose a language-guided vision-AI framework that integrates vision-language models and multimodal large language models for joint visual-linguistic reasoning. This framework implements a visual question answering paradigm aligned with India's Solid Waste Management Rules 2016. We construct a new WasteVQA dataset with 13,500 question-answer pairs across 21 waste categories. Experiments show that the BLIP-based model achieves a BLEU score of 0.8291 and a BERTScore of 0.9273, outperforming traditional CNN-based methods. This work improves source-level segregation accuracy, ensures regulatory compliance, and supports scalable deployment for municipal and citizen-facing waste management, promoting multimodal AI in sustainable urban infrastructure. The source code and dataset are available at: https://github.com/Khushkataruka/WasteAssistant",
+    "url": "https://arxiv.org/abs/2607.10610v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Efficient waste segregation is critical for sustainable urban management and environmental governance.",
+        "Existing automated systems are limited by single-modality visual processing, insufficient contextual understanding, and weak regulatory alignment."
+      ],
+      "Motivation": [
+        "Efficient waste segregation is critical for sustainable urban management and environmental governance."
+      ],
+      "Key Idea": [
+        "To address these issues, we propose a language-guided vision-AI framework that integrates vision-language models and multimodal large language models for joint visual-linguistic reasoning."
+      ],
+      "Experimental Results": [
+        "Experiments show that the BLIP-based model achieves a BLEU score of 0.8291 and a BERTScore of 0.9273, outperforming traditional CNN-based methods."
+      ],
+      "Data analysis": [
+        "We construct a new WasteVQA dataset with 13,500 question-answer pairs across 21 waste categories."
+      ],
+      "Discussion (e.g., future work)": [
+        "We construct a new WasteVQA dataset with 13,500 question-answer pairs across 21 waste categories."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10610v1"
+      ]
+    }
+  },
   "watchrememberreasonhumanviewvideounderstandingwithmllms": {
     "paper_id": "arxiv-2606.07433v1",
     "source": "arXiv",
@@ -145517,6 +146809,56 @@
       ]
     }
   },
+  "webdesignitercoevolvingdesignknowledgeforrepositorylevelfrontendcodegeneration": {
+    "paper_id": "arxiv-2607.10621v1",
+    "source": "arXiv",
+    "title": "WebDesignIter: Co-Evolving Design Knowledge for Repository-Level Front-End Code Generation",
+    "authors": [
+      "Zheng Pei",
+      "Mingwei Liu",
+      "Zhenxi Chen",
+      "Zihao Wang",
+      "Yanlin Wang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Front-end development accumulates change after change at the repository level, weaving complex cross-file dependencies that current LLM coding agents tuned for single-shot tasks cannot reliably track across multiple iterations, leading to functional regressions and code that resists maintenance. We argue the missing piece is design knowledge: architectural principles, module responsibilities, and structural constraints that developers lean on to keep code readable, maintainable, and evolvable as a system scales. To operationalize this, we propose WebDesignIter, a framework built around a persistent knowledge graph (WebAppArchKG) that fuses repository structure with design knowledge and keeps both in sync across development cycles. WebDesignIter works in two stages: design-informed planning pulls historical context and architectural overviews from WebAppArchKG to produce an implementation plan with corresponding test scripts, and design-aware generation executes that plan through targeted diff-based patches, validated by sandbox execution and automatic syntax repair. On Web-Bench, WebDesignIter delivers an average Pass@2 gain of 9.55 percentage points across nine foundation models over existing baselines. More importantly, WebDesignIter outperforms every general-purpose coding agent Claude Code, OpenHands, SWE-Agent, Codex CLI on every model configuration, posting the highest Pass@1 and Pass@2 while consuming 2530 fewer input tokens. Ablation singles out design knowledge as the most impactful component: stripping it drops Pass@1 by 11.40 percentage points, a degradation far larger than removing code-graph retrieval, patch-based generation, or sandbox verification, confirming that design knowledge provides a fundamentally more efficient and reliable path to repository-level code generation.",
+    "url": "https://arxiv.org/abs/2607.10621v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Front-end development accumulates change after change at the repository level, weaving complex cross-file dependencies that current LLM coding agents tuned for single-shot tasks cannot reliably track across multiple iterations, leading to functional regressions and code that resists maintenance.",
+        "We argue the missing piece is design knowledge: architectural principles, module responsibilities, and structural constraints that developers lean on to keep code readable, maintainable, and evolvable as a system scales."
+      ],
+      "Motivation": [
+        "Front-end development accumulates change after change at the repository level, weaving complex cross-file dependencies that current LLM coding agents tuned for single-shot tasks cannot reliably track across multiple iterations, leading to functional regressions and code that resists maintenance."
+      ],
+      "Key Idea": [
+        "To operationalize this, we propose WebDesignIter, a framework built around a persistent knowledge graph (WebAppArchKG) that fuses repository structure with design knowledge and keeps both in sync across development cycles."
+      ],
+      "Experimental Results": [
+        "More importantly, WebDesignIter outperforms every general-purpose coding agent Claude Code, OpenHands, SWE-Agent, Codex CLI on every model configuration, posting the highest Pass@1 and Pass@2 while consuming 2530 fewer input tokens."
+      ],
+      "Data analysis": [
+        "Ablation singles out design knowledge as the most impactful component: stripping it drops Pass@1 by 11.40 percentage points, a degradation far larger than removing code-graph retrieval, patch-based generation, or sandbox verification, confirming that design knowledge provides a fundamentally more efficient and reliable path to repository-level code generation."
+      ],
+      "Discussion (e.g., future work)": [
+        "On Web-Bench, WebDesignIter delivers an average Pass@2 gain of 9.55 percentage points across nine foundation models over existing baselines."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10621v1"
+      ]
+    }
+  },
   "webretrieveralargescalecomprehensivebenchmarkforefficientwebagentevaluation": {
     "paper_id": "arxiv-2607.06118v1",
     "source": "arXiv",
@@ -145673,6 +147015,55 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2607.08662v1"
+      ]
+    }
+  },
+  "weightadjustedgradientsrevealparameterimportanceandfailuremodesinllms": {
+    "paper_id": "arxiv-2607.10803v1",
+    "source": "arXiv",
+    "title": "Weight-Adjusted Gradients Reveal Parameter Importance and Failure Modes in LLMs",
+    "authors": [
+      "Shrestha Datta",
+      "Hongfu Liu",
+      "Anshuman Chhabra"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-12",
+    "added_date": "2026-07-14 10:26:41",
+    "category": [
+      "Quantization",
+      "Long Context"
+    ],
+    "abstract": "Understanding which parameters are influential in Large Language Models (LLMs) is central to improving their efficiency, reliability, and interpretability. We introduce Weight-Adjusted Gradients (WAG), a simple yet effective approach for estimating parameter importance that explicitly captures the interaction between model weights and first-order gradient information and identifies parameters that disproportionately influence model behavior, such as those responsible for collapse phenomena in LLMs. Across a range of models and settings, we show that WAG surfaces a tiny but critical subset of parameters whose modification leads to dramatic degradation in performance, a failure mode that existing importance metrics overlook. These findings reveal a previously underexplored interplay between weights and gradients, suggesting that parameter importance cannot be fully understood through either signal alone. The surprising effectiveness of WAG points to fundamental structural properties of trained networks and motivates new open questions about the role of zeroth-order and first-order information in deep learning. We demonstrate the practical utility of WAG across multiple applications, including expert allocation in mixture-of-expert architectures, parameter-specific unlearning, mixed-precision quantization, and layer selection for knowledge editing. Our results position WAG as a unified approach for analyzing, debugging, and controlling LLMs, and opens new directions for principled model-level interpretation.",
+    "url": "https://arxiv.org/abs/2607.10803v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Understanding which parameters are influential in Large Language Models (LLMs) is central to improving their efficiency, reliability, and interpretability.",
+        "We introduce Weight-Adjusted Gradients (WAG), a simple yet effective approach for estimating parameter importance that explicitly captures the interaction between model weights and first-order gradient information and identifies parameters that disproportionately influence model behavior, such as those responsible for collapse phenomena in LLMs."
+      ],
+      "Motivation": [
+        "The surprising effectiveness of WAG points to fundamental structural properties of trained networks and motivates new open questions about the role of zeroth-order and first-order information in deep learning."
+      ],
+      "Key Idea": [
+        "We introduce Weight-Adjusted Gradients (WAG), a simple yet effective approach for estimating parameter importance that explicitly captures the interaction between model weights and first-order gradient information and identifies parameters that disproportionately influence model behavior, such as those responsible for collapse phenomena in LLMs."
+      ],
+      "Experimental Results": [
+        "Understanding which parameters are influential in Large Language Models (LLMs) is central to improving their efficiency, reliability, and interpretability."
+      ],
+      "Data analysis": [
+        "These findings reveal a previously underexplored interplay between weights and gradients, suggesting that parameter importance cannot be fully understood through either signal alone."
+      ],
+      "Discussion (e.g., future work)": [
+        "The surprising effectiveness of WAG points to fundamental structural properties of trained networks and motivates new open questions about the role of zeroth-order and first-order information in deep learning."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization, Long Context in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.10803v1"
       ]
     }
   },
