@@ -99780,6 +99780,56 @@
       ]
     }
   },
+  "partitionpromptaggregatestatisticalselfconsistencyinlanguagemodels": {
+    "paper_id": "arxiv-2607.15277v1",
+    "source": "arXiv",
+    "title": "Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models",
+    "authors": [
+      "Patrik Wolf",
+      "Thomas Kleine Buening",
+      "Andreas Krause",
+      "Celestine Mendler-Dünner"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-16",
+    "added_date": "2026-07-18 10:27:43",
+    "category": [
+      "Long Context",
+      "Inference Optimization"
+    ],
+    "abstract": "In-context learning is commonly interpreted as a form of conditional inference, in which the prompt specifies a context and the model's output is treated as an estimate of the corresponding conditional distribution. If this interpretation holds, then LLM estimates should satisfy basic probabilistic identities. In particular, the law of total probability asserts that prior-weighted conditional distributions aggregate into population-level marginals over any valid partition of the population. In this work, we investigate to what extent LLM estimates adhere to this self-consistency principle. We use binary trees as an evaluation scaffold to recursively partition a population into increasingly fine-grained subpopulations. We then prompt LLMs with verbalized subpopulation descriptions in context, aggregate the resulting estimates back into population-level estimates, and compare them across partitions of varying granularity. Applying this protocol across problem domains and state-of-the-art frontier models, we show widespread violations of basic consistency properties. An in-depth study of persona prompting reveals a pattern we call the macro fallacy: estimates reconstructed from more fine-grained subpopulation responses are often better aligned with human reference data than direct population-level estimates. This effect persists across variations in tree structure and estimation task, and can be partially recovered through implicit prompting. Together, these findings suggest that models possess relevant subpopulation knowledge but do not reliably propagate it into aggregate estimates. This gap establishes statistical self-consistency as an unsaturated, reference-free criterion for evaluating LLMs.",
+    "url": "https://arxiv.org/abs/2607.15277v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "In-context learning is commonly interpreted as a form of conditional inference, in which the prompt specifies a context and the model's output is treated as an estimate of the corresponding conditional distribution.",
+        "If this interpretation holds, then LLM estimates should satisfy basic probabilistic identities."
+      ],
+      "Motivation": [
+        "Applying this protocol across problem domains and state-of-the-art frontier models, we show widespread violations of basic consistency properties."
+      ],
+      "Key Idea": [
+        "If this interpretation holds, then LLM estimates should satisfy basic probabilistic identities."
+      ],
+      "Experimental Results": [
+        "We then prompt LLMs with verbalized subpopulation descriptions in context, aggregate the resulting estimates back into population-level estimates, and compare them across partitions of varying granularity."
+      ],
+      "Data analysis": [
+        "An in-depth study of persona prompting reveals a pattern we call the macro fallacy: estimates reconstructed from more fine-grained subpopulation responses are often better aligned with human reference data than direct population-level estimates."
+      ],
+      "Discussion (e.g., future work)": [
+        "We use binary trees as an evaluation scaffold to recursively partition a population into increasingly fine-grained subpopulations."
+      ],
+      "Significance of this study": [
+        "This work contributes to Long Context, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.15277v1"
+      ]
+    }
+  },
   "pathmarkprotectingintellectualpropertyofmixtureofexpertllmsviapathwatermarks": {
     "paper_id": "arxiv-2607.03688v1",
     "source": "arXiv",
