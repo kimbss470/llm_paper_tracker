@@ -4158,6 +4158,54 @@
       ]
     }
   },
+  "afuzzyrulebasedneurosymbolicapproachforpipeseveritypredictioninsewernetworks": {
+    "paper_id": "arxiv-2607.28481v1",
+    "source": "arXiv",
+    "title": "A Fuzzy Rule-based Neuro-Symbolic Approach for Pipe Severity Prediction in Sewer Networks",
+    "authors": [
+      "Ngoc Thai Le",
+      "Thanh Ma",
+      "Umberto Straccia"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Standard automated sewer pipe severity assessment relies on direct image classification, creating a \"black box\" where the link between visual defects and final severity scores remains implicit. This study introduces a modular, fuzzy rule-based neuro-symbolic framework that bridges this gap by decoupling neural perception from symbolic reasoning. The perception module utilizes a Swin Transformer to predict 14 multilabel inspection CODE degrees directly from images. For reasoning, a DT, specifically Weka's J48, algorithm is trained on ground-truth CODEs and severity labels, and its paths are converted into 19 fixed IF--THEN rules. Inference operates via fuzzy logic: t-norm activations from CODE conditions are weighted by rule confidence and combined with corresponding s-norms to produce interpretable class evidence. We assessed Product, Łukasiewicz, and Hamacher operator pairs using a dataset of 3,244 images spanning five highly imbalanced severity classes. Ground-truth labels were robustly generated via consensus from five independent large language models analyzing original inspector notes. Our results show an improvement of accuracy, balanced accuracy, Macro F1 and MCC by 17.9%, 12.2%, 23.0%, and 17.3%, respectively, over image-only based classification. Overall, the framework combines competitive class-balanced performance with traceable reasoning from predicted CODE degrees to rule supports and severity evidence.",
+    "url": "https://arxiv.org/abs/2607.28481v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Standard automated sewer pipe severity assessment relies on direct image classification, creating a \"black box\" where the link between visual defects and final severity scores remains implicit.",
+        "This study introduces a modular, fuzzy rule-based neuro-symbolic framework that bridges this gap by decoupling neural perception from symbolic reasoning."
+      ],
+      "Motivation": [
+        "Standard automated sewer pipe severity assessment relies on direct image classification, creating a \"black box\" where the link between visual defects and final severity scores remains implicit."
+      ],
+      "Key Idea": [
+        "This study introduces a modular, fuzzy rule-based neuro-symbolic framework that bridges this gap by decoupling neural perception from symbolic reasoning."
+      ],
+      "Experimental Results": [
+        "Our results show an improvement of accuracy, balanced accuracy, Macro F1 and MCC by 17.9%, 12.2%, 23.0%, and 17.3%, respectively, over image-only based classification."
+      ],
+      "Data analysis": [
+        "We assessed Product, Łukasiewicz, and Hamacher operator pairs using a dataset of 3,244 images spanning five highly imbalanced severity classes."
+      ],
+      "Discussion (e.g., future work)": [
+        "Inference operates via fuzzy logic: t-norm activations from CODE conditions are weighted by rule confidence and combined with corresponding s-norms to produce interpretable class evidence."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28481v1"
+      ]
+    }
+  },
   "againstthemonolithicwirelessworldmodelwhynextgneedscomposableandagenticintelligence": {
     "paper_id": "arxiv-2605.16689v1",
     "source": "arXiv",
@@ -23375,6 +23423,58 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.17110v1"
+      ]
+    }
+  },
+  "capturingtokentendenciesfortrainingfreetokenpruninginmultimodallargelanguagemodels": {
+    "paper_id": "arxiv-2607.28341v1",
+    "source": "arXiv",
+    "title": "Capturing Token Tendencies for Training-Free Token Pruning in Multimodal Large Language Models",
+    "authors": [
+      "Jie Ma",
+      "Zhike Qiu",
+      "Jie Gao",
+      "Jiayi Ji",
+      "Qian Chen",
+      "Xiaoshuai Sun",
+      "Rongrong Ji"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "While visual token pruning is essential for efficient Multimodal Large Language Models (MLLMs), existing training-free methods suffer from a critical limitation: they rely on static, instantaneous heuristics to perform irreversible filtering. This approach ignores the hierarchical nature of MLLMs, where token importance often evolves dynamically rather than remaining fixed across layers. Consequently, tokens essential for deep-layer reasoning are often prematurely discarded by shallow-layer estimates. To address this, we propose Trend-aware Pruning, a novel framework that elevates pruning from a local snapshot decision to a temporal trajectory modeling problem. Instead of relying on isolated scores, our method captures the momentum of attention flow. This enables a dynamic rectification mechanism that selectively reactivates \"late-blooming\" tokens, those initially undervalued but exhibiting rising semantic importance, thereby preventing the loss of critical visual cues. Extensive experiments demonstrate that our approach achieves a superior efficiency-performance trade-off across diverse multimodal tasks. Notably, it reduces visual tokens by over 77.8%, retaining only approximately 23 tokens in the final layer while maintaining competitive performance, offering a robust and reversible solution for high-efficiency multimodal inference.",
+    "url": "https://arxiv.org/abs/2607.28341v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "While visual token pruning is essential for efficient Multimodal Large Language Models (MLLMs), existing training-free methods suffer from a critical limitation: they rely on static, instantaneous heuristics to perform irreversible filtering.",
+        "This approach ignores the hierarchical nature of MLLMs, where token importance often evolves dynamically rather than remaining fixed across layers."
+      ],
+      "Motivation": [
+        "To address this, we propose Trend-aware Pruning, a novel framework that elevates pruning from a local snapshot decision to a temporal trajectory modeling problem."
+      ],
+      "Key Idea": [
+        "While visual token pruning is essential for efficient Multimodal Large Language Models (MLLMs), existing training-free methods suffer from a critical limitation: they rely on static, instantaneous heuristics to perform irreversible filtering."
+      ],
+      "Experimental Results": [
+        "Extensive experiments demonstrate that our approach achieves a superior efficiency-performance trade-off across diverse multimodal tasks."
+      ],
+      "Data analysis": [
+        "To address this, we propose Trend-aware Pruning, a novel framework that elevates pruning from a local snapshot decision to a temporal trajectory modeling problem."
+      ],
+      "Discussion (e.g., future work)": [
+        "While visual token pruning is essential for efficient Multimodal Large Language Models (MLLMs), existing training-free methods suffer from a critical limitation: they rely on static, instantaneous heuristics to perform irreversible filtering."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28341v1"
       ]
     }
   },
@@ -58182,7 +58282,7 @@
     }
   },
   "fromfoundtodesignedconceptsasadesignaxisforlargelanguagemodels": {
-    "paper_id": "arxiv-2607.26825v1",
+    "paper_id": "arxiv-2607.26825v2",
     "source": "arXiv",
     "title": "From Found to Designed: Concepts as a Design Axis for Large Language Models",
     "authors": [
@@ -58196,8 +58296,8 @@
     "category": [
       "Inference Optimization"
     ],
-    "abstract": "Large language models (LLMs) encode rich concept-like information, but represent it implicitly through distributed statistical associations rather than as explicit, structured, compositional concepts. Consequently, concept-level structure is typically \\emph{found} rather than \\emph{designed}: it is recovered after training through probing or dictionary learning, with no architectural guarantee of stability, compositionality, controllability, or alignment with human conceptual organization. We argue that concepts should instead be treated as a design axis for LLMs, and map the design space along two dimensions: the pipeline stage at which concept structure is introduced (training objective, core architecture, inference, or post-hoc interpretation), and whether that structure is internally derived from the model's own representations or grounded in external resources. This taxonomy reveals three broad patterns: inference-time approaches remain comparatively underexplored, related ideas have developed largely in isolation across pipeline stages, and externally grounded methods span the entire pipeline despite often being described under different terminology. Together, these observations motivate moving beyond recovering concept-like structure from trained models toward designing LLMs with explicit conceptual representations.",
-    "url": "https://arxiv.org/abs/2607.26825v1",
+    "abstract": "Large language models (LLMs) encode rich concept-like information, but represent it implicitly through distributed statistical associations rather than as explicit, structured, compositional concepts. Consequently, concept-level structure is typically \\emph{found} rather than \\emph{designed}: it is recovered after training through probing or dictionary learning, with no architectural guarantee of stability, compositionality, controllability, or alignment with human conceptual organization. We organize concept-aware interventions along two dimensions: whether concept structure is internally induced or externally grounded, and the stage of the pipeline where it is introduced. This taxonomy reveals three broad patterns: inference-time approaches remain comparatively underexplored, related ideas have developed largely in isolation across pipeline stages, and externally grounded methods span the entire pipeline despite often being described under different terminology. Together, these observations motivate moving beyond recovering concept-like structure from trained models toward designing LLMs with explicit conceptual representations.",
+    "url": "https://arxiv.org/abs/2607.26825v2",
     "doi": null,
     "summary": {
       "Summary": [
@@ -58211,7 +58311,7 @@
         "This taxonomy reveals three broad patterns: inference-time approaches remain comparatively underexplored, related ideas have developed largely in isolation across pipeline stages, and externally grounded methods span the entire pipeline despite often being described under different terminology."
       ],
       "Experimental Results": [
-        "We argue that concepts should instead be treated as a design axis for LLMs, and map the design space along two dimensions: the pipeline stage at which concept structure is introduced (training objective, core architecture, inference, or post-hoc interpretation), and whether that structure is internally derived from the model's own representations or grounded in external resources."
+        "We organize concept-aware interventions along two dimensions: whether concept structure is internally induced or externally grounded, and the stage of the pipeline where it is introduced."
       ],
       "Data analysis": [
         "This taxonomy reveals three broad patterns: inference-time approaches remain comparatively underexplored, related ideas have developed largely in isolation across pipeline stages, and externally grounded methods span the entire pipeline despite often being described under different terminology."
@@ -58223,7 +58323,7 @@
         "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
       ],
       "Useful references to consider": [
-        "Source metadata page: https://arxiv.org/abs/2607.26825v1"
+        "Source metadata page: https://arxiv.org/abs/2607.26825v2"
       ]
     }
   },
@@ -92394,6 +92494,57 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.21770v1"
+      ]
+    }
+  },
+  "mantamultiagentnetworktopologyadaptationforselfevolvingmultiagentsystems": {
+    "paper_id": "arxiv-2607.28527v1",
+    "source": "arXiv",
+    "title": "MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems",
+    "authors": [
+      "Mao-xun Huang",
+      "Jerry Wang",
+      "Yi-Cheng Lai",
+      "Zhengxin Zhang",
+      "Claire Cardie",
+      "Hen-Hsen Huang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Large language model-based multi-agent systems improve complex problem solving through task decomposition, agent specialization, information exchange, and intermediate validation. However, existing systems typically treat communication topology as a fixed design choice or an offline optimization target. We introduce MANTA, a framework for Multi-Agent Network Topology Adaptation that enables communication structures to self-evolve at inference time. Before execution, MANTA initializes a task-conditioned topology from prior structural experience. During deployment, it monitors collaboration traces and applies bounded structural updates when the current organization becomes insufficient. These updates can modify agent roles, communication links, execution order, information visibility, and validation pathways while preserving the task interface and agent budget. We evaluate MANTA against representative single-agent and multi-agent baselines on five benchmarks spanning information seeking, tool use, planning, workflow execution, and mathematical reasoning. MANTA achieves the highest average score of 74.0, outperforming the strongest baseline by 5.8 percentage points and obtaining the best result on PlanCraft. These results show that inference-time self-improvement can extend to the architecture of collaboration itself.",
+    "url": "https://arxiv.org/abs/2607.28527v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large language model-based multi-agent systems improve complex problem solving through task decomposition, agent specialization, information exchange, and intermediate validation.",
+        "However, existing systems typically treat communication topology as a fixed design choice or an offline optimization target."
+      ],
+      "Motivation": [
+        "Large language model-based multi-agent systems improve complex problem solving through task decomposition, agent specialization, information exchange, and intermediate validation."
+      ],
+      "Key Idea": [
+        "We introduce MANTA, a framework for Multi-Agent Network Topology Adaptation that enables communication structures to self-evolve at inference time."
+      ],
+      "Experimental Results": [
+        "Large language model-based multi-agent systems improve complex problem solving through task decomposition, agent specialization, information exchange, and intermediate validation."
+      ],
+      "Data analysis": [
+        "Before execution, MANTA initializes a task-conditioned topology from prior structural experience."
+      ],
+      "Discussion (e.g., future work)": [
+        "During deployment, it monitors collaboration traces and applies bounded structural updates when the current organization becomes insufficient."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28527v1"
       ]
     }
   },
@@ -132195,6 +132346,53 @@
       ]
     }
   },
+  "scafedataefficientscarclassificationwithllmgeneratedclinicalfeatureprograms": {
+    "paper_id": "arxiv-2607.28538v1",
+    "source": "arXiv",
+    "title": "ScaFE: Data-Efficient Scar Classification with LLM-Generated Clinical Feature Programs",
+    "authors": [
+      "Ruman Wang",
+      "Hangting Ye"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Classifying pathological scars from clinical photographs requires distinguishing keloids from hypertrophic scars despite limited expert-labeled data and substantial acquisition variation across hospitals. End-to-end image models remain data-dependent, whereas sending photographs to a hosted vision-language model (VLM) may conflict with local data-governance requirements and yields decisions that are difficult to reproduce and audit. We introduce ScaFE (Scar Feature Engineering), which transfers clinical knowledge from a large language model (LLM) into deterministic, executable feature programs instead of asking the model to diagnose images. A web-enabled LLM retrieves clinical evidence and synthesizes programs that measure visually assessable scar attributes. Candidate programs execute in a restricted local environment, and only aggregate validation statistics and feature-level SHAP summaries are returned for iterative repair and refinement; raw images and patient-level outputs remain local. A lightweight Random Forest then operates on the resulting structured representation. On 600 photographs from three hospitals under leave-one-site-out evaluation, ScaFE achieves 81.0% site-macro balanced accuracy, exceeding the strongest baseline, BiomedCLIP, by 10.0 percentage points. With only 10% of the development data, ScaFE retains 72.0% balanced accuracy and an 11.8-point lead. Iterative refinement also raises the executable-program rate from 66.7% to 95.0%, with verified evidence for 91.7% of the final features. These results show that LLM knowledge can support data-efficient, cross-site medical image classification through local and auditable feature programs rather than direct VLM decisions.",
+    "url": "https://arxiv.org/abs/2607.28538v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Classifying pathological scars from clinical photographs requires distinguishing keloids from hypertrophic scars despite limited expert-labeled data and substantial acquisition variation across hospitals.",
+        "End-to-end image models remain data-dependent, whereas sending photographs to a hosted vision-language model (VLM) may conflict with local data-governance requirements and yields decisions that are difficult to reproduce and audit."
+      ],
+      "Motivation": [
+        "Classifying pathological scars from clinical photographs requires distinguishing keloids from hypertrophic scars despite limited expert-labeled data and substantial acquisition variation across hospitals."
+      ],
+      "Key Idea": [
+        "We introduce ScaFE (Scar Feature Engineering), which transfers clinical knowledge from a large language model (LLM) into deterministic, executable feature programs instead of asking the model to diagnose images."
+      ],
+      "Experimental Results": [
+        "A lightweight Random Forest then operates on the resulting structured representation."
+      ],
+      "Data analysis": [
+        "Classifying pathological scars from clinical photographs requires distinguishing keloids from hypertrophic scars despite limited expert-labeled data and substantial acquisition variation across hospitals."
+      ],
+      "Discussion (e.g., future work)": [
+        "Candidate programs execute in a restricted local environment, and only aggregate validation statistics and feature-level SHAP summaries are returned for iterative repair and refinement; raw images and patient-level outputs remain local."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28538v1"
+      ]
+    }
+  },
   "scalablecircuitlearningforinterpretinglargelanguagemodels": {
     "paper_id": "arxiv-2606.16939v1",
     "source": "arXiv",
@@ -166862,6 +167060,57 @@
       ]
     }
   },
+  "viewmind3dmodularviewawareinferencefortrainingfree3dqa": {
+    "paper_id": "arxiv-2607.28442v1",
+    "source": "arXiv",
+    "title": "ViewMind3D: Modular View-Aware Inference for Training-Free 3D-QA",
+    "authors": [
+      "Ping-Kun Chiang",
+      "Kun-Ru Wu",
+      "Po-han Li",
+      "Sandeep Chinchali",
+      "Ufuk Topcu",
+      "Yu-Chee Tseng"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Recent advances in large language models (LLMs) and vision-language models (VLMs) have enabled new possibilities for 3D question answering (3D-QA), a key capability for embodied AI and robotic perception. However, most existing methods rely on 3D-specific training or fine-tuning with costly annotations, limiting their scalability and real-world applicability. We present \\textbf{ViewMind3D}, a fully training-free and modular framework for 3D spatial reasoning over multi-view observations of a scene without requiring complete 3D reconstruction. The framework decomposes the 3D-QA task into four interpretable components: (1) question-driven multi-view selection, (2) guided visual grounding with language-conditioned object cues, (3) spatial context encoding via a bird's-eye-view (BEV) viewpoint indicator, and (4) structured answer generation through role-based reasoning. This design enables structured, robust, and interpretable reasoning without requiring model tuning. Experimental results on ScanQA and SQA3D show that ViewMind3D achieves competitive performance compared to prior training-free and fine-tuned 3D-LLMs. In particular, our method improves performance on spatially grounded question types, such as ``What'' questions in SQA3D, while maintaining strong overall accuracy (50.8\\%) and achieving 73.4 CIDEr on ScanQA. These results demonstrate that effective 3D reasoning can be achieved through modular orchestration of general-purpose LLMs and VLMs for robotic perception in real-world environments.",
+    "url": "https://arxiv.org/abs/2607.28442v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Recent advances in large language models (LLMs) and vision-language models (VLMs) have enabled new possibilities for 3D question answering (3D-QA), a key capability for embodied AI and robotic perception.",
+        "However, most existing methods rely on 3D-specific training or fine-tuning with costly annotations, limiting their scalability and real-world applicability."
+      ],
+      "Motivation": [
+        "Recent advances in large language models (LLMs) and vision-language models (VLMs) have enabled new possibilities for 3D question answering (3D-QA), a key capability for embodied AI and robotic perception."
+      ],
+      "Key Idea": [
+        "However, most existing methods rely on 3D-specific training or fine-tuning with costly annotations, limiting their scalability and real-world applicability."
+      ],
+      "Experimental Results": [
+        "Experimental results on ScanQA and SQA3D show that ViewMind3D achieves competitive performance compared to prior training-free and fine-tuned 3D-LLMs."
+      ],
+      "Data analysis": [
+        "The framework decomposes the 3D-QA task into four interpretable components: (1) question-driven multi-view selection, (2) guided visual grounding with language-conditioned object cues, (3) spatial context encoding via a bird's-eye-view (BEV) viewpoint indicator, and (4) structured answer generation through role-based reasoning."
+      ],
+      "Discussion (e.g., future work)": [
+        "This design enables structured, robust, and interpretable reasoning without requiring model tuning."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28442v1"
+      ]
+    }
+  },
   "vilegalnlinaturallanguageinferenceforvietnameselegaltexts": {
     "paper_id": "arxiv-2605.00116v1",
     "source": "arXiv",
@@ -169789,6 +170038,61 @@
       ]
     }
   },
+  "whenderivedmeasurementsmisleadquantifyingandmitigatingllmovertrustwithprivilegedmodalityreliabilityevidence": {
+    "paper_id": "arxiv-2607.28421v1",
+    "source": "arXiv",
+    "title": "When Derived Measurements Mislead: Quantifying and Mitigating LLM Over-Trust with Privileged-Modality Reliability Evidence",
+    "authors": [
+      "Zongheng Guo",
+      "Tao Chen",
+      "Tianli Li",
+      "Mingzhe Cui",
+      "Yang Jiao",
+      "Lei Xie",
+      "Yi Pan",
+      "Xiao Hu",
+      "Manuela Ferrario"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "Distillation",
+      "Inference Optimization"
+    ],
+    "abstract": "Derived measurements increasingly enter large language model (LLM) pipelines as direct facts despite their instance-dependent validity. We define derived-feature over-trust (DFOT) as the failure in which a downstream LLM assigns such a measurement the epistemic status of a direct fact or uses it outside its valid scope. Using physiological sensing as a case study, D1 tests acceptance of a PPG-derived rhythm contradicted by offline ECG, whereas D2 tests rejection of an offline-confirmed reliable PPG rhythm under misleading severe history. ECG supplies training supervision and offline reference construction but is never shown to the LLM. Five estimands quantify this chain: conflict over-trust rate (COTR) and context-induced error rate (CIR) characterize D1/D2; correct repair rate (CRR) measures frozen-error repair; evidence-specific repair margin (ESRM) contrasts matched and patient-disjoint shuffled evidence; and utility harm rate (UHR) measures unnecessary verification among HIGH-reliability cases used without verification at baseline. The framework does not depend on a particular reliability generator. We demonstrate it on 50,000 paired PPG-ECG records using ECG-to-PPG privileged distillation as an illustrative baseline and PPG-only inference. On a protocol-locked 187-patient test, the baseline improves four repair and specificity endpoints by 1.82-6.69 percentage points, with all paired confidence intervals excluding zero; UHR increases by 0.67 percentage points (95% CI: -0.4 to +1.7). DFOT provides a common evaluation target for stronger mitigation methods. The code is available at https://github.com/Zongheng-Guo/When-Derived-Measurements-Mislead.",
+    "url": "https://arxiv.org/abs/2607.28421v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Derived measurements increasingly enter large language model (LLM) pipelines as direct facts despite their instance-dependent validity.",
+        "We define derived-feature over-trust (DFOT) as the failure in which a downstream LLM assigns such a measurement the epistemic status of a direct fact or uses it outside its valid scope."
+      ],
+      "Motivation": [
+        "Derived measurements increasingly enter large language model (LLM) pipelines as direct facts despite their instance-dependent validity."
+      ],
+      "Key Idea": [
+        "DFOT provides a common evaluation target for stronger mitigation methods."
+      ],
+      "Experimental Results": [
+        "On a protocol-locked 187-patient test, the baseline improves four repair and specificity endpoints by 1.82-6.69 percentage points, with all paired confidence intervals excluding zero; UHR increases by 0.67 percentage points (95% CI: -0.4 to +1.7)."
+      ],
+      "Data analysis": [
+        "ECG supplies training supervision and offline reference construction but is never shown to the LLM."
+      ],
+      "Discussion (e.g., future work)": [
+        "Five estimands quantify this chain: conflict over-trust rate (COTR) and context-induced error rate (CIR) characterize D1/D2; correct repair rate (CRR) measures frozen-error repair; evidence-specific repair margin (ESRM) contrasts matched and patient-disjoint shuffled evidence; and utility harm rate (UHR) measures unnecessary verification among HIGH-reliability cases used without verification at baseline."
+      ],
+      "Significance of this study": [
+        "This work contributes to Distillation, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28421v1"
+      ]
+    }
+  },
   "whendoesdelegationbeatmajorityadelegationbasedaggregatorformultisamplellminference": {
     "paper_id": "arxiv-2606.08098v2",
     "source": "arXiv",
@@ -172285,6 +172589,57 @@
       ]
     }
   },
+  "wideboostingadaptivellminferenceviatokenleveldynamicwidthpruning": {
+    "paper_id": "arxiv-2607.28418v1",
+    "source": "arXiv",
+    "title": "WIDE: Boosting Adaptive LLM Inference via Token-level Dynamic Width Pruning",
+    "authors": [
+      "Haozhe Hu",
+      "Hao Wu",
+      "Peiran Yin",
+      "Chao Han",
+      "Yunpu Ma",
+      "Xiaoyu Shen"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Pruning is a promising approach for improving the efficiency of LLMs. Existing static structured pruning methods are hardware-friendly and can deliver practical throughput gains, but their input-agnostic computation allocation often causes substantial accuracy degradation under aggressive sparsity. Recent dynamic sparsity methods improve quality retention by adapting computation to individual inputs, yet they remain largely limited to coarse-grained structural decisions and their practical acceleration under real-world inference scenarios remains challenging. To address these challenges, we present WIDE, the first end-to-end differentiable token-level dynamic width pruning framework designed for both prefill and decode scenarios. WIDE enables fine-grained computation allocation by allowing each token to dynamically select attention-head groups and FFN-channel groups, extending dynamic pruning beyond layer-level decisions to neuron-block-level granularity. Through a two-stage training pipeline, WIDE learns effective token-wise sparse execution patterns and achieves substantially better quality retention than existing approaches. To make such fine-grained dynamic pruning practical, we further propose a pruning--kernel co-design framework that decomposes dynamic sparsity acceleration into mask reordering, hardware-agnostic block-level skipping, and hardware-dependent intra-block skipping, enabling efficient execution across different granularities. At 50% sparsity, WIDE provides 55.1% performance boost when compared to the state-of-the-art dynamic depth pruning under calibration-only settings. Under prefill and decoding inference workloads, WIDE achieves close-to-theoretical kernel-level speedups of up to 1.98x for prefill and 4.95x for decoding, as well as 1.68x and 1.55x end-to-end acceleration. Our code is available at https://github.com/EIT-NLP/LLM-Pruning/tree/main/WIDE.",
+    "url": "https://arxiv.org/abs/2607.28418v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Pruning is a promising approach for improving the efficiency of LLMs.",
+        "Existing static structured pruning methods are hardware-friendly and can deliver practical throughput gains, but their input-agnostic computation allocation often causes substantial accuracy degradation under aggressive sparsity."
+      ],
+      "Motivation": [
+        "To address these challenges, we present WIDE, the first end-to-end differentiable token-level dynamic width pruning framework designed for both prefill and decode scenarios."
+      ],
+      "Key Idea": [
+        "Existing static structured pruning methods are hardware-friendly and can deliver practical throughput gains, but their input-agnostic computation allocation often causes substantial accuracy degradation under aggressive sparsity."
+      ],
+      "Experimental Results": [
+        "Pruning is a promising approach for improving the efficiency of LLMs."
+      ],
+      "Data analysis": [
+        "To address these challenges, we present WIDE, the first end-to-end differentiable token-level dynamic width pruning framework designed for both prefill and decode scenarios."
+      ],
+      "Discussion (e.g., future work)": [
+        "WIDE enables fine-grained computation allocation by allowing each token to dynamically select attention-head groups and FFN-channel groups, extending dynamic pruning beyond layer-level decisions to neuron-block-level granularity."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28418v1"
+      ]
+    }
+  },
   "wideningthegapexploitingllmquantizationviaoutlierinjection": {
     "paper_id": "arxiv-2605.15152v1",
     "source": "arXiv",
@@ -172635,6 +172990,57 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2607.08740v1"
+      ]
+    }
+  },
+  "wouldyouwalktothecarwashrevealingthesaliencebiasoflargelanguagemodelsincommonsensereasoning": {
+    "paper_id": "arxiv-2607.28478v1",
+    "source": "arXiv",
+    "title": "Would You Walk to the Car Wash? Revealing the Salience Bias of Large Language Models in Commonsense Reasoning",
+    "authors": [
+      "Zheng Wu",
+      "Chenhao Xue",
+      "Shijie Zheng",
+      "Yijie Lu",
+      "Cheng Yang",
+      "Zhuosheng Zhang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-07-30",
+    "added_date": "2026-08-01 10:52:57",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "As large language models (LLMs) continue to advance in complex reasoning tasks, they have learned to heavily prioritize explicit conditions provided in the input. However, in everyday commonsense reasoning, this mechanism exposes a critical vulnerability which we term Salience Bias: models become easily hijacked by useless explicit distractors (e.g., numerical values), leading them to ignore the implicit physical or commonsense prerequisites of a task. A critical open question is whether this failure reflects a genuine gap in commonsense knowledge or merely its suppression under misleading task framing. To investigate this, we construct the SaliTrap Benchmark, a high-quality dataset across four trap dimensions. Evaluating 12 state-of-the-art LLMs, we find that all mainstream models suffer significantly from salience bias, with severity scaling with distractor density and detecting the trap often decoupled from actually avoiding it. Crucially, by re-eliciting the same models with the task framing stripped away, we show that this is overwhelmingly a failure of \\textbf{knowledge suppression rather than knowledge absence}: a context-free knowledge probe alone recovers over 90\\% of sycophantic-compliance failures, revealing that the requisite commonsense is intrinsically present but actively crowded out by salient distractors that lure the model into over-compliant, unnecessary computation. Building on this diagnosis, we further show that lightweight, inference-time prompting alone substantially closes the gap without any retraining. Our findings relocate the bottleneck of commonsense reasoning failures from model competence to elicitation, and we release SaliTrap as a testbed for this blind spot. The codes are available at https://github.com/Wuzheng02/SaliTrap.",
+    "url": "https://arxiv.org/abs/2607.28478v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "As large language models (LLMs) continue to advance in complex reasoning tasks, they have learned to heavily prioritize explicit conditions provided in the input.",
+        "However, in everyday commonsense reasoning, this mechanism exposes a critical vulnerability which we term Salience Bias: models become easily hijacked by useless explicit distractors (e.g., numerical values), leading them to ignore the implicit physical or commonsense prerequisites of a task."
+      ],
+      "Motivation": [
+        "As large language models (LLMs) continue to advance in complex reasoning tasks, they have learned to heavily prioritize explicit conditions provided in the input."
+      ],
+      "Key Idea": [
+        "However, in everyday commonsense reasoning, this mechanism exposes a critical vulnerability which we term Salience Bias: models become easily hijacked by useless explicit distractors (e.g., numerical values), leading them to ignore the implicit physical or commonsense prerequisites of a task."
+      ],
+      "Experimental Results": [
+        "To investigate this, we construct the SaliTrap Benchmark, a high-quality dataset across four trap dimensions."
+      ],
+      "Data analysis": [
+        "To investigate this, we construct the SaliTrap Benchmark, a high-quality dataset across four trap dimensions."
+      ],
+      "Discussion (e.g., future work)": [
+        "Evaluating 12 state-of-the-art LLMs, we find that all mainstream models suffer significantly from salience bias, with severity scaling with distractor density and detecting the trap often decoupled from actually avoiding it."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2607.28478v1"
       ]
     }
   },
