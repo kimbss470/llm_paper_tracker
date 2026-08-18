@@ -19168,6 +19168,55 @@
       ]
     }
   },
+  "beyondcapacityscalablemoellminferenceviahighbandwidthflashwithdirectgpuandhbmpaths": {
+    "paper_id": "arxiv-2608.14333v1",
+    "source": "arXiv",
+    "title": "Beyond Capacity: Scalable MoE LLM Inference via High-Bandwidth Flash with Direct GPU and HBM Paths",
+    "authors": [
+      "Seeyeon Kim",
+      "Juhyeong Jin",
+      "Joo-Young Kim"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "MoE",
+      "Inference Optimization"
+    ],
+    "abstract": "Modern mixture-of-experts (MoE) language models increasingly strain the capacity and cost efficiency of high-bandwidth memory (HBM), as rapidly growing expert weights must be provisioned close to GPUs. High-bandwidth flash (HBF) offers substantially greater capacity, but conventional designs typically deliver HBF-resident expert weights to the GPU through HBM, leaving an additional direct GPU-HBF connection underutilized. We explore an HBF organization that simultaneously exploits two independent expert-delivery routes: a direct path that transfers expert weights from HBF to the GPU and a relay path that transfers them from HBF through the HBM base die to the GPU. Whole experts are assigned to one of the two routes, and transfers over both routes proceed concurrently, increasing aggregate expert-delivery bandwidth without replicating expert weights or introducing a shared relay bottleneck. Early expert determination identifies upcoming experts ahead of their conventional execution point, allowing HBF read latency to overlap with preceding computation, while separate management of immutable expert weights and mutable KV-cache data reduces interference between the two traffic classes. We evaluate the architecture using an event-driven continuous-batching LLM serving simulator with empirically measured GPU compute latencies. Across representative MoE workloads, concurrently utilizing the direct GPU-HBF and HBF-HBM-GPU routes consistently improves expert-delivery efficiency over designs restricted to either route alone. For a representative workload, the proposed architecture can achieve 1.94$\\times$ higher throughput and 1.90$\\times$ end-to-end speedup over a design that delivers all HBF-resident expert weights to the GPU through the HBM base die.",
+    "url": "https://arxiv.org/abs/2608.14333v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Modern mixture-of-experts (MoE) language models increasingly strain the capacity and cost efficiency of high-bandwidth memory (HBM), as rapidly growing expert weights must be provisioned close to GPUs.",
+        "High-bandwidth flash (HBF) offers substantially greater capacity, but conventional designs typically deliver HBF-resident expert weights to the GPU through HBM, leaving an additional direct GPU-HBF connection underutilized."
+      ],
+      "Motivation": [
+        "Modern mixture-of-experts (MoE) language models increasingly strain the capacity and cost efficiency of high-bandwidth memory (HBM), as rapidly growing expert weights must be provisioned close to GPUs."
+      ],
+      "Key Idea": [
+        "High-bandwidth flash (HBF) offers substantially greater capacity, but conventional designs typically deliver HBF-resident expert weights to the GPU through HBM, leaving an additional direct GPU-HBF connection underutilized."
+      ],
+      "Experimental Results": [
+        "Across representative MoE workloads, concurrently utilizing the direct GPU-HBF and HBF-HBM-GPU routes consistently improves expert-delivery efficiency over designs restricted to either route alone."
+      ],
+      "Data analysis": [
+        "Early expert determination identifies upcoming experts ahead of their conventional execution point, allowing HBF read latency to overlap with preceding computation, while separate management of immutable expert weights and mutable KV-cache data reduces interference between the two traffic classes."
+      ],
+      "Discussion (e.g., future work)": [
+        "Early expert determination identifies upcoming experts ahead of their conventional execution point, allowing HBF read latency to overlap with preceding computation, while separate management of immutable expert weights and mutable KV-cache data reduces interference between the two traffic classes."
+      ],
+      "Significance of this study": [
+        "This work contributes to MoE, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14333v1"
+      ]
+    }
+  },
   "beyondcorrectnessbenchmarkingandaligningresponsebehaviorsinhybridthinkingmllms": {
     "paper_id": "arxiv-2608.12781v1",
     "source": "arXiv",
@@ -22190,6 +22239,56 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2607.25993v1"
+      ]
+    }
+  },
+  "biastracelinkingreasoningbehaviourstobiasedoutputsinllms": {
+    "paper_id": "arxiv-2608.14161v1",
+    "source": "arXiv",
+    "title": "BiasTrace: Linking Reasoning Behaviours to Biased Outputs in LLMs",
+    "authors": [
+      "Varsha Ramineni",
+      "Hossein A. Rahmani",
+      "Jerome Ramos",
+      "Karin Sevegnani",
+      "Emine Yilmaz"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "LLMs exhibit social biases that can produce inaccurate and discriminatory inferences, posing risks in high-stakes applications. While prior work has made progress in measuring and mitigating bias, it largely focuses on final outputs of models, with limited understanding of the mechanisms that produce biased outcomes. Recent advances in LLM reasoning offers a new lens for investigating bias, yet the link between reasoning and bias remains poorly understood. Existing approaches focus primarily on final answer correctness or explicitly biased language, overlooking different behaviours in reasoning that can drive biased outcomes. We introduce BiasTrace, an annotation scheme for labelling reasoning behaviours in model-generated traces and linking them to biased outcomes. BiasTrace captures bias-specific behaviours (e.g., unsupported demographic assumptions) as well as general reasoning patterns that may implicitly contribute to bias (e.g. overthinking). We apply BiasTrace to reasoning traces in bias-sensitive contexts, scaled using validated LLM-as-a-judge methods, producing a large annotated dataset. Our analysis shows that biased outputs often stem from subtle reasoning behaviours rather than explicitly biased language, and that reasoning-level annotations improve bias detection. We further show that BiasTrace behaviours can be exploited for inference-time mitigation. These findings underscore the importance of examining a broader range of reasoning patterns to better understand bias in LLMs.",
+    "url": "https://arxiv.org/abs/2608.14161v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "LLMs exhibit social biases that can produce inaccurate and discriminatory inferences, posing risks in high-stakes applications.",
+        "While prior work has made progress in measuring and mitigating bias, it largely focuses on final outputs of models, with limited understanding of the mechanisms that produce biased outcomes."
+      ],
+      "Motivation": [
+        "LLMs exhibit social biases that can produce inaccurate and discriminatory inferences, posing risks in high-stakes applications."
+      ],
+      "Key Idea": [
+        "We introduce BiasTrace, an annotation scheme for labelling reasoning behaviours in model-generated traces and linking them to biased outcomes."
+      ],
+      "Experimental Results": [
+        "Our analysis shows that biased outputs often stem from subtle reasoning behaviours rather than explicitly biased language, and that reasoning-level annotations improve bias detection."
+      ],
+      "Data analysis": [
+        "We apply BiasTrace to reasoning traces in bias-sensitive contexts, scaled using validated LLM-as-a-judge methods, producing a large annotated dataset."
+      ],
+      "Discussion (e.g., future work)": [
+        "We introduce BiasTrace, an annotation scheme for labelling reasoning behaviours in model-generated traces and linking them to biased outcomes."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14161v1"
       ]
     }
   },
@@ -28751,6 +28850,57 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2606.13001v1"
+      ]
+    }
+  },
+  "cforceboostingparalleldecodingfordllmsviaconsistencyforcing": {
+    "paper_id": "arxiv-2608.13925v1",
+    "source": "arXiv",
+    "title": "CForce: Boosting Parallel Decoding for dLLMs via Consistency Forcing",
+    "authors": [
+      "Yuji Ren",
+      "Chenkai Xu",
+      "Zhuocheng Gong",
+      "Jianguo Li",
+      "Zhijie Deng"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Distillation",
+      "Inference Optimization"
+    ],
+    "abstract": "Diffusion large language models (dLLMs) accelerate language generation by predicting multiple masks in a single forward pass. However, existing dLLMs can suffer from unreliable predictions in early denoising stages under aggressive parallelism strategies, leading to errors that can propagate to later stages. To tackle this issue, we present Consistency Forcing (CForce) for dLLMs, a distillation method to force the mask predictions of early stages to align with those of later stages. CForce trains the model on pre-collected self-rollout trajectories, thereby improving training-inference alignment. We introduce Confidence Adaptive KL Divergence as a distillation objective to conjoin the merits of forward and reverse KL. We further provide a theoretical analysis for the consistency objective to explain why CForce can approximately minimize the prediction error of early stages. Critically, the same formulation applies to both mask-to-token decoding and edit-capable decoding; in the edit-capable case, later token-to-token refinements provide additional supervision for earlier masked-state predictions. Experiments on non-edit and edit-capable LLaDA models show improved speed-quality trade-offs, especially under high-parallelism decoding budgets. Code is available at: https://github.com/inclusionAI/dFactory.",
+    "url": "https://arxiv.org/abs/2608.13925v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Diffusion large language models (dLLMs) accelerate language generation by predicting multiple masks in a single forward pass.",
+        "However, existing dLLMs can suffer from unreliable predictions in early denoising stages under aggressive parallelism strategies, leading to errors that can propagate to later stages."
+      ],
+      "Motivation": [
+        "Diffusion large language models (dLLMs) accelerate language generation by predicting multiple masks in a single forward pass."
+      ],
+      "Key Idea": [
+        "To tackle this issue, we present Consistency Forcing (CForce) for dLLMs, a distillation method to force the mask predictions of early stages to align with those of later stages."
+      ],
+      "Experimental Results": [
+        "CForce trains the model on pre-collected self-rollout trajectories, thereby improving training-inference alignment."
+      ],
+      "Data analysis": [
+        "We further provide a theoretical analysis for the consistency objective to explain why CForce can approximately minimize the prediction error of early stages."
+      ],
+      "Discussion (e.g., future work)": [
+        "We introduce Confidence Adaptive KL Divergence as a distillation objective to conjoin the merits of forward and reverse KL."
+      ],
+      "Significance of this study": [
+        "This work contributes to Distillation, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13925v1"
       ]
     }
   },
@@ -36289,6 +36439,59 @@
       ]
     }
   },
+  "corunpaddingissimpleandefficientfordeterministicllminference": {
+    "paper_id": "arxiv-2608.14376v1",
+    "source": "arXiv",
+    "title": "CoRun: Padding is Simple and Efficient for Deterministic LLM Inference",
+    "authors": [
+      "Shiju Zhao",
+      "Jiacheng Yang",
+      "Qihang Chen",
+      "Junhao Hu",
+      "Jiaqi Zheng",
+      "Guihai Chen",
+      "Xusheng Chen"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Long Context",
+      "Inference Optimization"
+    ],
+    "abstract": "Despite fixed sampling parameters and random seeds, Large Language Model (LLM) inference exhibits output inconsistency, which undermines downstream tasks such as model evaluation and reinforcement learning. A major source of this nondeterminism is batch-dependent GPU execution: dynamic input shapes change kernel tiling and floating-point reduction orders. Existing systems address this problem with batch-invariant kernels, but these kernels restrict optimized tiling and split reductions, increasing more than 2$\\times$ latency and reducing serving throughput by up to 74 %. This paper observes that although most kernels are not batch-invariant, they are position-invariant. Leveraging this property, we present CoRun, a scheduling-based system that achieves deterministic inference without requiring batch invariance. CoRun employs isolated prefill and fixed-shape batched decode to handle the two stages of LLM inference, respectively, leveraging CUDA graphs for efficient execution and simplified implementation. Experiments on LLMs with diverse architectures, including Qwen and DeepSeek, show that CoRun ensures determinism while improving throughput by 15-324 % over batch-invariant approaches, reducing time-to-first-token by 51.8 % and time-per-output-token by 48.6 % on average.",
+    "url": "https://arxiv.org/abs/2608.14376v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Despite fixed sampling parameters and random seeds, Large Language Model (LLM) inference exhibits output inconsistency, which undermines downstream tasks such as model evaluation and reinforcement learning.",
+        "A major source of this nondeterminism is batch-dependent GPU execution: dynamic input shapes change kernel tiling and floating-point reduction orders."
+      ],
+      "Motivation": [
+        "Existing systems address this problem with batch-invariant kernels, but these kernels restrict optimized tiling and split reductions, increasing more than 2$\\times$ latency and reducing serving throughput by up to 74 %."
+      ],
+      "Key Idea": [
+        "Leveraging this property, we present CoRun, a scheduling-based system that achieves deterministic inference without requiring batch invariance."
+      ],
+      "Experimental Results": [
+        "Experiments on LLMs with diverse architectures, including Qwen and DeepSeek, show that CoRun ensures determinism while improving throughput by 15-324 % over batch-invariant approaches, reducing time-to-first-token by 51.8 % and time-per-output-token by 48.6 % on average."
+      ],
+      "Data analysis": [
+        "This paper observes that although most kernels are not batch-invariant, they are position-invariant."
+      ],
+      "Discussion (e.g., future work)": [
+        "Leveraging this property, we present CoRun, a scheduling-based system that achieves deterministic inference without requiring batch invariance."
+      ],
+      "Significance of this study": [
+        "This work contributes to Long Context, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14376v1"
+      ]
+    }
+  },
   "cosaacceleratinglongcontextinferenceviaproxykernelcodesignedsparseattention": {
     "paper_id": "arxiv-2607.25291v1",
     "source": "arXiv",
@@ -39880,6 +40083,63 @@
       ]
     }
   },
+  "deamoeefficientmoestructureforfastsmallbatchdecoding": {
+    "paper_id": "arxiv-2608.14385v1",
+    "source": "arXiv",
+    "title": "DeaMoE: Efficient MoE Structure for Fast Small-Batch Decoding",
+    "authors": [
+      "Zewen Jin",
+      "Shen Fu",
+      "Zeping Duan",
+      "Shannon Wang",
+      "Weihao Wu",
+      "Chengjie Tang",
+      "Congkun Ai",
+      "Ping Gong",
+      "Zijian Dai",
+      "Youhui Bai",
+      "Cheng Li"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "MoE",
+      "Inference Optimization"
+    ],
+    "abstract": "Mixture-of-Experts (MoE) models have been widely adopted in real-time interactive applications such as coding assistants, real-time audio-video interaction systems. To meet the extremely low response latency requirements of these scenarios, practitioners commonly employ small-batch decoding, under which MoE inference becomes memory-bound and is severely bottlenecked by expert weight loading. However, this bottleneck has received limited attention, and existing solutions such as post-training weight compression or fine-grained expert design during pre-training either degrade model accuracy or introduce additional computation and communication overhead. To tackle this issue, we propose DeaMoE, a decoding-efficient MoE architecture, in which the experts are grouped into several departments, and the experts belonging to the same department share most parameters since they come from the same professional field, and additionally each expert contains a few private parameters to reflect its uniqueness. Moreover, we design customized two-stage routing strategy for DeaMoE to avoid redundant loading, under which DeaMoE greatly improves the efficiency during LLM decoding. Compared with vanilla MoE, DeaMoE reduces per-step loaded weights by up to 50.9% and achieves up to 1.33 end-to-end TPOT speedup for the pre-trained 7B model on A40, and up to 2.00x and 1.97x peak speedup for DeepSeek-V3 on A40 and H100 in microbenchmarks.",
+    "url": "https://arxiv.org/abs/2608.14385v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Mixture-of-Experts (MoE) models have been widely adopted in real-time interactive applications such as coding assistants, real-time audio-video interaction systems.",
+        "To meet the extremely low response latency requirements of these scenarios, practitioners commonly employ small-batch decoding, under which MoE inference becomes memory-bound and is severely bottlenecked by expert weight loading."
+      ],
+      "Motivation": [
+        "Mixture-of-Experts (MoE) models have been widely adopted in real-time interactive applications such as coding assistants, real-time audio-video interaction systems."
+      ],
+      "Key Idea": [
+        "To tackle this issue, we propose DeaMoE, a decoding-efficient MoE architecture, in which the experts are grouped into several departments, and the experts belonging to the same department share most parameters since they come from the same professional field, and additionally each expert contains a few private parameters to reflect its uniqueness."
+      ],
+      "Experimental Results": [
+        "Moreover, we design customized two-stage routing strategy for DeaMoE to avoid redundant loading, under which DeaMoE greatly improves the efficiency during LLM decoding."
+      ],
+      "Data analysis": [
+        "To tackle this issue, we propose DeaMoE, a decoding-efficient MoE architecture, in which the experts are grouped into several departments, and the experts belonging to the same department share most parameters since they come from the same professional field, and additionally each expert contains a few private parameters to reflect its uniqueness."
+      ],
+      "Discussion (e.g., future work)": [
+        "Moreover, we design customized two-stage routing strategy for DeaMoE to avoid redundant loading, under which DeaMoE greatly improves the efficiency during LLM decoding."
+      ],
+      "Significance of this study": [
+        "This work contributes to MoE, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14385v1"
+      ]
+    }
+  },
   "deattributetoforgetforllmunlearning": {
     "paper_id": "arxiv-2605.30919v1",
     "source": "arXiv",
@@ -42079,6 +42339,60 @@
       ]
     }
   },
+  "demystifyingagentskillswhytheyworkuntiltheydont": {
+    "paper_id": "arxiv-2608.14036v1",
+    "source": "arXiv",
+    "title": "Demystifying Agent Skills: Why They Work-Until They Don't",
+    "authors": [
+      "Zhiyuan Jiang",
+      "Fangrui Huang",
+      "Hanwen Xing",
+      "Xander Wu",
+      "Yipeng Gao",
+      "Rui Cao",
+      "Mengdi Wang",
+      "Shilong Liu",
+      "Yijiang Li"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Skills have emerged as a practical and effective approach for enhancing LLM agents at inference time through structured packages of knowledge. However, existing evaluations largely measure whether skills improve aggregated task success, leaving a more fundamental question underexplored: \\emph{\\textbf{When do skills help, why do they work, and where do they fail?}} Through controlled experiments across various benchmarks, agent harnesses and LLMs, we isolate the effects of representation, outcome annotation, retrieval difficulty, and cross-framework robustness of skills. To further answer this question, we design a contrastive study that combines controlled quantitative experiments with paired trajectory analysis. We normalize 8,135 trial records from controlled experiments and retain 238 valid unique labels from 240 open-coded records. We consolidate these observations into a taxonomy of three high-level categories and twelve skill-use modes: skills work when noisy trajectories become procedural anchors that stabilize execution. Skills improve over Workflow Memory by 6.06 points in matched comparisons. Procedural anchoring accounts for 65.7\\% of skill cases, versus 4.5\\% for explicit knowledge injection, showing that skills stabilize action rather than inject missing facts. Retrieval is a separate bottleneck: as pools grow from 5 to 100, actual-use precision falls from 29.6\\% to 3.3\\%. Confusable distractors impair offline identification, yet downstream success remains stable; exact ground-truth invocation is neither sufficient nor necessary. Skills fail under brittle assumptions, incompatible contexts, or insufficient adaptation. These findings move evaluation beyond aggregate success rates and guide reliable self-evolving agents.",
+    "url": "https://arxiv.org/abs/2608.14036v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Skills have emerged as a practical and effective approach for enhancing LLM agents at inference time through structured packages of knowledge.",
+        "However, existing evaluations largely measure whether skills improve aggregated task success, leaving a more fundamental question underexplored: \\emph{\\textbf{When do skills help, why do they work, and where do they fail?}} Through controlled experiments across various benchmarks, agent harnesses and LLMs, we isolate the effects of representation, outcome annotation, retrieval difficulty, and cross-framework robustness of skills."
+      ],
+      "Motivation": [
+        "Skills have emerged as a practical and effective approach for enhancing LLM agents at inference time through structured packages of knowledge."
+      ],
+      "Key Idea": [
+        "However, existing evaluations largely measure whether skills improve aggregated task success, leaving a more fundamental question underexplored: \\emph{\\textbf{When do skills help, why do they work, and where do they fail?}} Through controlled experiments across various benchmarks, agent harnesses and LLMs, we isolate the effects of representation, outcome annotation, retrieval difficulty, and cross-framework robustness of skills."
+      ],
+      "Experimental Results": [
+        "However, existing evaluations largely measure whether skills improve aggregated task success, leaving a more fundamental question underexplored: \\emph{\\textbf{When do skills help, why do they work, and where do they fail?}} Through controlled experiments across various benchmarks, agent harnesses and LLMs, we isolate the effects of representation, outcome annotation, retrieval difficulty, and cross-framework robustness of skills."
+      ],
+      "Data analysis": [
+        "To further answer this question, we design a contrastive study that combines controlled quantitative experiments with paired trajectory analysis."
+      ],
+      "Discussion (e.g., future work)": [
+        "We consolidate these observations into a taxonomy of three high-level categories and twelve skill-use modes: skills work when noisy trajectories become procedural anchors that stabilize execution."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14036v1"
+      ]
+    }
+  },
   "demystifyingnumericalinstabilityinllminferenceachievingreproducibleinferenceformissioncriticaltaskswithheal": {
     "paper_id": "arxiv-2606.21023v1",
     "source": "arXiv",
@@ -44043,7 +44357,7 @@
     }
   },
   "discoveringefficientandexplainablecommunicationtopologiesforllmbasedmultiagentsystemsviacausalinference": {
-    "paper_id": "arxiv-2608.12921v1",
+    "paper_id": "arxiv-2608.12921v2",
     "source": "arXiv",
     "title": "Discovering Efficient and Explainable Communication Topologies for LLM-based Multi-Agent Systems via Causal Inference",
     "authors": [
@@ -44064,7 +44378,7 @@
       "Inference Optimization"
     ],
     "abstract": "The performance of large language model (LLM)-based multi-agent systems (MAS) largely depends on effective communication topologies. Existing topology generation methods, however, typically learn communication topologies through black-box optimization driven solely by task-level rewards. While effective, such optimization provides little insight into why particular communication edges are selected, making it difficult to identify the critical communication subgraphs responsible for successful collaboration. To address this limitation, we propose E2-Explainer, a model-agnostic framework for providing interpretable explanations of communication topologies produced by arbitrary topology generators. Specifically, we formulate topology explanation as a causal attribution problem that identifies compact communication subgraphs supported by edge-level evidence of task preservation. We obtain this evidence with a Granger-style objective that measures how masking each communication channel changes the task outcome and the stability of the final response. The resulting budgeted subgraphs are then distilled into an amortized explainer, enabling efficient post-hoc explanation without repeated edge-level evaluations at deployment. Extensive experiments on multiple reasoning and coding benchmarks demonstrate that E2-Explainer identifies critical communication subgraphs that preserve successful collaboration. These subgraphs can also be executed directly to prune redundant communication edges, substantially reducing communication costs while maintaining competitive task performance.",
-    "url": "https://arxiv.org/abs/2608.12921v1",
+    "url": "https://arxiv.org/abs/2608.12921v2",
     "doi": null,
     "summary": {
       "Summary": [
@@ -44090,7 +44404,7 @@
         "This work contributes to Distillation, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
       ],
       "Useful references to consider": [
-        "Source metadata page: https://arxiv.org/abs/2608.12921v1"
+        "Source metadata page: https://arxiv.org/abs/2608.12921v2"
       ]
     }
   },
@@ -59565,6 +59879,60 @@
       ]
     }
   },
+  "exploringhighbandwidthflashformodernllminferenceopportunitiesandchallenges": {
+    "paper_id": "arxiv-2608.13868v1",
+    "source": "arXiv",
+    "title": "Exploring High-Bandwidth Flash for Modern LLM Inference: Opportunities and Challenges",
+    "authors": [
+      "Dowon Son",
+      "Yonggon Park",
+      "Hyunuk Cho",
+      "Hyungkyu Ham",
+      "Onur Mutlu",
+      "Sungjin Lee",
+      "Gwangsun Kim",
+      "Jisung Park"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "This work investigates the potential benefits and technical challenges of using high-bandwidth flash (HBF) for large language model (LLM) inference. HBF has gained increasing attention as a promising solution to mitigate memory-capacity bottlenecks in modern LLM-serving systems, but its benefits and challenges remain largely uninvestigated. To address this gap, we thoroughly analyze HBF-based LLM-serving systems under diverse system configurations and operating scenarios in which HBF serves as a main GPU-memory component to handle both reads and writes. Our analysis shows that, despite its limited write performance, HBF can significantly improve the batch size, throughput, and flexibility of LLM-serving systems while reducing the minimum GPU requirements, but realizing these benefits critically depends on sustaining HBM-comparable read bandwidth and requires significant endurance improvements.",
+    "url": "https://arxiv.org/abs/2608.13868v1",
+    "doi": "10.1109/LCA.2026.3705817",
+    "summary": {
+      "Summary": [
+        "This work investigates the potential benefits and technical challenges of using high-bandwidth flash (HBF) for large language model (LLM) inference.",
+        "HBF has gained increasing attention as a promising solution to mitigate memory-capacity bottlenecks in modern LLM-serving systems, but its benefits and challenges remain largely uninvestigated."
+      ],
+      "Motivation": [
+        "This work investigates the potential benefits and technical challenges of using high-bandwidth flash (HBF) for large language model (LLM) inference."
+      ],
+      "Key Idea": [
+        "HBF has gained increasing attention as a promising solution to mitigate memory-capacity bottlenecks in modern LLM-serving systems, but its benefits and challenges remain largely uninvestigated."
+      ],
+      "Experimental Results": [
+        "Our analysis shows that, despite its limited write performance, HBF can significantly improve the batch size, throughput, and flexibility of LLM-serving systems while reducing the minimum GPU requirements, but realizing these benefits critically depends on sustaining HBM-comparable read bandwidth and requires significant endurance improvements."
+      ],
+      "Data analysis": [
+        "Our analysis shows that, despite its limited write performance, HBF can significantly improve the batch size, throughput, and flexibility of LLM-serving systems while reducing the minimum GPU requirements, but realizing these benefits critically depends on sustaining HBM-comparable read bandwidth and requires significant endurance improvements."
+      ],
+      "Discussion (e.g., future work)": [
+        "Our analysis shows that, despite its limited write performance, HBF can significantly improve the batch size, throughput, and flexibility of LLM-serving systems while reducing the minimum GPU requirements, but realizing these benefits critically depends on sustaining HBM-comparable read bandwidth and requires significant endurance improvements."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13868v1",
+        "DOI: https://doi.org/10.1109/LCA.2026.3705817"
+      ]
+    }
+  },
   "exploringinteractionparadigmsforllmagentsinscientificvisualization": {
     "paper_id": "arxiv-2604.27996v1",
     "source": "arXiv",
@@ -61653,6 +62021,57 @@
       ]
     }
   },
+  "federatedpromptlearningaunifiedframeworkempiricalanalysisandfuturedirections": {
+    "paper_id": "arxiv-2608.13844v1",
+    "source": "arXiv",
+    "title": "Federated Prompt Learning: A Unified Framework, Empirical Analysis, and Future Directions",
+    "authors": [
+      "Qinglin Yang",
+      "Chen Qiu",
+      "Hongyuan Zhang",
+      "Pengdeng Li",
+      "Yuan Liu",
+      "Zhihong Tian"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Large language models (LLMs) have become core components of cloud-based intelligent services in academia and industry, yet their training and deployment are hindered by high computational costs, data centralization, and privacy concerns. Federated learning (FL) offers a decentralized training paradigm that enables clients to collaboratively train a learning model without sharing raw data, making it a promising solution for privacy-preserving LLM training and reasoning. This paper presents a comprehensive survey of federated prompt learning (FPL) to review recent advances in integrating the federated learning paradigm and large language models, answering the following research questions: RQ1: The fundamental motivations, characteristics, and enabling technologies of FPL, and how it differs from conventional FL and full-model federated fine-tuning; RQ2: The trade-offs FPL approaches exhibit in performance, communication efficiency, computational overhead, scalability, personalization, and heterogeneity handling; RQ3: The remaining security, privacy, robustness, and system challenges, along with key future research directions. To this end, we systematically examine existing FPL methods across the full model lifecycle: pre-training, fine-tuning, and practical applications, while discussing security, privacy, and robustness issues and summarizing existing defense mechanisms. Finally, we highlight open challenges and future directions, aiming to help readers understand how the insights drive research in FPL.",
+    "url": "https://arxiv.org/abs/2608.13844v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large language models (LLMs) have become core components of cloud-based intelligent services in academia and industry, yet their training and deployment are hindered by high computational costs, data centralization, and privacy concerns.",
+        "Federated learning (FL) offers a decentralized training paradigm that enables clients to collaboratively train a learning model without sharing raw data, making it a promising solution for privacy-preserving LLM training and reasoning."
+      ],
+      "Motivation": [
+        "This paper presents a comprehensive survey of federated prompt learning (FPL) to review recent advances in integrating the federated learning paradigm and large language models, answering the following research questions: RQ1: The fundamental motivations, characteristics, and enabling technologies of FPL, and how it differs from conventional FL and full-model federated fine-tuning; RQ2: The trade-offs FPL approaches exhibit in performance, communication efficiency, computational overhead, scalability, personalization, and heterogeneity handling; RQ3: The remaining security, privacy, robustness, and system challenges, along with key future research directions."
+      ],
+      "Key Idea": [
+        "To this end, we systematically examine existing FPL methods across the full model lifecycle: pre-training, fine-tuning, and practical applications, while discussing security, privacy, and robustness issues and summarizing existing defense mechanisms."
+      ],
+      "Experimental Results": [
+        "This paper presents a comprehensive survey of federated prompt learning (FPL) to review recent advances in integrating the federated learning paradigm and large language models, answering the following research questions: RQ1: The fundamental motivations, characteristics, and enabling technologies of FPL, and how it differs from conventional FL and full-model federated fine-tuning; RQ2: The trade-offs FPL approaches exhibit in performance, communication efficiency, computational overhead, scalability, personalization, and heterogeneity handling; RQ3: The remaining security, privacy, robustness, and system challenges, along with key future research directions."
+      ],
+      "Data analysis": [
+        "Large language models (LLMs) have become core components of cloud-based intelligent services in academia and industry, yet their training and deployment are hindered by high computational costs, data centralization, and privacy concerns."
+      ],
+      "Discussion (e.g., future work)": [
+        "This paper presents a comprehensive survey of federated prompt learning (FPL) to review recent advances in integrating the federated learning paradigm and large language models, answering the following research questions: RQ1: The fundamental motivations, characteristics, and enabling technologies of FPL, and how it differs from conventional FL and full-model federated fine-tuning; RQ2: The trade-offs FPL approaches exhibit in performance, communication efficiency, computational overhead, scalability, personalization, and heterogeneity handling; RQ3: The remaining security, privacy, robustness, and system challenges, along with key future research directions."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13844v1"
+      ]
+    }
+  },
   "federatedvariationalpreferencealignmentwithgumbelsoftmaxpriorforpersonalizeduserpreferences": {
     "paper_id": "arxiv-2605.30873v1",
     "source": "arXiv",
@@ -62323,6 +62742,54 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.12374v2"
+      ]
+    }
+  },
+  "findingvulnerabilitiesviallmaugmentedsemanticsawaretypechecking": {
+    "paper_id": "arxiv-2608.14533v1",
+    "source": "arXiv",
+    "title": "Finding Vulnerabilities via LLM-Augmented Semantics-Aware Type-Checking",
+    "authors": [
+      "Ruizhe Wang",
+      "Meng Xu",
+      "N. Asokan"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Vulnerability detection via static analysis traditionally relies on security experts encoding insecure coding patterns into algorithmic rules. However, this approach often focuses on syntactic patterns and overlooks deeper semantic information in the code, such as the meanings of variable and function names. As software systems grow more complex, modeling vulnerabilities using only syntactic rules becomes increasingly challenging. In this paper, we propose a semantics-aware approach to detecting software vulnerabilities. We present SETYPE, a semantics-aware type system that can be derived directly from source code based solely on the meanings of symbols and expressions in natural language. In the SETYPE type system, both type inference and checking are performed by Large Language Models (LLMs), and a failed type check indicates a potential vulnerability. We prototype PYSETYPE to demonstrate the feasibility of SETYPE for detecting vulnerabilities in Python web applications. Our evaluation on real-world applications achieves 87% detection precision and 88% detection accuracy. Using PYSETYPE, we identified 15 potential zero-day vulnerabilities, nine of which were confirmed by developers.",
+    "url": "https://arxiv.org/abs/2608.14533v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Vulnerability detection via static analysis traditionally relies on security experts encoding insecure coding patterns into algorithmic rules.",
+        "However, this approach often focuses on syntactic patterns and overlooks deeper semantic information in the code, such as the meanings of variable and function names."
+      ],
+      "Motivation": [
+        "Vulnerability detection via static analysis traditionally relies on security experts encoding insecure coding patterns into algorithmic rules."
+      ],
+      "Key Idea": [
+        "In this paper, we propose a semantics-aware approach to detecting software vulnerabilities."
+      ],
+      "Experimental Results": [
+        "As software systems grow more complex, modeling vulnerabilities using only syntactic rules becomes increasingly challenging."
+      ],
+      "Data analysis": [
+        "Vulnerability detection via static analysis traditionally relies on security experts encoding insecure coding patterns into algorithmic rules."
+      ],
+      "Discussion (e.g., future work)": [
+        "We present SETYPE, a semantics-aware type system that can be derived directly from source code based solely on the meanings of symbols and expressions in natural language."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14533v1"
       ]
     }
   },
@@ -73925,6 +74392,57 @@
       ]
     }
   },
+  "graphmambanavspatialtemporalgraphmambaleveragingobjectrelationknowledgeforobjectgoalnavigation": {
+    "paper_id": "arxiv-2608.13723v1",
+    "source": "arXiv",
+    "title": "Graph-MambaNav: Spatial-Temporal Graph Mamba Leveraging Object-Relation Knowledge for Object-Goal Navigation",
+    "authors": [
+      "Leyuan Sun",
+      "Genxin Chen",
+      "Linwei Ye",
+      "Yan Zhang",
+      "Xi Kan",
+      "Yanfei Sun"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-13",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Object-goal navigation requires an agent to reason over object relationships and prioritize target-relevant objects for efficient decision making in unseen environments. While existing graph-based methods incorporate target-awareness at the feature or attention level, they remain permutation-invariant and lack an explicit mechanism to control information propagation order, limiting their ability to model target-dependent importance and long-range dependencies. In contrast, Graph-Mamba highlights that node prioritization through sequence ordering is critical for effective global reasoning. In this work, we investigate the node prioritization mechanism in Graph-Mamba and study its role in object navigation. We propose Graph-MambaNav, a target-aware spatial-temporal graph encoding framework that introduces a heuristic ordering over objects based on their relevance to the target, allowing more informative objects to be processed later to aggregate richer context. Both node ordering and edge weights are initialized from LLM-derived commonsense object relationships, providing a unified prior for structured reasoning. A spatial module integrates local message passing with global GraphMamba-based selective scanning, while a temporal module applies Mamba-based sequence modeling over object-wise temporal orders, allowing selective aggregation of historical context for long-range temporal reasoning. Experiments on AI2-THOR and RoboTHOR demonstrate improved navigation performance with generalization, and additional real-world robot deployment further validates the effectiveness of our proposed approach.",
+    "url": "https://arxiv.org/abs/2608.13723v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Object-goal navigation requires an agent to reason over object relationships and prioritize target-relevant objects for efficient decision making in unseen environments.",
+        "While existing graph-based methods incorporate target-awareness at the feature or attention level, they remain permutation-invariant and lack an explicit mechanism to control information propagation order, limiting their ability to model target-dependent importance and long-range dependencies."
+      ],
+      "Motivation": [
+        "Object-goal navigation requires an agent to reason over object relationships and prioritize target-relevant objects for efficient decision making in unseen environments."
+      ],
+      "Key Idea": [
+        "While existing graph-based methods incorporate target-awareness at the feature or attention level, they remain permutation-invariant and lack an explicit mechanism to control information propagation order, limiting their ability to model target-dependent importance and long-range dependencies."
+      ],
+      "Experimental Results": [
+        "Experiments on AI2-THOR and RoboTHOR demonstrate improved navigation performance with generalization, and additional real-world robot deployment further validates the effectiveness of our proposed approach."
+      ],
+      "Data analysis": [
+        "In this work, we investigate the node prioritization mechanism in Graph-Mamba and study its role in object navigation."
+      ],
+      "Discussion (e.g., future work)": [
+        "We propose Graph-MambaNav, a target-aware spatial-temporal graph encoding framework that introduces a heuristic ordering over objects based on their relevance to the target, allowing more informative objects to be processed later to aggregate richer context."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13723v1"
+      ]
+    }
+  },
   "graphofagentsagraphbasedframeworkformultiagentllmcollaboration": {
     "paper_id": "arxiv-2604.17148v1",
     "source": "arXiv",
@@ -79562,6 +80080,55 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2604.27714v1"
+      ]
+    }
+  },
+  "howcompliantissepsistreatmentanexpertguidedneurosymbolicpipelineforgeneratingclinicalcomplianceinsights": {
+    "paper_id": "arxiv-2608.13617v1",
+    "source": "arXiv",
+    "title": "How Compliant is Sepsis Treatment? An Expert-Guided Neuro-symbolic Pipeline for Generating Clinical Compliance Insights",
+    "authors": [
+      "Himanshu Tripathi",
+      "Kaushik Roy",
+      "Subash Neupane",
+      "Shahram Rahimi"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-12",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Verifying whether clinical care follows evidence-based protocols is a natural neuro-symbolic problem, yet the safety-critical setting defeats either paradigm alone. We present an expert-guided pipeline that constrains a large language model strictly to semantic normalization, mapping messy drug and microbiology strings onto a fixed clinical vocabulary, while a Sugeno fuzzy inference system reasons over the normalized events. The fuzzy layer encodes eight Surviving Sepsis Campaign bundle rules and replaces binary judgments with graded scores in [0,1]. Applied to 2,438 MIMIC-IV v3.1 sepsis episodes, it surfaces antibiotic timing as the most critical breakdown (mean 0.24, 13% within one hour), Hour-1 underperformance (mean 36.7%), a 51% elevated-lactate drop-off, and descriptive differences in ICU stay across compliance groups (3.8 versus 5.1 days).",
+    "url": "https://arxiv.org/abs/2608.13617v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Verifying whether clinical care follows evidence-based protocols is a natural neuro-symbolic problem, yet the safety-critical setting defeats either paradigm alone.",
+        "We present an expert-guided pipeline that constrains a large language model strictly to semantic normalization, mapping messy drug and microbiology strings onto a fixed clinical vocabulary, while a Sugeno fuzzy inference system reasons over the normalized events."
+      ],
+      "Motivation": [
+        "Verifying whether clinical care follows evidence-based protocols is a natural neuro-symbolic problem, yet the safety-critical setting defeats either paradigm alone."
+      ],
+      "Key Idea": [
+        "We present an expert-guided pipeline that constrains a large language model strictly to semantic normalization, mapping messy drug and microbiology strings onto a fixed clinical vocabulary, while a Sugeno fuzzy inference system reasons over the normalized events."
+      ],
+      "Experimental Results": [
+        "The fuzzy layer encodes eight Surviving Sepsis Campaign bundle rules and replaces binary judgments with graded scores in [0,1]."
+      ],
+      "Data analysis": [
+        "Applied to 2,438 MIMIC-IV v3.1 sepsis episodes, it surfaces antibiotic timing as the most critical breakdown (mean 0.24, 13% within one hour), Hour-1 underperformance (mean 36.7%), a 51% elevated-lactate drop-off, and descriptive differences in ICU stay across compliance groups (3.8 versus 5.1 days)."
+      ],
+      "Discussion (e.g., future work)": [
+        "Applied to 2,438 MIMIC-IV v3.1 sepsis episodes, it surfaces antibiotic timing as the most critical breakdown (mean 0.24, 13% within one hour), Hour-1 underperformance (mean 36.7%), a 51% elevated-lactate drop-off, and descriptive differences in ICU stay across compliance groups (3.8 versus 5.1 days)."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13617v1"
       ]
     }
   },
@@ -89751,6 +90318,52 @@
       ]
     }
   },
+  "knowingwhentostopbayesianoptimalstoppingforllmevaluations": {
+    "paper_id": "arxiv-2608.14425v1",
+    "source": "arXiv",
+    "title": "Knowing When to Stop: Bayesian Optimal Stopping for LLM Evaluations",
+    "authors": [
+      "Toby D. Pilditch"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "LLM evaluations often use fixed sampling budgets, testing every item the same number of times even after estimates are precise. We introduce optstop, a precision-based adaptive stopping framework that treats evaluation as a sequential measurement problem: keep sampling where uncertainty remains high, and stop where estimates are precise or stable enough. The framework builds on hierarchical Bayesian inference, supports binary, ordinal, and continuous outcomes, and keeps every benchmark item eligible for sampling, without requiring a calibrated item bank. It runs live or retrospectively, and includes a safeguard that samples more cautiously as measured performance approaches zero, where rare successes matter most. In an illustrative 200-item, 10-epoch evaluation, it removes 57%-97% of planned trials across nine validation settings, with overall conclusions equivalent to the full run. These results show that LLM evaluation compute can be allocated by uncertainty rather than by fixed repetition counts, with the magnitude of savings depending on evaluation design.",
+    "url": "https://arxiv.org/abs/2608.14425v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "LLM evaluations often use fixed sampling budgets, testing every item the same number of times even after estimates are precise.",
+        "We introduce optstop, a precision-based adaptive stopping framework that treats evaluation as a sequential measurement problem: keep sampling where uncertainty remains high, and stop where estimates are precise or stable enough."
+      ],
+      "Motivation": [
+        "We introduce optstop, a precision-based adaptive stopping framework that treats evaluation as a sequential measurement problem: keep sampling where uncertainty remains high, and stop where estimates are precise or stable enough."
+      ],
+      "Key Idea": [
+        "We introduce optstop, a precision-based adaptive stopping framework that treats evaluation as a sequential measurement problem: keep sampling where uncertainty remains high, and stop where estimates are precise or stable enough."
+      ],
+      "Experimental Results": [
+        "The framework builds on hierarchical Bayesian inference, supports binary, ordinal, and continuous outcomes, and keeps every benchmark item eligible for sampling, without requiring a calibrated item bank."
+      ],
+      "Data analysis": [
+        "It runs live or retrospectively, and includes a safeguard that samples more cautiously as measured performance approaches zero, where rare successes matter most."
+      ],
+      "Discussion (e.g., future work)": [
+        "In an illustrative 200-item, 10-epoch evaluation, it removes 57%-97% of planned trials across nine validation settings, with overall conclusions equivalent to the full run."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14425v1"
+      ]
+    }
+  },
   "knowingyouatfirstglanceinferringapparentpersonalityfromfaces": {
     "paper_id": "arxiv-2607.14631v1",
     "source": "arXiv",
@@ -98521,6 +99134,55 @@
       ]
     }
   },
+  "llmassistedldpcdecodingviasyndromeverifiedsemanticpriors": {
+    "paper_id": "arxiv-2608.14280v1",
+    "source": "arXiv",
+    "title": "LLM-Assisted LDPC Decoding via Syndrome-Verified Semantic Priors",
+    "authors": [
+      "Sojeong Park",
+      "Hyeonsu Lyu",
+      "Jaehyun Choi",
+      "Hyun Jong Yang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Semantic communication exploits the meaning of the payload, which bit-level processing discards. When channel decoding fails on a natural language payload, the errors appear as corrupted characters in the recovered text. A large language model (LLM) infers the intended characters from the semantic context, but it can also produce incorrect corrections. Applying them directly introduces new bit errors when the LLM modifies characters incorrectly. In this paper, we propose an LLM-assisted decoding framework for low-density parity-check (LDPC) codes. Rather than trusting LLM predictions, the decoder evaluates the modified characters jointly against the parity-check constraints and admits only the accepted corrections as verified semantic priors. These priors are injected as soft updates to the channel log-likelihood ratios, preserving the original channel evidence without modifying the decoder. A subsequent belief propagation pass distributes the injected evidence across the check nodes, recovering not only the injected bits but also the residual errors that the LLM fails to correct. Simulations demonstrate a 73% bit error rate reduction over a conventional decoder at 2.0 dB, whereas doubling its iterations to the same budget yields only 21%. The verification maintains an injection precision above 0.88 despite inaccurate LLM predictions, demonstrating that semantic knowledge can be reliably translated into physical-layer reliability gains.",
+    "url": "https://arxiv.org/abs/2608.14280v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Semantic communication exploits the meaning of the payload, which bit-level processing discards.",
+        "When channel decoding fails on a natural language payload, the errors appear as corrupted characters in the recovered text."
+      ],
+      "Motivation": [
+        "Semantic communication exploits the meaning of the payload, which bit-level processing discards."
+      ],
+      "Key Idea": [
+        "In this paper, we propose an LLM-assisted decoding framework for low-density parity-check (LDPC) codes."
+      ],
+      "Experimental Results": [
+        "A large language model (LLM) infers the intended characters from the semantic context, but it can also produce incorrect corrections."
+      ],
+      "Data analysis": [
+        "Applying them directly introduces new bit errors when the LLM modifies characters incorrectly."
+      ],
+      "Discussion (e.g., future work)": [
+        "In this paper, we propose an LLM-assisted decoding framework for low-density parity-check (LDPC) codes."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14280v1"
+      ]
+    }
+  },
   "llmattributionanalysisacrossdifferentfinetuningstrategiesandmodelscalesforautomatedcodecompliance": {
     "paper_id": "arxiv-2604.15589v1",
     "source": "arXiv",
@@ -100082,7 +100744,7 @@
     }
   },
   "llmguidedgraphgenerationforstructurebasedlocalimprovementmethods": {
-    "paper_id": "arxiv-2608.13333v1",
+    "paper_id": "arxiv-2608.13333v2",
     "source": "arXiv",
     "title": "LLM-Guided Graph Generation for Structure-Based Local Improvement Methods",
     "authors": [
@@ -100098,34 +100760,34 @@
     "category": [
       "General LLM Efficiency"
     ],
-    "abstract": "Large neighborhood search normally selects a random subset of decision variables for iterative optimization. For efficiently solving different problems, researchers tend to design variable selection strategies by taking into account structural features from different domains. In this paper, we build an automatic pipeline that is problem-agnostic to all problems in the MiniZinc format. By prompting an LLM with our semantic guidelines, we guide the LLM to produce a graph generator that maps any instance of a problem type to a uniform weighted graph, where nodes represent decision variables and edges represent constraint relationships. These problem-agnostic graphs guide our structure-based local improvement framework (SLIM) in variable selection. Meanwhile, the weighted graph enables all problem instances to share the same generic graph representation, from which the same graph features can be extracted and used for configuration selection. We evaluated our pipeline on instances across 20 MiniZinc competition problems, finding that algorithm selection achieves a 39.5% average problem-weighted win rate against a one-shot Gurobi baseline, more than doubling the best single configuration (19.3%). Configuration and feature ablation boost the performance further to 44.0%, demonstrating that LLM-based semantic generation enables effective automated structure extraction and feature extraction for constraint optimization.",
-    "url": "https://arxiv.org/abs/2608.13333v1",
+    "abstract": "Large neighborhood search normally selects a random subset of decision variables for iterative optimization. To efficiently solve various problems, researchers tend to design variable selection strategies that take into account structural features across different domains. In this paper, we build an automatic pipeline that is problem-agnostic to all problems in the MiniZinc format. By prompting an LLM with our semantic guidelines, we guide the LLM to produce a graph generator that maps any instance of a problem type to a uniform weighted graph, where nodes represent decision variables and edges represent constraint relationships. These problem-agnostic graphs guide our structure-based local improvement (SLIM) framework for variable selection. Meanwhile, the weighted graph enables all problem instances to share the same generic graph representation, from which the same graph features can be extracted and used for configuration selection. We evaluated our pipeline on instances across 20 MiniZinc competition problems, finding that algorithm selection achieves a 39.6% average problem-weighted win rate against a one-shot Gurobi baseline, more than doubling the best single configuration (19.3%). A post-hoc configuration and a feature ablation indicate a headroom of up to 44.0%, demonstrating that LLM-based semantic generation enables effective automated structure and feature extraction for constraint optimization.",
+    "url": "https://arxiv.org/abs/2608.13333v2",
     "doi": null,
     "summary": {
       "Summary": [
         "Large neighborhood search normally selects a random subset of decision variables for iterative optimization.",
-        "For efficiently solving different problems, researchers tend to design variable selection strategies by taking into account structural features from different domains."
+        "To efficiently solve various problems, researchers tend to design variable selection strategies that take into account structural features across different domains."
       ],
       "Motivation": [
-        "For efficiently solving different problems, researchers tend to design variable selection strategies by taking into account structural features from different domains."
+        "To efficiently solve various problems, researchers tend to design variable selection strategies that take into account structural features across different domains."
       ],
       "Key Idea": [
-        "For efficiently solving different problems, researchers tend to design variable selection strategies by taking into account structural features from different domains."
+        "To efficiently solve various problems, researchers tend to design variable selection strategies that take into account structural features across different domains."
       ],
       "Experimental Results": [
-        "These problem-agnostic graphs guide our structure-based local improvement framework (SLIM) in variable selection."
+        "These problem-agnostic graphs guide our structure-based local improvement (SLIM) framework for variable selection."
       ],
       "Data analysis": [
-        "Configuration and feature ablation boost the performance further to 44.0%, demonstrating that LLM-based semantic generation enables effective automated structure extraction and feature extraction for constraint optimization."
+        "A post-hoc configuration and a feature ablation indicate a headroom of up to 44.0%, demonstrating that LLM-based semantic generation enables effective automated structure and feature extraction for constraint optimization."
       ],
       "Discussion (e.g., future work)": [
-        "These problem-agnostic graphs guide our structure-based local improvement framework (SLIM) in variable selection."
+        "These problem-agnostic graphs guide our structure-based local improvement (SLIM) framework for variable selection."
       ],
       "Significance of this study": [
         "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
       ],
       "Useful references to consider": [
-        "Source metadata page: https://arxiv.org/abs/2608.13333v1"
+        "Source metadata page: https://arxiv.org/abs/2608.13333v2"
       ]
     }
   },
@@ -101213,6 +101875,53 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2604.27345v2"
+      ]
+    }
+  },
+  "llmsdontpayforthejump": {
+    "paper_id": "arxiv-2608.14397v1",
+    "source": "arXiv",
+    "title": "LLMs Don't Pay for the Jump",
+    "authors": [
+      "Paras Balani",
+      "Subhrakanta Panda"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Zahavy [2026] argues that Large Language Models, despite their capabilities in induction and deduction, cannot perform the abductive \"Jump\" that produced Einstein's equivalence principle, and attributes this limitation to the absence of embodied simulation. Zheng-Xin [2026] and Farmer [2026] question whether embodiment is necessary for abduction, pointing to alternative routes to General Relativity and forms of abduction that require no sensorimotor grounding. Max Planck resolved the blackbody radiation problem in 1900. Planck's move to E = hν required no embodied simulation. It was motivated by a mathematical consequence of classical theory, an infinite predicted energy for a finite measured quantity, that could not be physically accepted. We show that neither induction nor deduction could have produced the postulate and argue that its adoption required a coupling between epistemic error and physical cost. We formalize this distinction through thermodynamic coupling and show that fixed-weight transformer inference lacks such coupling, regardless of model scale. This is consistent with empirical results showing that output entropy remains nearly unchanged across tasks with sharply increasing causal difficulty, even as accuracy falls from 100% to 17%. We therefore argue that the missing ingredient in machine abduction may lie deeper than embodiment: a system must have some physical mechanism through which epistemic error becomes costly enough to force revision.",
+    "url": "https://arxiv.org/abs/2608.14397v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Zahavy [2026] argues that Large Language Models, despite their capabilities in induction and deduction, cannot perform the abductive \"Jump\" that produced Einstein's equivalence principle, and attributes this limitation to the absence of embodied simulation.",
+        "Zheng-Xin [2026] and Farmer [2026] question whether embodiment is necessary for abduction, pointing to alternative routes to General Relativity and forms of abduction that require no sensorimotor grounding."
+      ],
+      "Motivation": [
+        "Max Planck resolved the blackbody radiation problem in 1900."
+      ],
+      "Key Idea": [
+        "Zheng-Xin [2026] and Farmer [2026] question whether embodiment is necessary for abduction, pointing to alternative routes to General Relativity and forms of abduction that require no sensorimotor grounding."
+      ],
+      "Experimental Results": [
+        "This is consistent with empirical results showing that output entropy remains nearly unchanged across tasks with sharply increasing causal difficulty, even as accuracy falls from 100% to 17%."
+      ],
+      "Data analysis": [
+        "Planck's move to E = hν required no embodied simulation."
+      ],
+      "Discussion (e.g., future work)": [
+        "Zahavy [2026] argues that Large Language Models, despite their capabilities in induction and deduction, cannot perform the abductive \"Jump\" that produced Einstein's equivalence principle, and attributes this limitation to the absence of embodied simulation."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14397v1"
       ]
     }
   },
@@ -105900,6 +106609,57 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.26189v1"
+      ]
+    }
+  },
+  "mazerunnernonlineartaskandclueorchestrationforllmdrivenblackboxautomatedpenetrationtesting": {
+    "paper_id": "arxiv-2608.14216v1",
+    "source": "arXiv",
+    "title": "MazeRunner: Nonlinear Task and Clue Orchestration for LLM-driven Black-Box Automated Penetration Testing",
+    "authors": [
+      "Zhenyuan Li",
+      "Yi Jiang",
+      "Junjie Cheng",
+      "Yaokun Li",
+      "Jing Qiu",
+      "Shouling Ji"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Penetration testing is essential yet resource-intensive. Although large language models (LLMs) show promise for automating security auditing, existing agents mainly execute end-to-end workflows in simplified linear scenarios. Real-world black-box testing is fundamentally nonlinear: the attack graph is initially unknown and must be incrementally inferred from environmental feedback. Observations may reveal multiple attack branches, failures are often ambiguous, and critical clues may span long action horizons. Existing agents therefore tend to become trapped in depth-first exploration, misdiagnose failures, and forget prior evidence. We present MazeRunner, an autonomous penetration testing system built on a three-agent task-and-clue orchestration framework. It separates global orchestration, context-intensive execution, and failure-oriented review while persistently maintaining task states and environmental evidence. This design supports action revision, prerequisite recovery, branch switching, and long-range clue correlation. We evaluate MazeRunner on 10 recently released HTB targets, limiting each system-target run to 20 million LLM tokens and preventing target-specific solution leakage. With Claude Sonnet 4.5, MazeRunner completes 47.7% of annotated subtasks, compared with 36.2% for PentestGPT-V2 and 34.2% for Claude Code. It achieves user-level or higher access on six targets, including root access on two; each same-model baseline reaches user-level access on only two targets and never obtains root access. Execution-trace analysis further shows that MazeRunner explores more attack branches and acquires shells more efficiently.",
+    "url": "https://arxiv.org/abs/2608.14216v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Penetration testing is essential yet resource-intensive.",
+        "Although large language models (LLMs) show promise for automating security auditing, existing agents mainly execute end-to-end workflows in simplified linear scenarios."
+      ],
+      "Motivation": [
+        "Penetration testing is essential yet resource-intensive."
+      ],
+      "Key Idea": [
+        "We present MazeRunner, an autonomous penetration testing system built on a three-agent task-and-clue orchestration framework."
+      ],
+      "Experimental Results": [
+        "Real-world black-box testing is fundamentally nonlinear: the attack graph is initially unknown and must be incrementally inferred from environmental feedback."
+      ],
+      "Data analysis": [
+        "Execution-trace analysis further shows that MazeRunner explores more attack branches and acquires shells more efficiently."
+      ],
+      "Discussion (e.g., future work)": [
+        "Existing agents therefore tend to become trapped in depth-first exploration, misdiagnose failures, and forget prior evidence."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14216v1"
       ]
     }
   },
@@ -111568,6 +112328,59 @@
       ]
     }
   },
+  "mmdynoptagentdynamicoptimizationformultimodallargelanguagemodelreasoningviareinforcementlearning": {
+    "paper_id": "arxiv-2608.14026v1",
+    "source": "arXiv",
+    "title": "MMDynOpt-Agent: Dynamic Optimization for Multimodal Large Language Model Reasoning via Reinforcement Learning",
+    "authors": [
+      "Wenjin Liu",
+      "Haoran Luo",
+      "Fayuan Ke",
+      "Zhenghong Lin",
+      "Yue Lu",
+      "Zhe Cui",
+      "Anh Tuan Luu",
+      "Carl Yang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Recently, multimodal large language models (MLLMs) have demonstrated strong potential in visual understanding and complex reasoning tasks. However, existing methods often struggle to efficiently transform visual cues from multimodal inputs and the semantics of the question into effective reasoning conditions, thereby limiting the reasoning performance of multimodal large language models. To address this challenge, we propose MMDynOpt-Agent, which models the dynamic optimization of multimodal reasoning as a Markov decision process via end-to-end reinforcement learning. Specifically, a lightweight multimodal agent serves as the decision policy and interacts with the target MLLM as the environment, adaptively steering its reasoning through multi-turn dynamic optimization prompts. Furthermore, to reduce the cost of multimodal reasoning, a reward mechanism that combines format compliance, answer correctness, and budget awareness is designed to jointly ensure reasoning accuracy and efficiency. MMDynOpt-Agent is transferable and generalizable, enabling training with one target MLLM and inference-time transfer to others. Experimental results on fifteen public datasets show MMDynOpt-Agent achieves strong performance and outperforms baselines. Our project is available at https://github.com/QwenQKing/MMDynOpt-Agent.",
+    "url": "https://arxiv.org/abs/2608.14026v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Recently, multimodal large language models (MLLMs) have demonstrated strong potential in visual understanding and complex reasoning tasks.",
+        "However, existing methods often struggle to efficiently transform visual cues from multimodal inputs and the semantics of the question into effective reasoning conditions, thereby limiting the reasoning performance of multimodal large language models."
+      ],
+      "Motivation": [
+        "To address this challenge, we propose MMDynOpt-Agent, which models the dynamic optimization of multimodal reasoning as a Markov decision process via end-to-end reinforcement learning."
+      ],
+      "Key Idea": [
+        "However, existing methods often struggle to efficiently transform visual cues from multimodal inputs and the semantics of the question into effective reasoning conditions, thereby limiting the reasoning performance of multimodal large language models."
+      ],
+      "Experimental Results": [
+        "Experimental results on fifteen public datasets show MMDynOpt-Agent achieves strong performance and outperforms baselines."
+      ],
+      "Data analysis": [
+        "Experimental results on fifteen public datasets show MMDynOpt-Agent achieves strong performance and outperforms baselines."
+      ],
+      "Discussion (e.g., future work)": [
+        "Furthermore, to reduce the cost of multimodal reasoning, a reward mechanism that combines format compliance, answer correctness, and budget awareness is designed to jointly ensure reasoning accuracy and efficiency."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14026v1"
+      ]
+    }
+  },
   "mmirtcmmemoryintegratedmultimodalinferenceandretrievalfortcmclinicaldecisionsupport": {
     "paper_id": "arxiv-2607.01814v1",
     "source": "arXiv",
@@ -112697,6 +113510,60 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2606.26607v1"
+      ]
+    }
+  },
+  "moeexpertexecutionindisaggregatedllmservingwithahighbandwidthreramnearmemoryarchitecture": {
+    "paper_id": "arxiv-2608.13962v1",
+    "source": "arXiv",
+    "title": "MoE Expert Execution in Disaggregated LLM Serving with a High-Bandwidth ReRAM Near-Memory Architecture",
+    "authors": [
+      "Kunming Shao",
+      "Ming Zeng",
+      "Xin Yuan",
+      "Binbin Liao",
+      "Yangming Zhang",
+      "Wei Wang",
+      "Tim Kwang-Ting Cheng",
+      "Chi-Ying Tsui"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "MoE",
+      "Inference Optimization"
+    ],
+    "abstract": "Attention-FFN disaggregation maps LLM modules to specialized pools, creating an opening to keep Mixture-of-Experts (MoE) weights resident in a high-bandwidth FFN pool. Decode SLOs, however, cap the run-batch while sparse routing expands the activated-expert union, so weight traffic amortizes poorly and routing skew idles cold-expert resources. The FFN pool must therefore deliver weight-read bandwidth density under sparse unions and recover occupancy under skew without a global sharing fabric. We present a ReRAM near-memory architecture that keeps expert weights resident behind high-bandwidth local reads. The design factors actual MFU into ideal MFU and occupancy, recovers occupancy with bounded core-local multicast pooling, coactivation-aware placement, and load-aware fetch, and sizes each communication level from induced demand. A measured + modeled study on Qwen3.5-35B-A3B, Qwen3.5-397B-A17B, and GLM-5.2 shows that side-4 pooling raises occupancy from 0.328 to 0.519 and, at iso-peak compute, lowers per-token FFN-pool latency by 9.5x versus H20 with 20x lower weight-movement energy; an H20-attention + ReRAM-FFN system reduces decode TPOT by 1.25-4.0x, 2.4-10.3x, and 2.5-10.4x versus a homogeneous H20 pool.",
+    "url": "https://arxiv.org/abs/2608.13962v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Attention-FFN disaggregation maps LLM modules to specialized pools, creating an opening to keep Mixture-of-Experts (MoE) weights resident in a high-bandwidth FFN pool.",
+        "Decode SLOs, however, cap the run-batch while sparse routing expands the activated-expert union, so weight traffic amortizes poorly and routing skew idles cold-expert resources."
+      ],
+      "Motivation": [
+        "Attention-FFN disaggregation maps LLM modules to specialized pools, creating an opening to keep Mixture-of-Experts (MoE) weights resident in a high-bandwidth FFN pool."
+      ],
+      "Key Idea": [
+        "We present a ReRAM near-memory architecture that keeps expert weights resident behind high-bandwidth local reads."
+      ],
+      "Experimental Results": [
+        "The FFN pool must therefore deliver weight-read bandwidth density under sparse unions and recover occupancy under skew without a global sharing fabric."
+      ],
+      "Data analysis": [
+        "We present a ReRAM near-memory architecture that keeps expert weights resident behind high-bandwidth local reads."
+      ],
+      "Discussion (e.g., future work)": [
+        "The design factors actual MFU into ideal MFU and occupancy, recovers occupancy with bounded core-local multicast pooling, coactivation-aware placement, and load-aware fetch, and sizes each communication level from induced demand."
+      ],
+      "Significance of this study": [
+        "This work contributes to MoE, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13962v1"
       ]
     }
   },
@@ -118453,6 +119320,53 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.25381v1"
+      ]
+    }
+  },
+  "nouniversalsignalpredictssamplelevelllmregressionunderversionupdates": {
+    "paper_id": "arxiv-2608.13607v1",
+    "source": "arXiv",
+    "title": "No Universal Signal Predicts Sample-Level LLM Regression under Version Updates",
+    "authors": [
+      "Jia Sheng",
+      "Yiwei Lu"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-11",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Frontier LLMs are updated frequently and typically outperform their predecessors in aggregate. But aggregate gains say little about individual samples: an update can still cause sample-level regression, where a response correct under the old model becomes incorrect under the new one. This paper studies how to predict such regressions from signals available at inference time. We compare single-model signals (confidence, logit margin, attention entropy) against cross-version signals (output KL divergence, likelihood drift, token-level KL, representation drift) under a unified added-value test that isolates each signal's gain over a confidence baseline. Across six benchmarks in three task families (multiple-choice question answering, or MCQ; math reasoning; code generation) and six model update pairs, we find that (1) signal effectiveness is task-dependent: confidence is strongest on MCQ and simpler math, while likelihood/KL signals give the most frequent gains on harder math and code; (2) no signal is universally best across model updates either; and (3) some cross-version signals stay informative even when confidence fails, including without labels, which supports a proof-of-concept selective fallback that routes high-risk samples back to the old model. Practitioners can use these task-level patterns to choose which regression signal to trust for a given update. Code is available at https://github.com/jiashengsally/llm-regression-signals.",
+    "url": "https://arxiv.org/abs/2608.13607v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Frontier LLMs are updated frequently and typically outperform their predecessors in aggregate.",
+        "But aggregate gains say little about individual samples: an update can still cause sample-level regression, where a response correct under the old model becomes incorrect under the new one."
+      ],
+      "Motivation": [
+        "Frontier LLMs are updated frequently and typically outperform their predecessors in aggregate."
+      ],
+      "Key Idea": [
+        "But aggregate gains say little about individual samples: an update can still cause sample-level regression, where a response correct under the old model becomes incorrect under the new one."
+      ],
+      "Experimental Results": [
+        "Frontier LLMs are updated frequently and typically outperform their predecessors in aggregate."
+      ],
+      "Data analysis": [
+        "We compare single-model signals (confidence, logit margin, attention entropy) against cross-version signals (output KL divergence, likelihood drift, token-level KL, representation drift) under a unified added-value test that isolates each signal's gain over a confidence baseline."
+      ],
+      "Discussion (e.g., future work)": [
+        "Across six benchmarks in three task families (multiple-choice question answering, or MCQ; math reasoning; code generation) and six model update pairs, we find that (1) signal effectiveness is task-dependent: confidence is strongest on MCQ and simpler math, while likelihood/KL signals give the most frequent gains on harder math and code; (2) no signal is universally best across model updates either; and (3) some cross-version signals stay informative even when confidence fails, including without labels, which supports a proof-of-concept selective fallback that routes high-risk samples back to the old model."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13607v1"
       ]
     }
   },
@@ -124276,6 +125190,57 @@
       ]
     }
   },
+  "p2skillprivacypreservingskilldistillationforcloudlocalllminferencesystems": {
+    "paper_id": "arxiv-2608.14094v1",
+    "source": "arXiv",
+    "title": "P2Skill: Privacy Preserving Skill Distillation for Cloud-Local LLM Inference Systems",
+    "authors": [
+      "Myunghoon Ryu",
+      "Geunpyo Park",
+      "Sungjoon Lee",
+      "XinYu Piao",
+      "Jong-Kook Kim"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Distillation",
+      "Inference Optimization"
+    ],
+    "abstract": "Cloud-local LLM inference systems have the potential to use the reasoning capability of large cloud models while protecting sensitive user data on personal devices. Cloud-bound requests must exclude personally identifiable information (PII) to prevent external data leakage. Existing privacy-preserving methods rely on prompt perturbation, entity masking, or model fine-tuning, but these approaches may distort contextual semantics or require additional training. This paper proposes P2Skill, a prompt-based skill distillation method in which a local small language model (SLM) autonomously performs decomposition, PII-aware routing, paraphrasing, and reconstruction by following the skill prompts. Skills are iteratively refined from execution failures by a cloud LLM, enabling the local SLM to generalize beyond memorized PII patterns, and therefore P2Skill requires no privacy-specific fine-tuning or learned auxiliary detectors. Evaluation on a four-domain benchmark shows that P2Skill achieves $1.69\\times$ and $3.66\\times$ higher privacy-preserved inference quality than previous baselines.",
+    "url": "https://arxiv.org/abs/2608.14094v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Cloud-local LLM inference systems have the potential to use the reasoning capability of large cloud models while protecting sensitive user data on personal devices.",
+        "Cloud-bound requests must exclude personally identifiable information (PII) to prevent external data leakage."
+      ],
+      "Motivation": [
+        "Cloud-local LLM inference systems have the potential to use the reasoning capability of large cloud models while protecting sensitive user data on personal devices."
+      ],
+      "Key Idea": [
+        "Existing privacy-preserving methods rely on prompt perturbation, entity masking, or model fine-tuning, but these approaches may distort contextual semantics or require additional training."
+      ],
+      "Experimental Results": [
+        "Evaluation on a four-domain benchmark shows that P2Skill achieves $1.69\\times$ and $3.66\\times$ higher privacy-preserved inference quality than previous baselines."
+      ],
+      "Data analysis": [
+        "Cloud-local LLM inference systems have the potential to use the reasoning capability of large cloud models while protecting sensitive user data on personal devices."
+      ],
+      "Discussion (e.g., future work)": [
+        "Skills are iteratively refined from execution failures by a cloud LLM, enabling the local SLM to generalize beyond memorized PII patterns, and therefore P2Skill requires no privacy-specific fine-tuning or learned auxiliary detectors."
+      ],
+      "Significance of this study": [
+        "This work contributes to Distillation, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14094v1"
+      ]
+    }
+  },
   "paceadaptivebudgetallocationfortimeefficientembodiedplanning": {
     "paper_id": "arxiv-2608.03034v1",
     "source": "arXiv",
@@ -129591,7 +130556,7 @@
     }
   },
   "potentialapplicationsofhbfinllmservingsystems": {
-    "paper_id": "arxiv-2608.13127v1",
+    "paper_id": "arxiv-2608.13127v2",
     "source": "arXiv",
     "title": "Potential Applications of HBF in LLM Serving Systems",
     "authors": [
@@ -129618,7 +130583,7 @@
       "Inference Optimization"
     ],
     "abstract": "LLM serving is increasingly constrained by memory capacity as model weights, KV caches, and the number of served model variants continue to grow. This report examines High-Bandwidth Flash (HBF) as a capacity-oriented extension to HBM-based serving systems. We first discuss how HBF can be integrated into the GPU memory hierarchy without undermining the bandwidth expected by the compute die. We then model the system-level value of added capacity as expanded residency for read-mostly model-state objects. Under this view, HBF can improve MoE serving by enabling more expert replicas and can improve multi-model serving by reducing model loading and supporting hot-model replication. Our simulation results show that these benefits depend on preserving the HBM-resident execution path while using HBF to expand the resident set of model weights.",
-    "url": "https://arxiv.org/abs/2608.13127v1",
+    "url": "https://arxiv.org/abs/2608.13127v2",
     "doi": null,
     "summary": {
       "Summary": [
@@ -129644,7 +130609,7 @@
         "This work contributes to MoE, KV Cache Compression, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
       ],
       "Useful references to consider": [
-        "Source metadata page: https://arxiv.org/abs/2608.13127v1"
+        "Source metadata page: https://arxiv.org/abs/2608.13127v2"
       ]
     }
   },
@@ -135998,6 +136963,56 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2607.07597v1"
+      ]
+    }
+  },
+  "quasarloweringthelossfloorofquantizationawaretrainingwithlossawarereconstruction": {
+    "paper_id": "arxiv-2608.13966v1",
+    "source": "arXiv",
+    "title": "QUASAR: Lowering the Loss Floor of Quantization-Aware Training with Loss-Aware Reconstruction",
+    "authors": [
+      "Vincent Counathe",
+      "Ben Athiwaratkun",
+      "Christopher De Sa",
+      "Tianyi Zhang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Quantization",
+      "Inference Optimization"
+    ],
+    "abstract": "As large language model inference shifts toward lower precision, post-training quantization (PTQ) becomes increasingly brittle, making quantization-aware training (QAT) essential for preserving model quality. However, QAT computes the loss and surrogate gradients using a lossy reconstruction of latent full-precision weights, while applying updates to the latent weights themselves. This mismatch can lead to suboptimal training trajectories and a higher loss floor. Second-order PTQ methods mitigate a similar gap by minimizing loss-aware reconstruction error, but doing it once for a frozen model can take hours; repeating this process throughout QAT as the weights evolve is impractical. We introduce QUASAR, a QAT method that continuously performs lightweight, loss-aware reconstruction in the training loop to lower the loss floor and improve the resulting low-bit model. At each training step, QUASAR uses the exponential moving average of squared gradients as online saliency estimates, searches over a small set of clipping ranges, and fits affine dequantizers via saliency-weighted least squares. Our analysis shows that the loss-aware reconstruction error is the only reconstruction-dependent term in the QAT convergence bound and controls the loss of the final quantized model, establishing QUASAR's objective as a principled optimization target. QUASAR modifies only the training procedure and supports standard deployment formats, including integer quantization and NVFP4, with no inference-time changes or overhead. Across Qwen3 and Llama-3.1, QUASAR achieves the lowest held-out KL divergence among competitive QAT methods at 2, 3, and 4 bits, reducing KL by at least 10% at 3 and 4 bits and by 29% at 2 bits. At 2 bits, it improves average accuracy across eight tasks by 3.5-4.3 percentage points over strong QAT and PTQ baselines.",
+    "url": "https://arxiv.org/abs/2608.13966v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "As large language model inference shifts toward lower precision, post-training quantization (PTQ) becomes increasingly brittle, making quantization-aware training (QAT) essential for preserving model quality.",
+        "However, QAT computes the loss and surrogate gradients using a lossy reconstruction of latent full-precision weights, while applying updates to the latent weights themselves."
+      ],
+      "Motivation": [
+        "As large language model inference shifts toward lower precision, post-training quantization (PTQ) becomes increasingly brittle, making quantization-aware training (QAT) essential for preserving model quality."
+      ],
+      "Key Idea": [
+        "Second-order PTQ methods mitigate a similar gap by minimizing loss-aware reconstruction error, but doing it once for a frozen model can take hours; repeating this process throughout QAT as the weights evolve is impractical."
+      ],
+      "Experimental Results": [
+        "We introduce QUASAR, a QAT method that continuously performs lightweight, loss-aware reconstruction in the training loop to lower the loss floor and improve the resulting low-bit model."
+      ],
+      "Data analysis": [
+        "Our analysis shows that the loss-aware reconstruction error is the only reconstruction-dependent term in the QAT convergence bound and controls the loss of the final quantized model, establishing QUASAR's objective as a principled optimization target."
+      ],
+      "Discussion (e.g., future work)": [
+        "We introduce QUASAR, a QAT method that continuously performs lightweight, loss-aware reconstruction in the training loop to lower the loss floor and improve the resulting low-bit model."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13966v1"
       ]
     }
   },
@@ -151461,6 +152476,70 @@
       ]
     }
   },
+  "scienceflowalonghorizonagentformlresearchscientificdiscoveryandbeyond": {
+    "paper_id": "arxiv-2608.14354v1",
+    "source": "arXiv",
+    "title": "ScienceFlow: A long-horizon agent for ML research, scientific discovery and beyond",
+    "authors": [
+      "Mingming Zhao",
+      "Jiqian Dong",
+      "Kangping Xu",
+      "Zadid Hasan",
+      "Chengrui Fan",
+      "Shan Jiang",
+      "Shuai Mao",
+      "Ting Lingya",
+      "Linyi Zou",
+      "Tailin Zhou",
+      "Yun Hin Chan",
+      "Wenkai Zhang",
+      "Zhanhong Zhou",
+      "Guowei Huang",
+      "Hongliang Li",
+      "Wenjing Cun",
+      "Zhitang Chen",
+      "Mingxuan Yuan",
+      "Yanhui Geng"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Enabling LLM agents to sustain productive, stable, and goal-aligned research over extended horizons is a central challenge for autonomous machine learning and scientific discovery, as progress hinges on continuously managing evolving state, exploration decisions, and computational resources. Pioneering autoresearch agents, despite great success, still lack mechanisms for continuity, recovery from dead ends, and value-driven compute allocation, which inherently undermines overall search efficiency, wastes computational resources, and lowers the chance of ultimate success. To bridge this gap, we introduce ScienceFlow, an end-to-end autoresearch agent framework that organizes long-horizon research work into research segments grounded in executable workspaces. It represents research progress as recoverable executable states, enabling efficient exploration, revision, and execution. Transitions between research segments are governed by Executable-State Transition through Re-Anchoring (ESTRA), which selects either the live state or an archived state as the next anchor and determines whether to continue or redirect the research trajectory. An evidence-aware execution controller allocates resources to physical jobs based on resource availability, remaining budget, and validated progress. We evaluate ScienceFlow on tasks spanning machine learning, scientific modeling, and mathematical optimization. Results on diverse long-horizon benchmarks demonstrate its ability to sustain effective research processes, highlighted by a SOTA 70.22 percent Any-Medal score on the full MLE-bench within a 24-hour budget, outperforming prior reported results by 4.92 percentage points. The efficacy of ScienceFlow further demonstrates that efficient state management, adaptive exploration, and objective-aligned execution are critical for scaling autonomous research beyond short-horizon interactions.",
+    "url": "https://arxiv.org/abs/2608.14354v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Enabling LLM agents to sustain productive, stable, and goal-aligned research over extended horizons is a central challenge for autonomous machine learning and scientific discovery, as progress hinges on continuously managing evolving state, exploration decisions, and computational resources.",
+        "Pioneering autoresearch agents, despite great success, still lack mechanisms for continuity, recovery from dead ends, and value-driven compute allocation, which inherently undermines overall search efficiency, wastes computational resources, and lowers the chance of ultimate success."
+      ],
+      "Motivation": [
+        "Enabling LLM agents to sustain productive, stable, and goal-aligned research over extended horizons is a central challenge for autonomous machine learning and scientific discovery, as progress hinges on continuously managing evolving state, exploration decisions, and computational resources."
+      ],
+      "Key Idea": [
+        "To bridge this gap, we introduce ScienceFlow, an end-to-end autoresearch agent framework that organizes long-horizon research work into research segments grounded in executable workspaces."
+      ],
+      "Experimental Results": [
+        "Results on diverse long-horizon benchmarks demonstrate its ability to sustain effective research processes, highlighted by a SOTA 70.22 percent Any-Medal score on the full MLE-bench within a 24-hour budget, outperforming prior reported results by 4.92 percentage points."
+      ],
+      "Data analysis": [
+        "It represents research progress as recoverable executable states, enabling efficient exploration, revision, and execution."
+      ],
+      "Discussion (e.g., future work)": [
+        "Transitions between research segments are governed by Executable-State Transition through Re-Anchoring (ESTRA), which selects either the live state or an archived state as the next anchor and determines whether to continue or redirect the research trajectory."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14354v1"
+      ]
+    }
+  },
   "scitoolagentevoanontologyawareselfevolvingagentforopenworldscientifictoolacquisition": {
     "paper_id": "arxiv-2607.28692v1",
     "source": "arXiv",
@@ -152160,6 +153239,56 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2604.26394v1"
+      ]
+    }
+  },
+  "secondthoughtreasoninginparallelasllmagentsactandobserve": {
+    "paper_id": "arxiv-2608.13667v1",
+    "source": "arXiv",
+    "title": "Second Thought: Reasoning in Parallel as LLM Agents Act and Observe",
+    "authors": [
+      "Zhensu Sun",
+      "Chengran Yang",
+      "Yunbo Lyu",
+      "Jieke Shi",
+      "David Lo"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-13",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "LLM agents in the ReAct paradigm alternate between reasoning, acting, and observing, but deliberate reasoning is confined to the Thought phase: while the agent serializes an action and waits for the environment, its reasoning is frozen. We identify this recurring interval for Action and Observation as a reasoning idle window and ask whether it can host additional reasoning in parallel that serves future turns. Therefore, we propose Second Thought, a training-free inference framework that forks four auxiliary branches the instant each Thought phase concludes, decodes them concurrently with the main loop, and merges the generated thoughts back when the environment observation arrives. In this way, Second Thought relocates the added reasoning off the main thread's sequential decoding path. Across three agentic benchmarks and three reasoning LLMs, Second Thought lowers the average turn count in all nine (model,benchmark) pairs and reduces main thread decoding in six of them by up to 43% (roughly 20% on average among those settings), while leaving it essentially unchanged in a seventh; Pass@1 shows no significant change in seven of nine pairs and the two significant differences are +12.4 and +10.2 points. Against a compute-matched control that forces an equivalent budget onto the main thread's own reasoning, it attains strictly higher Pass@1 with 1.3 to 3.2 less sequential decoding in all four settings where the control applies.",
+    "url": "https://arxiv.org/abs/2608.13667v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "LLM agents in the ReAct paradigm alternate between reasoning, acting, and observing, but deliberate reasoning is confined to the Thought phase: while the agent serializes an action and waits for the environment, its reasoning is frozen.",
+        "We identify this recurring interval for Action and Observation as a reasoning idle window and ask whether it can host additional reasoning in parallel that serves future turns."
+      ],
+      "Motivation": [
+        "LLM agents in the ReAct paradigm alternate between reasoning, acting, and observing, but deliberate reasoning is confined to the Thought phase: while the agent serializes an action and waits for the environment, its reasoning is frozen."
+      ],
+      "Key Idea": [
+        "Therefore, we propose Second Thought, a training-free inference framework that forks four auxiliary branches the instant each Thought phase concludes, decodes them concurrently with the main loop, and merges the generated thoughts back when the environment observation arrives."
+      ],
+      "Experimental Results": [
+        "Across three agentic benchmarks and three reasoning LLMs, Second Thought lowers the average turn count in all nine (model,benchmark) pairs and reduces main thread decoding in six of them by up to 43% (roughly 20% on average among those settings), while leaving it essentially unchanged in a seventh; Pass@1 shows no significant change in seven of nine pairs and the two significant differences are +12.4 and +10.2 points."
+      ],
+      "Data analysis": [
+        "In this way, Second Thought relocates the added reasoning off the main thread's sequential decoding path."
+      ],
+      "Discussion (e.g., future work)": [
+        "We identify this recurring interval for Action and Observation as a reasoning idle window and ask whether it can host additional reasoning in parallel that serves future turns."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13667v1"
       ]
     }
   },
@@ -162292,7 +163421,7 @@
     }
   },
   "specsheetsarenotkernelsanisaandsourcelevelauditofint8availabilityonnvidiablackwellultra": {
-    "paper_id": "arxiv-2608.11693v1",
+    "paper_id": "arxiv-2608.11693v2",
     "source": "arXiv",
     "title": "Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra",
     "authors": [
@@ -162309,7 +163438,7 @@
       "Inference Optimization"
     ],
     "abstract": "NVIDIA's published specifications give the Blackwell Ultra GPU (B300) a dense-compute ratio of roughly 30:1 between FP8 and INT8 tensor-core throughput; its predecessors, H200 and B200, both provide 1:1. We audit what this deprioritization means in practice by tracing INT8 W8A8 support through four layers of the stack: the published specifications, the PTX ISA, NVIDIA's CUTLASS kernel library, and the two major open-source LLM serving engines (vLLM and SGLang). We find a consistent, layered withdrawal: (i) the PTX ISA never exposes the fifth-generation tensor-core integer path (tcgen05.mma with .kind::i8) on sm_103a, even though the same PTX revision extends the FP4 kinds to that target, leaving legacy warp-level IMMA as the only architecturally legal integer tensor-core path on B300; (ii) CUTLASS's kernel generator explicitly skips INT8 UMMA generation for any build targeting 103a, while generating FP8 unconditionally; (iii) vLLM ships no INT8 GEMM for Blackwell and fails with a hard runtime error at the first forward pass, after the model has loaded; and (iv) SGLang's ahead-of-time INT8 GEMM stops at Sm90, while its FP8 tuning configurations already cover B200. We document an escape hatch (rerouting vLLM's INT8 path to a JIT-compiled Triton backend via an environment variable), a false-negative trap in the obvious profiler methodology for detecting \"native INT8\" on sm_103, and the practical failure semantics that make naive testing expensive. Together, these findings show that a quantization format's availability is a property of the whole stack rather than of the model or the spec sheet. Four distinct layers, three of them NVIDIA's own, withdrew INT8 support in mutually consistent ways, and a format that is nominally present on the datasheet is, by default, undeployable on this hardware.",
-    "url": "https://arxiv.org/abs/2608.11693v1",
+    "url": "https://arxiv.org/abs/2608.11693v2",
     "doi": null,
     "summary": {
       "Summary": [
@@ -162335,7 +163464,7 @@
         "This work contributes to Quantization, Long Context, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
       ],
       "Useful references to consider": [
-        "Source metadata page: https://arxiv.org/abs/2608.11693v1"
+        "Source metadata page: https://arxiv.org/abs/2608.11693v2"
       ]
     }
   },
@@ -165470,6 +166599,56 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2606.22175v1"
+      ]
+    }
+  },
+  "stinerautomatedextractionofstrategiccyberthreatintelligencefromx": {
+    "paper_id": "arxiv-2608.14418v1",
+    "source": "arXiv",
+    "title": "STINER: Automated Extraction of Strategic Cyber Threat Intelligence from X",
+    "authors": [
+      "Yasir Ech-Chammakhy",
+      "Oussama Azrara",
+      "Jaafar Chbili",
+      "Anas Motii"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Long Context",
+      "Inference Optimization"
+    ],
+    "abstract": "Strategic Cyber Threat Intelligence (CTI) focuses on high-level insights, such as identifying targeted industries, attributing attacks to specific ransomware groups, and assessing the scale of data loss. Today, X (formerly Twitter) has become the fastest source for this intelligence, often hosting real-time breach announcements days before formal vendor reports. Converting this raw chatter into actionable intelligence requires navigating a complex linguistic landscape. Conventional Named Entity Recognition (NER) models struggle to parse the informal and highly irregular dialect of social media, creating a blind spot for automated defense systems. To address this challenge, we introduce STINER, a taxonomy and expert-annotated corpus for extracting strategic intelligence from social media streams. We construct a high-quality, expert-annotated dataset of 2,100 real-world alerts and propose a granular taxonomy of eight entity types centered on strategic pivots such as Threat Actor, Sector, and Location. We benchmark nine models across 12 evaluated configurations, spanning general-purpose and domain-adapted encoders, open-schema extraction, and generative LLMs in both zero-shot and fine-tuned settings. Domain-adapted encoders such as DarkBERT reach a strict F1-score of 89.33%, outperforming both general-purpose baselines and fine-tuned Large Language Models, which additionally incur substantially higher inference latency. Leveraging STINER-DarkBERT, we conduct a European threat landscape analysis for H1 2025. Our results align with official reporting on major targets while highlighting the distinct visibility profile of attacks in Spain, and illustrate how social-media-driven extraction can surface early signals of the SafePay ransomware campaign prior to its retrospective characterization in vendor threat landscape reports.",
+    "url": "https://arxiv.org/abs/2608.14418v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Strategic Cyber Threat Intelligence (CTI) focuses on high-level insights, such as identifying targeted industries, attributing attacks to specific ransomware groups, and assessing the scale of data loss.",
+        "Today, X (formerly Twitter) has become the fastest source for this intelligence, often hosting real-time breach announcements days before formal vendor reports."
+      ],
+      "Motivation": [
+        "To address this challenge, we introduce STINER, a taxonomy and expert-annotated corpus for extracting strategic intelligence from social media streams."
+      ],
+      "Key Idea": [
+        "To address this challenge, we introduce STINER, a taxonomy and expert-annotated corpus for extracting strategic intelligence from social media streams."
+      ],
+      "Experimental Results": [
+        "We benchmark nine models across 12 evaluated configurations, spanning general-purpose and domain-adapted encoders, open-schema extraction, and generative LLMs in both zero-shot and fine-tuned settings."
+      ],
+      "Data analysis": [
+        "Strategic Cyber Threat Intelligence (CTI) focuses on high-level insights, such as identifying targeted industries, attributing attacks to specific ransomware groups, and assessing the scale of data loss."
+      ],
+      "Discussion (e.g., future work)": [
+        "To address this challenge, we introduce STINER, a taxonomy and expert-annotated corpus for extracting strategic intelligence from social media streams."
+      ],
+      "Significance of this study": [
+        "This work contributes to Long Context, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14418v1"
       ]
     }
   },
@@ -173475,6 +174654,53 @@
       ]
     }
   },
+  "theintegeralibilocalizingcrosskerneldivergenceinint8quantizedllminference": {
+    "paper_id": "arxiv-2608.13756v1",
+    "source": "arXiv",
+    "title": "The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference",
+    "authors": [
+      "Teng-Ruei Chen"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-13",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Quantization",
+      "Inference Optimization"
+    ],
+    "abstract": "Two GPU kernels implementing the same scaled INT8 GEMM interface are usually treated as interchangeable. We test that assumption: holding the checkpoint, prompts, hardware, inference engine, decoding, and quantization configuration fixed, we swap only the INT8 linear kernel (CUTLASS versus Triton) inside vLLM. At 1.7B each arm reproduces itself bit-for-bit across cold restarts, yet the arms agree on no sequence in any end-to-end comparison we ran (0/8, 0/16, and 0/64). What makes this more than a benchmark discrepancy is an integer alibi: for shared INT8 operands under a verified no-overflow bound, the INT32 dot product is exact and order-independent, so the accumulator cannot be the source of any difference. Feeding both kernels identical operands from every linear layer of Qwen3-1.7B and 8B (196 and 252 layers), we find bit-identical outputs under power-of-two scales, confirming a pinned prediction list 196/196 and 252/252 (pre-registered at 1.7B, pinned but not blind at 8B), and observed differences of at most one bfloat16 spacing under the checkpoints' real scales. This localizes the divergence to scale application and output rounding after the exact accumulator. Applied as a probe checkpoint, the same intervention restores end-to-end bitwise agreement (8/8 and 16/16 sequences). Cross-implementation FP8 GEMM shows a different signature: both the prevalence and the magnitude of differences grow with reduction depth, while the INT8 fraction stays at parts per million and within one spacing over a 64x range of K. Teacher-forced replay ties layers to tokens: flips concentrate at small logit margins, which predict flip risk with ROC-AUC 0.94 on 16,384 positions. We will release the pre-registration, per-layer predictions, manifests with kernel-selection evidence, and a conformance procedure that turns these controls into a concrete check for kernel interchangeability.",
+    "url": "https://arxiv.org/abs/2608.13756v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Two GPU kernels implementing the same scaled INT8 GEMM interface are usually treated as interchangeable.",
+        "We test that assumption: holding the checkpoint, prompts, hardware, inference engine, decoding, and quantization configuration fixed, we swap only the INT8 linear kernel (CUTLASS versus Triton) inside vLLM."
+      ],
+      "Motivation": [
+        "Two GPU kernels implementing the same scaled INT8 GEMM interface are usually treated as interchangeable."
+      ],
+      "Key Idea": [
+        "We test that assumption: holding the checkpoint, prompts, hardware, inference engine, decoding, and quantization configuration fixed, we swap only the INT8 linear kernel (CUTLASS versus Triton) inside vLLM."
+      ],
+      "Experimental Results": [
+        "What makes this more than a benchmark discrepancy is an integer alibi: for shared INT8 operands under a verified no-overflow bound, the INT32 dot product is exact and order-independent, so the accumulator cannot be the source of any difference."
+      ],
+      "Data analysis": [
+        "What makes this more than a benchmark discrepancy is an integer alibi: for shared INT8 operands under a verified no-overflow bound, the INT32 dot product is exact and order-independent, so the accumulator cannot be the source of any difference."
+      ],
+      "Discussion (e.g., future work)": [
+        "Feeding both kernels identical operands from every linear layer of Qwen3-1.7B and 8B (196 and 252 layers), we find bit-identical outputs under power-of-two scales, confirming a pinned prediction list 196/196 and 252/252 (pre-registered at 1.7B, pinned but not blind at 8B), and observed differences of at most one bfloat16 spacing under the checkpoints' real scales."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13756v1"
+      ]
+    }
+  },
   "thejointeffectofquantizationandsamplingtemperatureonllmsafetyalignmentafactorialanalysis": {
     "paper_id": "arxiv-2606.29581v1",
     "source": "arXiv",
@@ -179373,6 +180599,55 @@
       ]
     }
   },
+  "towardsefficientmultimodalandmultilingualopinionextractionforstiaqlorabasedfinetuningapproach": {
+    "paper_id": "arxiv-2608.14152v1",
+    "source": "arXiv",
+    "title": "Towards Efficient Multimodal and Multilingual Opinion Extraction for STI: A QLoRA-Based Fine-Tuning Approach",
+    "authors": [
+      "Sheng Hong",
+      "Xuanqi Wang",
+      "Jiacheng Wang",
+      "Yuwei Wang"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Quantization"
+    ],
+    "abstract": "Recent advances in large language models (LLMs) have reshaped semantic analysis. Opinion Extraction (OE) for Science and Technology Intelligence (STI) requires concise core opinions from large information streams. Off-the-shelf models struggle to filter noise from these streams and show limited structured-output reliability in zero-shot multilingual and multi-modal settings. To address information overload and extraction defocus, this study proposes a multimodal core-opinion extraction framework in which visual evidence serves as a contextual anchor for textual judgment. Using VideoLLaMA2 (VL2) and VideoLLaMA2.1 (VL2.1) as the base models, we apply Quantized Low-Rank Adaptation (QLoRA) fine-tuning on a curated dataset of 2,194 multilingual and multimodal samples. Under the selected Image-Augmented setting, fine-tuned VL2.1 generates structured JSON core-opinion outputs, achieving 64.98% Precision, 42.15% Recall, 51.14% F1-score, and 74.00% sample-level accuracy. Relative to the zero-shot VL2.1 setting, it raises the F1-scores of Spanish and Russian from 4.83% and 0.45% to 46.05% and 51.93%, respectively. The framework further incorporates a Fuzzy Cumulative Prospect Theory-based post-extraction triage module for case-level value assessment, providing a case-level value signal for downstream STI screening.",
+    "url": "https://arxiv.org/abs/2608.14152v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Recent advances in large language models (LLMs) have reshaped semantic analysis.",
+        "Opinion Extraction (OE) for Science and Technology Intelligence (STI) requires concise core opinions from large information streams."
+      ],
+      "Motivation": [
+        "Recent advances in large language models (LLMs) have reshaped semantic analysis."
+      ],
+      "Key Idea": [
+        "Opinion Extraction (OE) for Science and Technology Intelligence (STI) requires concise core opinions from large information streams."
+      ],
+      "Experimental Results": [
+        "Off-the-shelf models struggle to filter noise from these streams and show limited structured-output reliability in zero-shot multilingual and multi-modal settings."
+      ],
+      "Data analysis": [
+        "Recent advances in large language models (LLMs) have reshaped semantic analysis."
+      ],
+      "Discussion (e.g., future work)": [
+        "Using VideoLLaMA2 (VL2) and VideoLLaMA2.1 (VL2.1) as the base models, we apply Quantized Low-Rank Adaptation (QLoRA) fine-tuning on a curated dataset of 2,194 multilingual and multimodal samples."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14152v1"
+      ]
+    }
+  },
   "towardsefficientreasoninginllmbasedrecommendersystemsviamodelmerging": {
     "paper_id": "arxiv-2608.10447v1",
     "source": "arXiv",
@@ -183023,6 +184298,55 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2605.17222v1"
+      ]
+    }
+  },
+  "tripwiretriggeringalignedrefusalviastatisticallycertifiedsafetyneurons": {
+    "paper_id": "arxiv-2608.14392v1",
+    "source": "arXiv",
+    "title": "Tripwire: Triggering Aligned Refusal via Statistically Certified Safety Neurons",
+    "authors": [
+      "Wei Zhao",
+      "Zhe Li",
+      "Peixin Zhang",
+      "Jun Sun"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-14",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Neuron- and path-level interventions offer the finest-grained route to defending large language models (LLMs) against jailbreak attacks, yet existing methods fall short of this promise, i.e., they often compromise model utility significantly. Specifically, one line of work suppresses toxic neurons to erase harmful semantics, but since such semantics are distributed across the network, blocking every pathway forces a large intervention footprint. An alternative line of research focus on identify safety neurons using external classifiers. While promising, the existing approaches suffer from compromising neurons that are important for the model utility as well. Moreover, both approaches remain always on and thus perturb every benign request even when no attack is present. To address these limitations, we present \\ours{}, a training-free defense that first identifies safety-specific neurons through per-neuron hypothesis tests under false-discovery-rate control together with a utility-specificity filter. Based on this identification, a trigger-style clamp holds the selected neurons at their harmful-conditional mean activations, injecting an internal harmful-input signal that triggers the refusal behavior learned during alignment. The clamp is then realized by two provably equivalent deployment modes, namely a detector-gated inference-time intervention and an offline bias-patch weight edit. Extensive experiments across four safety-aligned LLMs and four representative attacks demonstrate that \\ours{} reduces the average attack success rate to at most 2.0\\% while incurring a utility drop of only 0.5\\% to 5.3\\% on MT-Bench, the smallest among all defenses. Code is available at https://anonymous.4open.science/r/Tripwire-65C4.",
+    "url": "https://arxiv.org/abs/2608.14392v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Neuron- and path-level interventions offer the finest-grained route to defending large language models (LLMs) against jailbreak attacks, yet existing methods fall short of this promise, i.e., they often compromise model utility significantly.",
+        "Specifically, one line of work suppresses toxic neurons to erase harmful semantics, but since such semantics are distributed across the network, blocking every pathway forces a large intervention footprint."
+      ],
+      "Motivation": [
+        "Neuron- and path-level interventions offer the finest-grained route to defending large language models (LLMs) against jailbreak attacks, yet existing methods fall short of this promise, i.e., they often compromise model utility significantly."
+      ],
+      "Key Idea": [
+        "Neuron- and path-level interventions offer the finest-grained route to defending large language models (LLMs) against jailbreak attacks, yet existing methods fall short of this promise, i.e., they often compromise model utility significantly."
+      ],
+      "Experimental Results": [
+        "Extensive experiments across four safety-aligned LLMs and four representative attacks demonstrate that \\ours{} reduces the average attack success rate to at most 2.0\\% while incurring a utility drop of only 0.5\\% to 5.3\\% on MT-Bench, the smallest among all defenses."
+      ],
+      "Data analysis": [
+        "While promising, the existing approaches suffer from compromising neurons that are important for the model utility as well."
+      ],
+      "Discussion (e.g., future work)": [
+        "To address these limitations, we present \\ours{}, a training-free defense that first identifies safety-specific neurons through per-neuron hypothesis tests under false-discovery-rate control together with a utility-specificity filter."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.14392v1"
       ]
     }
   },
@@ -190307,6 +191631,72 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2607.14510v1"
+      ]
+    }
+  },
+  "voicechatttsalowlatencycontinuousspeechsynthesismodelforinteractiveagents": {
+    "paper_id": "arxiv-2608.13831v1",
+    "source": "arXiv",
+    "title": "VoiceChat-TTS: A Low-Latency Continuous Speech Synthesis Model for Interactive Agents",
+    "authors": [
+      "Edresson Casanova",
+      "Jaehyeon Kim",
+      "Mariana Graterol Fuenmayor",
+      "Shehzeen Hussain",
+      "Viacheslav Klimkov",
+      "Valentin Mendelev",
+      "Mikyas Desta",
+      "Paarth Neekhara",
+      "Piotr Zelasko",
+      "Chen Chen",
+      "Elena Rastorgueva",
+      "Ke Hu",
+      "Ankita Pasad",
+      "Xuesong Yang",
+      "Aya Alja'fari",
+      "Rajarshi Roy",
+      "Rohan Badlani",
+      "Jason Roche",
+      "Jason Li",
+      "Zhehuai Chen"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-08-13",
+    "added_date": "2026-08-18 09:38:47",
+    "category": [
+      "KV Cache Compression",
+      "Inference Optimization"
+    ],
+    "abstract": "Spoken dialogue is a natural form of human--computer interaction, yet most speech language models remain limited to turn-based operation and lack real-time adaptability, such as user barge-in. Recent duplex speech-to-speech and speech-to-text models reduce latency by replacing multi-stage pipelines, but often compromise speech quality because accurate ASR, interruption handling, and high-fidelity synthesis must be optimized jointly. We propose VoiceChat-TTS, a low-latency, continuous, and streamable text-to-speech model for interactive agents. VoiceChat-TTS is driven directly by LLM text-token streams, supports explicit interruption via control tokens, and produces silence when no textual input is available. The model enables always-on, responsive speech generation while preserving modularity and high speech quality, and it supports mid-utterance interruptions without resetting the KV cache.",
+    "url": "https://arxiv.org/abs/2608.13831v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Spoken dialogue is a natural form of human--computer interaction, yet most speech language models remain limited to turn-based operation and lack real-time adaptability, such as user barge-in.",
+        "Recent duplex speech-to-speech and speech-to-text models reduce latency by replacing multi-stage pipelines, but often compromise speech quality because accurate ASR, interruption handling, and high-fidelity synthesis must be optimized jointly."
+      ],
+      "Motivation": [
+        "Spoken dialogue is a natural form of human--computer interaction, yet most speech language models remain limited to turn-based operation and lack real-time adaptability, such as user barge-in."
+      ],
+      "Key Idea": [
+        "We propose VoiceChat-TTS, a low-latency, continuous, and streamable text-to-speech model for interactive agents."
+      ],
+      "Experimental Results": [
+        "We propose VoiceChat-TTS, a low-latency, continuous, and streamable text-to-speech model for interactive agents."
+      ],
+      "Data analysis": [
+        "VoiceChat-TTS is driven directly by LLM text-token streams, supports explicit interruption via control tokens, and produces silence when no textual input is available."
+      ],
+      "Discussion (e.g., future work)": [
+        "The model enables always-on, responsive speech generation while preserving modularity and high speech quality, and it supports mid-utterance interruptions without resetting the KV cache."
+      ],
+      "Significance of this study": [
+        "This work contributes to KV Cache Compression, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2608.13831v1"
       ]
     }
   },
