@@ -19923,6 +19923,55 @@
       ]
     }
   },
+  "batchedpandorasbox": {
+    "paper_id": "arxiv-2609.04059v1",
+    "source": "arXiv",
+    "title": "Batched Pandora's Box",
+    "authors": [
+      "Shaddin Dughmi",
+      "Yusuf Hakan Kalayci",
+      "Vasilis Livanos",
+      "Aditya Prasad"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-09-03",
+    "added_date": "2026-09-05 10:59:45",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Motivated by numerous parallelizable stochastic search problems, most notable and timely among them being LLM inference-time scaling, we propose and study batched versions of the Pandora's Box problem of Weitzman. In particular, boxes are opened in capacity-constrained batches, each batch has a setup cost, and all rewards in a batch are revealed together. We consider two different variants, motivated by different application environments: one where boxes are reusable (i.e., can provide multiple i.i.d.~samples) and another where they are not. For both variants we rule out most ``simple'' natural heuristics, and also formally prove NP-hardness of approximation in the traditional sense. We then relax the problem to allow bi-criteria approximations, with respect to both rewards and setup costs, where we exhibit constant approximation algorithms for both the reusable and non-reusable settings. This is obtained through a linear-programming relaxation of Pandora's Box problem, followed by randomized or Pipage rounding.",
+    "url": "https://arxiv.org/abs/2609.04059v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Motivated by numerous parallelizable stochastic search problems, most notable and timely among them being LLM inference-time scaling, we propose and study batched versions of the Pandora's Box problem of Weitzman.",
+        "In particular, boxes are opened in capacity-constrained batches, each batch has a setup cost, and all rewards in a batch are revealed together."
+      ],
+      "Motivation": [
+        "Motivated by numerous parallelizable stochastic search problems, most notable and timely among them being LLM inference-time scaling, we propose and study batched versions of the Pandora's Box problem of Weitzman."
+      ],
+      "Key Idea": [
+        "Motivated by numerous parallelizable stochastic search problems, most notable and timely among them being LLM inference-time scaling, we propose and study batched versions of the Pandora's Box problem of Weitzman."
+      ],
+      "Experimental Results": [
+        "We consider two different variants, motivated by different application environments: one where boxes are reusable (i.e., can provide multiple i.i.d.~samples) and another where they are not."
+      ],
+      "Data analysis": [
+        "For both variants we rule out most ``simple'' natural heuristics, and also formally prove NP-hardness of approximation in the traditional sense."
+      ],
+      "Discussion (e.g., future work)": [
+        "We then relax the problem to allow bi-criteria approximations, with respect to both rewards and setup costs, where we exhibit constant approximation algorithms for both the reusable and non-reusable settings."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2609.04059v1"
+      ]
+    }
+  },
   "bayesbenchevaluatingllmbelieftrajectoriesundermultiturnevidenceaccumulation": {
     "paper_id": "arxiv-2606.30850v1",
     "source": "arXiv",
@@ -60630,7 +60679,7 @@
     }
   },
   "efficientlyestimatingoptimalhyperparameterscalinglawsthroughpowerlawentropysearch": {
-    "paper_id": "arxiv-2609.01431v1",
+    "paper_id": "arxiv-2609.01431v2",
     "source": "arXiv",
     "title": "Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search",
     "authors": [
@@ -60638,6 +60687,7 @@
       "Sebastian Ament",
       "David Eriksson",
       "Maximilian Balandat",
+      "Bryan Kian Hsiang Low",
       "Eytan Bakshy",
       "Jihao Andreas Lin"
     ],
@@ -60650,7 +60700,7 @@
       "General LLM Efficiency"
     ],
     "abstract": "Optimal hyperparameter scaling laws describe how the best hyperparameters for large language model (LLM) training change with model and data scale, enabling practitioners to predict optimal configurations at production scales without expensive large-scale tuning. However, estimating these scaling laws conventionally requires exhaustive grid searches over thousands of training runs, consuming enormous computational resources. We introduce Power-Law Entropy Search (PLES), a computational cost-aware acquisition function built on multi-fidelity Bayesian optimization that efficiently estimates optimal hyperparameter scaling laws through adaptive experimentation. A key innovation in PLES is that it searches for candidates that reduce the overall uncertainty of a scaling law estimate, instead of optimizing a single objective function. At each iteration, PLES selects the candidate configuration that maximally reduces the uncertainty of the scaling law estimates per unit computational cost, naturally favoring informative small-scale experiments. We evaluate PLES on synthetic benchmarks, surrogate models fitted to real LLM training data, and actual LLM pre-training runs. Across all settings, PLES converges to accurate optimal hyperparameter scaling laws using less than one-tenth of the computational budget required by conventional grid search and other baselines.",
-    "url": "https://arxiv.org/abs/2609.01431v1",
+    "url": "https://arxiv.org/abs/2609.01431v2",
     "doi": null,
     "summary": {
       "Summary": [
@@ -60676,7 +60726,7 @@
         "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
       ],
       "Useful references to consider": [
-        "Source metadata page: https://arxiv.org/abs/2609.01431v1"
+        "Source metadata page: https://arxiv.org/abs/2609.01431v2"
       ]
     }
   },
@@ -105014,6 +105064,55 @@
       ]
     }
   },
+  "labelmateanllmdrivenframeworkforrefinedissuereportlabeling": {
+    "paper_id": "arxiv-2609.04055v1",
+    "source": "arXiv",
+    "title": "LabelMate: An LLM-Driven Framework for Refined Issue Report Labeling",
+    "authors": [
+      "Liam Johnston",
+      "Shayan Noei",
+      "Maram Assi",
+      "Ying Zou"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-09-03",
+    "added_date": "2026-09-05 10:59:45",
+    "category": [
+      "General LLM Efficiency"
+    ],
+    "abstract": "Software users often submit issue reports to a product's issue tracking system to report defects, suggest enhancements, or raise other product-related concerns. Labeling these issue reports supports effective planning and improves community engagement. However, many issue reports remain unlabeled due to the substantial manual effort required to design an appropriate label taxonomy, then assign suitable labels from this taxonomy to new issue reports. Existing automated labeling approaches attempt to mitigate these challenges. However, they suffer from key limitations, such as extensive manual intervention, the assignment of generic labels, and a dependence on existing labeled datasets. To address these limitations, we propose LabelMate, a novel Large Language Model (LLM)-driven framework that (1) derives a comprehensive, project-specific label set from historical issue reports and (2) automatically assigns relevant labels to new issue reports without requiring any pre-labeled training data. We evaluate LabelMate on 16,500 issue reports from 30 popular and diverse GitHub repositories. Based on this dataset, our approach generates a coherent list of 275 labels and achieves an average labeling accuracy of 89.84%, a statistically significant improvement over existing generic label assigning approaches. These results demonstrate that LabelMate offers an efficient, domain-adaptive solution to streamline the issue labeling process.",
+    "url": "https://arxiv.org/abs/2609.04055v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Software users often submit issue reports to a product's issue tracking system to report defects, suggest enhancements, or raise other product-related concerns.",
+        "Labeling these issue reports supports effective planning and improves community engagement."
+      ],
+      "Motivation": [
+        "Existing automated labeling approaches attempt to mitigate these challenges."
+      ],
+      "Key Idea": [
+        "To address these limitations, we propose LabelMate, a novel Large Language Model (LLM)-driven framework that (1) derives a comprehensive, project-specific label set from historical issue reports and (2) automatically assigns relevant labels to new issue reports without requiring any pre-labeled training data."
+      ],
+      "Experimental Results": [
+        "Labeling these issue reports supports effective planning and improves community engagement."
+      ],
+      "Data analysis": [
+        "However, they suffer from key limitations, such as extensive manual intervention, the assignment of generic labels, and a dependence on existing labeled datasets."
+      ],
+      "Discussion (e.g., future work)": [
+        "However, they suffer from key limitations, such as extensive manual intervention, the assignment of generic labels, and a dependence on existing labeled datasets."
+      ],
+      "Significance of this study": [
+        "This work contributes to General LLM Efficiency in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2609.04055v1"
+      ]
+    }
+  },
   "labollmacceleratedbayesianoptimizationthroughbroadexplorationandselectiveexperimentation": {
     "paper_id": "arxiv-2605.22054v1",
     "source": "arXiv",
@@ -113022,6 +113121,53 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2609.03674v1"
+      ]
+    }
+  },
+  "llm4ckdlargelanguagemodelsforearlystagechronickidneydiseasescreening": {
+    "paper_id": "arxiv-2609.04013v1",
+    "source": "arXiv",
+    "title": "LLM4CKD: Large Language Models for Early Stage Chronic Kidney Disease Screening",
+    "authors": [
+      "Muhammad Ashad Kabir",
+      "Sirajam Munira"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-09-03",
+    "added_date": "2026-09-05 10:59:45",
+    "category": [
+      "Inference Optimization"
+    ],
+    "abstract": "Early screening of chronic kidney disease (CKD) is critical for timely intervention, yet most machine learning (ML) and deep learning (DL) approaches require labeled data and model training, limiting their use in real-world screening settings. This study evaluates the effectiveness of large language models (LLMs) for CKD screening under zero-shot and few-shot in-context learning settings and compares them with traditional ML and DL methods. We propose a framework that uses clinically selected tabular features and structured prompt templates to enable LLM-based inference without task-specific training. LLM performance is evaluated across multiple prompt styles, feature configurations, and data settings, and compared with standard ML, DL, and tabular foundation model (TFM) baselines, and existing CKD screening tools. The results show that LLMs can achieve competitive performance using only a small number of examples, often matching or outperforming traditional approaches in low-data settings. However, their performance remains model-dependent and less stable as input complexity increases. In contrast, ML, DL, and TFM models show more consistent improvement with larger training data. Overall, the findings highlight a trade-off between data efficiency and stability, suggesting that LLMs may serve as a flexible complementary approach for CKD screening when labeled data are limited.",
+    "url": "https://arxiv.org/abs/2609.04013v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Early screening of chronic kidney disease (CKD) is critical for timely intervention, yet most machine learning (ML) and deep learning (DL) approaches require labeled data and model training, limiting their use in real-world screening settings.",
+        "This study evaluates the effectiveness of large language models (LLMs) for CKD screening under zero-shot and few-shot in-context learning settings and compares them with traditional ML and DL methods."
+      ],
+      "Motivation": [
+        "Early screening of chronic kidney disease (CKD) is critical for timely intervention, yet most machine learning (ML) and deep learning (DL) approaches require labeled data and model training, limiting their use in real-world screening settings."
+      ],
+      "Key Idea": [
+        "This study evaluates the effectiveness of large language models (LLMs) for CKD screening under zero-shot and few-shot in-context learning settings and compares them with traditional ML and DL methods."
+      ],
+      "Experimental Results": [
+        "The results show that LLMs can achieve competitive performance using only a small number of examples, often matching or outperforming traditional approaches in low-data settings."
+      ],
+      "Data analysis": [
+        "Early screening of chronic kidney disease (CKD) is critical for timely intervention, yet most machine learning (ML) and deep learning (DL) approaches require labeled data and model training, limiting their use in real-world screening settings."
+      ],
+      "Discussion (e.g., future work)": [
+        "The results show that LLMs can achieve competitive performance using only a small number of examples, often matching or outperforming traditional approaches in low-data settings."
+      ],
+      "Significance of this study": [
+        "This work contributes to Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2609.04013v1"
       ]
     }
   },
@@ -213367,6 +213513,69 @@
       ]
     }
   },
+  "unlockinglosslessspeedupsinllmsviadiscretediffusion": {
+    "paper_id": "arxiv-2609.04010v1",
+    "source": "arXiv",
+    "title": "Unlocking Lossless Speedups in LLMs via Discrete Diffusion",
+    "authors": [
+      "Subham Sekhar Sahoo",
+      "Lingjie Chen",
+      "Khiem Pham",
+      "Jonathan Geuter",
+      "Chaitanya Dwivedi",
+      "Varad Pimpalkhute",
+      "Yash Akhauri",
+      "Alexander Moreno",
+      "Mikhail Yurochkin",
+      "Zhenting Wang",
+      "Mostafa Elhoushi",
+      "Nolan Dey",
+      "Shane Bergsma",
+      "Joel Hestness",
+      "John Thickstun",
+      "Eric Xing",
+      "Zhengzhong Liu"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-09-03",
+    "added_date": "2026-09-05 10:59:45",
+    "category": [
+      "Distillation",
+      "Inference Optimization"
+    ],
+    "abstract": "Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation. To overcome this bottleneck, we introduce diffusion-augmented LLMs, a new class of models that defines an AR model distribution while using diffusion to draw multiple tokens in parallel from that distribution. We decouple the parameters of these models into two sets: AR weights, trained using the standard NTP objective, and lightweight diffusion weights, trained to generate multiple tokens simultaneously. The diffusion weights are learned through a simple Diffusion Distillation phase that adds negligible overhead to existing LLM training pipelines. We also introduce $Ψ$-Spec, a family of samplers that enables lossless acceleration and inference-time scaling at a fixed context length. Unlike speculative decoding, our method requires no separate draft model. Unlike diffusion LLMs (d-LLMs), it accelerates generation without sacrificing the quality of the underlying AR model. The resulting models, called Uno, can be trained from scratch or built by augmenting existing open-weight AR LLMs. Uno achieves higher throughput than leading speculative-decoding methods at every evaluated batch size and delivers up to $3\\times$ speedups over the base AR model, including at the largest batch size supported by the device. Notably, our 8B Uno model outperforms the leading open d-LLM, the 26B DiffusionGemma, and the proprietary Mercury 2 across all evaluated benchmarks in agentic tool use, coding, and long-context reasoning. We release code and checkpoints at: https://s-sahoo.github.io/uno/",
+    "url": "https://arxiv.org/abs/2609.04010v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation.",
+        "To overcome this bottleneck, we introduce diffusion-augmented LLMs, a new class of models that defines an AR model distribution while using diffusion to draw multiple tokens in parallel from that distribution."
+      ],
+      "Motivation": [
+        "Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation."
+      ],
+      "Key Idea": [
+        "To overcome this bottleneck, we introduce diffusion-augmented LLMs, a new class of models that defines an AR model distribution while using diffusion to draw multiple tokens in parallel from that distribution."
+      ],
+      "Experimental Results": [
+        "The resulting models, called Uno, can be trained from scratch or built by augmenting existing open-weight AR LLMs."
+      ],
+      "Data analysis": [
+        "The diffusion weights are learned through a simple Diffusion Distillation phase that adds negligible overhead to existing LLM training pipelines."
+      ],
+      "Discussion (e.g., future work)": [
+        "We also introduce $Ψ$-Spec, a family of samplers that enables lossless acceleration and inference-time scaling at a fixed context length."
+      ],
+      "Significance of this study": [
+        "This work contributes to Distillation, Inference Optimization in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2609.04010v1"
+      ]
+    }
+  },
   "unlockingparallelisminautoregressivelanguagemodelsviaspeculativedecodingwithprogressivetreedrafting": {
     "paper_id": "arxiv-2607.10661v1",
     "source": "arXiv",
@@ -223180,6 +223389,54 @@
       ],
       "Useful references to consider": [
         "Source metadata page: https://arxiv.org/abs/2608.30403v1"
+      ]
+    }
+  },
+  "whygateddeltanetsurvives4bitquantizationnvfp4w4a4fortherecurrenthalfofahybrid27bllm": {
+    "paper_id": "arxiv-2609.04098v1",
+    "source": "arXiv",
+    "title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM",
+    "authors": [
+      "Sergii Kozyrev",
+      "Davyd Maiboroda"
+    ],
+    "affiliations": [],
+    "venue": "Preprint (arXiv)",
+    "year": 2026,
+    "published_date": "2026-09-03",
+    "added_date": "2026-09-05 10:59:45",
+    "category": [
+      "Quantization",
+      "Long Context"
+    ],
+    "abstract": "Hybrid LLMs pair softmax attention with linear-attention layers such as Gated DeltaNet (GDN), whose recurrent state summarizes the context in fixed size. Early community 4-bit quantizations of Qwen3.8-27B (48 GDN layers, 16 attention layers) left the GDN block in 8- or 16-bit precision -- especially its decay and write-strength gates -- on the intuition that errors in a recurrence accumulate over long contexts. We test that intuition by building Minima: NVFP4 W4A4 on all 496 linear layers, GDN included. Across perplexity at 4K/32K, MMLU-Pro, GSM8K, AIME'25, GPQA-Diamond, LiveCodeBench, and RULER retrieval to 64K, Minima matches BF16 within seed noise (5-task average -0.52) while being the smallest (17.5 GiB) and fastest-prefill (+14-19%) recipe we compare, and its 32K perplexity gap shrinks with position. A four-part mechanism study explains why: (i) NVFP4's 16-element block scaling localizes the residual stream's extreme outliers, equalizing activation error across layer roles; (ii) the supposedly fragile gate projections are the least sensitive -- softplus/exponential and sigmoid parameterizations compress ~11% GEMM error to ~2% output error; (iii) the delta-rule recurrence holds injected noise at a flat plateau over 32K tokens and forgets a state impulse within hundreds of steps, because each write overwrites the state along the current key direction; (iv) the per-token quantization cost washes out with context instead of compounding. We also repair a global-scale mismatch that arises when per-module-calibrated NVFP4 checkpoints are served by kernels that fuse those modules into one GEMM, and show calibrated FP8 KV-cache scales are performance-free. The result: a practical recipe -- quantize everything, ship KV scales -- and a mechanistic account of why the recurrent half of a hybrid LLM is the easy half to quantize. Checkpoint: https://huggingface.co/minima-ai/mnma_qwen3.8_27b_nvfp4",
+    "url": "https://arxiv.org/abs/2609.04098v1",
+    "doi": null,
+    "summary": {
+      "Summary": [
+        "Hybrid LLMs pair softmax attention with linear-attention layers such as Gated DeltaNet (GDN), whose recurrent state summarizes the context in fixed size.",
+        "Early community 4-bit quantizations of Qwen3.8-27B (48 GDN layers, 16 attention layers) left the GDN block in 8- or 16-bit precision -- especially its decay and write-strength gates -- on the intuition that errors in a recurrence accumulate over long contexts."
+      ],
+      "Motivation": [
+        "Hybrid LLMs pair softmax attention with linear-attention layers such as Gated DeltaNet (GDN), whose recurrent state summarizes the context in fixed size."
+      ],
+      "Key Idea": [
+        "Early community 4-bit quantizations of Qwen3.8-27B (48 GDN layers, 16 attention layers) left the GDN block in 8- or 16-bit precision -- especially its decay and write-strength gates -- on the intuition that errors in a recurrence accumulate over long contexts."
+      ],
+      "Experimental Results": [
+        "The result: a practical recipe -- quantize everything, ship KV scales -- and a mechanistic account of why the recurrent half of a hybrid LLM is the easy half to quantize."
+      ],
+      "Data analysis": [
+        "Across perplexity at 4K/32K, MMLU-Pro, GSM8K, AIME'25, GPQA-Diamond, LiveCodeBench, and RULER retrieval to 64K, Minima matches BF16 within seed noise (5-task average -0.52) while being the smallest (17.5 GiB) and fastest-prefill (+14-19%) recipe we compare, and its 32K perplexity gap shrinks with position."
+      ],
+      "Discussion (e.g., future work)": [
+        "A four-part mechanism study explains why: (i) NVFP4's 16-element block scaling localizes the residual stream's extreme outliers, equalizing activation error across layer roles; (ii) the supposedly fragile gate projections are the least sensitive -- softplus/exponential and sigmoid parameterizations compress ~11% GEMM error to ~2% output error; (iii) the delta-rule recurrence holds injected noise at a flat plateau over 32K tokens and forgets a state impulse within hundreds of steps, because each write overwrites the state along the current key direction; (iv) the per-token quantization cost washes out with context instead of compounding."
+      ],
+      "Significance of this study": [
+        "This work contributes to Quantization, Long Context in 2026 and is a candidate for practical LLM system optimization follow-up."
+      ],
+      "Useful references to consider": [
+        "Source metadata page: https://arxiv.org/abs/2609.04098v1"
       ]
     }
   },
