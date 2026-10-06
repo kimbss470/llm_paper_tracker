@@ -36628,245 +36628,245 @@
       "title": "Yo-ByT5: Efficient and High-Fidelity Diacritic Restoration for Yorùbá",
       "paper_id": "arxiv-2610.01634v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "universalbytelevelencodingutf8utf16routingtoreducecrossscripttokenbudgetdisparities": {
       "title": "Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities",
-      "paper_id": "arxiv-2610.01984v1",
+      "paper_id": "arxiv-2610.01984v2",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "topkguidedadaptivebudgetawareactivationsparsityforefficientllminference": {
       "title": "TopK-Guided: Adaptive, Budget-Aware Activation Sparsity for Efficient LLM Inference",
       "paper_id": "arxiv-2610.01763v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "thedevilisinthereconstructionlossscalerethinkingoptimizationinllmquantization": {
       "title": "The Devil Is in the Reconstruction Loss Scale: Rethinking Optimization in LLM Quantization",
       "paper_id": "arxiv-2610.00983v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "sharpeningtaxinposttraining": {
       "title": "Sharpening Tax in Post-Training",
       "paper_id": "arxiv-2610.01509v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "steerreducinginferencecostinrelationalfoundationmodelsthroughsemanticallyinformedsampling": {
       "title": "STEER: Reducing Inference Cost in Relational Foundation Models through Semantically Informed Sampling",
       "paper_id": "arxiv-2610.00907v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "rehoperrecedinghorizonplanningforenhancedreasoning": {
       "title": "ReHoPER: Receding-Horizon Planning for Enhanced Reasoning",
       "paper_id": "arxiv-2610.00940v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "rptunelearnedcontextcurationforllmcatalogsearch": {
       "title": "RPTune: Learned Context Curation for LLM Catalog Search",
-      "paper_id": "arxiv-2610.00964v1",
+      "paper_id": "arxiv-2610.00964v2",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "overactmeasuringandmitigatingproactiveoverauthorizationinllmtoolcallingagents": {
       "title": "OverAct: Measuring and Mitigating Proactive Over-Authorization in LLM Tool-Calling Agents",
       "paper_id": "arxiv-2610.01508v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "omniseeknativetoolintegrationformultiturnaudiovisualreasoning": {
       "title": "OmniSeek: Native Tool Integration for Multi-turn Audio-Visual Reasoning",
       "paper_id": "arxiv-2610.02181v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "memfitefficientlongtermagenticmemory": {
       "title": "MemFit: Efficient Long-Term Agentic Memory",
       "paper_id": "arxiv-2610.00872v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "mwopmodalityawarewidthwiseoperationpruningforefficientmllms": {
       "title": "MWOP: Modality-aware Width-wise Operation Pruning for Efficient MLLMs",
       "paper_id": "arxiv-2610.01434v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "momatmixtureofmultipleatlasesforlowpowerjailbreakdefenseofquantizedllms": {
       "title": "MOMAT: Mixture of Multiple Atlases for Low-Power Jailbreak Defense of Quantized LLMs",
       "paper_id": "arxiv-2610.01058v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "learningtoaskinformationacquisitionforslmllmcollaborationunderabudget": {
       "title": "Learning to Ask: Information Acquisition for SLM-LLM Collaboration, under a budget",
       "paper_id": "arxiv-2610.01236v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "kalibenchafinegrainedbenchmarkforcybersecuritytooluseonkalilinuxwithruntimefreeverifiablerewards": {
       "title": "KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards",
       "paper_id": "arxiv-2610.02206v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "jevidssystemonemodelsfornetworkintrusiondetection": {
       "title": "Jev-IDS: System One Models for Network Intrusion Detection",
       "paper_id": "arxiv-2610.01079v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "haveanllmwriteyouranomalydetectorautonomousdiscoveryofcompactinterpretabledetectorsfortimeseries": {
       "title": "Have an LLM Write Your Anomaly Detector: Autonomous Discovery of Compact, Interpretable Detectors for Time Series",
       "paper_id": "arxiv-2610.01223v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "hakiccllmdrivenmultiagentdesignandoptimizationofconcurrencycontrolprotocols": {
       "title": "HakiCC: LLM-Driven Multi-Agent Design and Optimization of Concurrency Control Protocols",
       "paper_id": "arxiv-2610.00889v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "hhrhierarchicalhashretrievalforefficientllmgeneration": {
       "title": "HHR: Hierarchical Hash Retrieval for Efficient LLM Generation",
       "paper_id": "arxiv-2610.01230v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "fromdiscoverytodecisionfinitebudgetrecoverabilityinllmvoting": {
       "title": "From Discovery to Decision: Finite-Budget Recoverability in LLM Voting",
       "paper_id": "arxiv-2610.01014v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "federatedlearningforllmsovermobilenetworksissuesandsolutionsintherantransport": {
       "title": "Federated Learning for LLMs over Mobile Networks: Issues and Solutions in the RAN Transport",
       "paper_id": "arxiv-2610.01304v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "fedfitfederatedfinetuningofllmsviavectorbankparameterizationandquantization": {
       "title": "FedFit: Federated Fine-Tuning of LLMs via Vector-Bank Parameterization and Quantization",
       "paper_id": "arxiv-2610.01537v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "fastciefficientgpuintensiveciforllmtrainingframeworks": {
       "title": "FastCI: Efficient GPU-Intensive CI for LLM Training Frameworks",
       "paper_id": "arxiv-2610.01967v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "efficienttaskadaptationinlargelanguagemodelsasurveyofweightbasedpromptbasedandembeddingbasedadaptations": {
       "title": "Efficient Task Adaptation in Large Language Models: A Survey of Weight-Based, Prompt-Based, and Embedding-Based Adaptations",
       "paper_id": "arxiv-2610.00928v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "distillingdirectionalverification": {
       "title": "Distilling Directional Verification",
       "paper_id": "arxiv-2610.00997v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "detectinginconsistenciesinmodelspecificationswithllmasverifierreasoning": {
       "title": "Detecting Inconsistencies in Model Specifications with LLM-as-Verifier Reasoning",
       "paper_id": "arxiv-2610.01847v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "dependencyawarerewardshapingforagenticreinforcementlearning": {
       "title": "Dependency-Aware Reward Shaping for Agentic Reinforcement Learning",
       "paper_id": "arxiv-2610.01207v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "countingandmincostencodingfortokenizationinlargelanguagemodels": {
       "title": "Counting and Min-Cost Encoding for Tokenization in Large Language Models",
       "paper_id": "arxiv-2610.01127v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "beyondstateoftheartstandardisingenvironmentalimpactmetricsforairesearch": {
       "title": "Beyond State-of-the-Art: Standardising Environmental Impact Metrics for AI Research",
       "paper_id": "arxiv-2610.01116v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "beyondmemoryharnessinglonghorizonagentswithexplicitbeliefstates": {
       "title": "Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States",
       "paper_id": "arxiv-2610.01415v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "beyondleaderboardstokenomicsofagenticsmalllanguagemodelensembles": {
       "title": "Beyond Leaderboards: Tokenomics of Agentic Small Language Model Ensembles",
       "paper_id": "arxiv-2610.00954v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "beforeitfadesreinforcingtemporalrepresentationsatinferencetimeinvideollms": {
       "title": "Before It Fades: Reinforcing Temporal Representations at Inference Time in VideoLLMs",
       "paper_id": "arxiv-2610.01595v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "acmitemitigatinggenderbiasinllmsthroughconceptguidedmutualinformation": {
       "title": "Acmite: Mitigating Gender Bias in LLMs through Concept-Guided Mutual Information",
       "paper_id": "arxiv-2610.01696v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "amatryoshkahierarchicalragforefficientmultihopquestionanswering": {
       "title": "A Matryoshka Hierarchical RAG for Efficient Multi-Hop Question Answering",
       "paper_id": "arxiv-2610.01767v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "acitationgroundedbenchmarkfortrustworthyearningscalltranscriptanalysiswithlargelanguagemodels": {
       "title": "A Citation-Grounded Benchmark for Trustworthy Earnings Call Transcript Analysis with Large Language Models",
       "paper_id": "arxiv-2610.00969v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-10-01"
     },
     "dattrillmaunifiedandefficientlibraryfortrainingdataattributionatllmscale": {
@@ -36880,14 +36880,14 @@
       "title": "XOR-Trellis: Ultra-Low-Complexity Dequantization and Curvature-Aware Hadamard-Free LLM Quantization",
       "paper_id": "arxiv-2610.00432v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "workingaroundthecomputeceilingbyteexactmemoryingalahadmakesllmreadingaonetimecostllmreadingaonetimecost": {
       "title": "Working Around the Compute Ceiling: Byte-Exact Memory in Galahad Makes LLM Reading a One-Time Cost LLM Reading a One-Time Cost",
       "paper_id": "arxiv-2609.39358v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "vostispecifyingimplementingandverifyingdeterministicllminference": {
@@ -36901,7 +36901,7 @@
       "title": "Values as Style: Disentangling Values from Semantics with One-Way Mixing for Low-Damage LLM Steering",
       "paper_id": "arxiv-2609.39701v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "uniaemoeaunifiedaudioencoderviamixtureofexperts": {
@@ -36922,21 +36922,21 @@
       "title": "The Evolution of Attention in Large Language Models: Mechanisms, Trade-offs, and Emerging Trends",
       "paper_id": "arxiv-2609.39661v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "tamingspeculativesearchfortesttimescalinginllmserving": {
       "title": "Taming Speculative Search for Test-Time Scaling in LLM Serving",
       "paper_id": "arxiv-2609.39334v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "tactictemporalandcontextawarellmtacticalplanningforroadsidelidarattacks": {
       "title": "TACTIC: Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks",
       "paper_id": "arxiv-2609.39969v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "statetreeenhancinglongtermdialoguereasoningviareinforcementlearning": {
@@ -36950,7 +36950,7 @@
       "title": "Spatial Strategies, Not Actions: Vector-Quantized Geodesics as Tools for LLM-Driven Agents",
       "paper_id": "arxiv-2610.00613v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "sparseenginesparsefirstinferenceengine": {
@@ -36971,14 +36971,14 @@
       "title": "SkillSpec: Consensus-Gated Agent Skill Evolution via Representation Specialization",
       "paper_id": "arxiv-2610.00704v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "skillfmgeneratingskillsforllmagentsvialatentflowmatching": {
       "title": "SkillFM: Generating Skills for LLM Agents via Latent Flow Matching",
       "paper_id": "arxiv-2609.39382v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "simexsimulationintegratedroboticsautoresearch": {
@@ -36999,7 +36999,7 @@
       "title": "ScaffoldM3C: A Multimodal Sequential Monte Carlo Framework for Generative Stable Construction Planning",
       "paper_id": "arxiv-2610.00487v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "strataselflearningthroughrolealignedtieredagentsforrealtimestrategygames": {
@@ -37020,14 +37020,14 @@
       "title": "Revisiting On-policy Adversarial Black-Box Distillation: Calibrating Groupwise Reward Geometry for Effective Advantage Construction",
       "paper_id": "arxiv-2609.39757v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "resourceefficientsemanticcommunicationforheterogeneousagenticteams": {
       "title": "Resource-Efficient Semantic Communication for Heterogeneous Agentic Teams",
       "paper_id": "arxiv-2609.39477v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "reinforcingmultimodalreasoningviatokenlevelperceptiongroundedadvantageestimation": {
@@ -37041,21 +37041,21 @@
       "title": "RATIO: Reasoning Analysis and Token-level Inference Optimization for Quantized Reasoning Models",
       "paper_id": "arxiv-2609.39801v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "raimrobustaggregationofinexpensivemodelsforhallucinationdetection": {
       "title": "RAIM: Robust Aggregation of Inexpensive Models for Hallucination Detection",
       "paper_id": "arxiv-2609.39229v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "qulocphotonicquantumassistedlowrankllmcompression": {
       "title": "QuLoC: Photonic Quantum-Assisted Low-Rank LLM Compression",
-      "paper_id": "arxiv-2609.40146v1",
+      "paper_id": "arxiv-2609.40146v2",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "qatfactoryaversatiledeploymentalignedframeworkforquantizationawaretraininganddistillationofllms": {
@@ -37067,9 +37067,9 @@
     },
     "pricingtimenotjusttokenslatencyawaremechanismdesignforllminference": {
       "title": "Pricing Time, Not Just Tokens: Latency-Aware Mechanism Design for LLM Inference",
-      "paper_id": "arxiv-2609.40098v1",
+      "paper_id": "arxiv-2609.40098v2",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "preservingprovenanceinsharedkvcachesforllmserving": {
@@ -37083,28 +37083,28 @@
       "title": "Persistent Context Graphs for Efficient Memory Compaction in LLM Agents",
       "paper_id": "arxiv-2609.40118v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "patchkvweightspacecompensationofkvcache": {
       "title": "PatchKV: Weight-Space Compensation of KV Cache",
       "paper_id": "arxiv-2609.39329v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "offlineguidanceonlinereasoningreusingllmfeedbackforsmalllanguagemodels": {
       "title": "Offline Guidance, Online Reasoning: Reusing LLM Feedback for Small Language Models",
       "paper_id": "arxiv-2609.39346v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "opsrdonpolicyselfroledistillation": {
       "title": "OPSRD: On-Policy Self-Role Distillation",
       "paper_id": "arxiv-2609.39884v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "multillmcollaborativealignmentviastackelberggames": {
@@ -37125,14 +37125,14 @@
       "title": "Metacognitive Reasoning in Energy Based Models using Instance Based Learning Theory",
       "paper_id": "arxiv-2610.00399v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "megafluxskewresilientmoemegakernelsviapipelinedexpertreplication": {
       "title": "MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication",
       "paper_id": "arxiv-2610.00671v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "memomultilevelentityawarememoryforstreamingvideounderstanding": {
@@ -37146,21 +37146,21 @@
       "title": "Lingtai: What Concept Geometry Reveals--and Does Not Reveal--About LLM Inference",
       "paper_id": "arxiv-2610.00656v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "letofastinplacerecoveryforllmtrainingonsurvivinghardware": {
       "title": "Leto: Fast In-Place Recovery for LLM Training on Surviving Hardware",
       "paper_id": "arxiv-2610.00687v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "legalresearchbenchmeasuringendtoendreliabilityinlonghorizonlegalresearchagents": {
       "title": "Legal Research Bench: Measuring End-to-End Reliability in Long-Horizon Legal Research Agents",
       "paper_id": "arxiv-2610.00609v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "learningtorouteinvisualspaceviamultistepembeddingretrieval": {
@@ -37181,7 +37181,7 @@
       "title": "LabBook: Harnessing Experimental History for Efficient LLM-Driven Discovery",
       "paper_id": "arxiv-2610.00675v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "learntsllmenhancedalignmentandreconstructionwithnormalityguidanceformultivariatetimeseriesanomalydetection": {
@@ -37195,28 +37195,28 @@
       "title": "JevSpawn: Adaptive Agentic Inference through Compositional Action Spaces",
       "paper_id": "arxiv-2610.00437v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "isweighttyingstillbeneficialfordecoderonlyllmsinprivatesettingsunderdpsgd": {
       "title": "Is Weight Tying Still Beneficial for Decoder-Only LLMs in Private Settings Under DP-SGD?",
       "paper_id": "arxiv-2609.40335v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "interpretingreasoningoflargelanguagemodelsviapartialinformationdecomposition": {
       "title": "Interpreting Reasoning of Large Language Models via Partial Information Decomposition",
       "paper_id": "arxiv-2610.00571v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "inferenceauctions": {
       "title": "Inference Auctions",
       "paper_id": "arxiv-2609.40070v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "idbalancingstabletrainingofextremelysparsemoeviapidbasedloadcontrol": {
@@ -37230,14 +37230,14 @@
       "title": "Herschel: Continuous Optimization of Production LLM Inference through On-Demand Profiling",
       "paper_id": "arxiv-2609.40247v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "forteadaptivescoringandexactkeyframeselectionforlongvideoquestionanswering": {
       "title": "FORTE: Adaptive Scoring and Exact Keyframe Selection for Long-Video Question Answering",
       "paper_id": "arxiv-2610.00573v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "eventdrivenrefreshandrecurrencememorytoreducestalegroundinginreferringvideoobjectsegmentation": {
@@ -37251,21 +37251,21 @@
       "title": "Efficient Expert-Parallel Communication on PCIe-Connected Consumer GPUs",
       "paper_id": "arxiv-2609.40093v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "denoisingsurfacemodelingandpredictinginferencecostfordiffusionllmserving": {
       "title": "Denoising Surface: Modeling and Predicting Inference Cost for Diffusion LLM Serving",
       "paper_id": "arxiv-2610.00499v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "decisionorientedrecommendationrerankinganempiricalstudyofjev": {
       "title": "Decision-Oriented Recommendation Reranking: An Empirical Study of Jev",
       "paper_id": "arxiv-2609.40241v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "composingtaskspecificagentharnessesattesttimewithreusableprimitives": {
@@ -37279,7 +37279,7 @@
       "title": "Cognitive Enhancement: Rethinking the Necessity of Role-Playing for Large Language Models",
       "paper_id": "arxiv-2609.39853v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "codetocontrolsynthesizingparameterizedreactivecontrollers": {
@@ -37300,7 +37300,7 @@
       "title": "ChainLoRA: Geometry-Preserving Task Vector Merging for Continual Learning in LLMs",
       "paper_id": "arxiv-2610.00431v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "cascadiaacontrolplanefreealternativetohyperconvergedaiinfrastructure": {
@@ -37314,7 +37314,7 @@
       "title": "Capture the lifecycle: KV Cache management in ReAct Agents with KVTether",
       "paper_id": "arxiv-2609.39819v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "blackboardintelligencecansurpassautoregressiveongloballyconstrainedproblems": {
@@ -37328,21 +37328,21 @@
       "title": "Backdoor Purification for LoRA-Tuned LLMs via Null-Space Projection",
       "paper_id": "arxiv-2610.00685v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "backdoorcontainmentviaexpertquarantineandshutdowninllms": {
       "title": "Backdoor Containment via Expert Quarantine and Shutdown in LLMs",
       "paper_id": "arxiv-2610.00663v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "argumentstructurepredictioninonlineconversationsacomparativestudyofmodelingparadigmsandtaskarchitectures": {
       "title": "Argument Structure Prediction in Online Conversations: A Comparative Study of Modeling Paradigms and Task Architectures",
       "paper_id": "arxiv-2609.39225v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "alleviatinghallucinationinreasoningtaskswithtrainingfreeuncertaintyguidedsteering": {
@@ -37363,7 +37363,7 @@
       "title": "AIR-LLM: Broadcasting AI Weights over Radio for Memory-Free Edge LLM Inference via RF Computing",
       "paper_id": "arxiv-2610.00465v1",
       "first_seen_date": "2026-10-02 12:07:57",
-      "last_seen_date": "2026-10-03 11:54:28",
+      "last_seen_date": "2026-10-06 12:51:09",
       "latest_published_date": "2026-09-30"
     },
     "whichmodelsworkwelltogethermeasuringheterogeneityforllmteamselection": {
@@ -37512,6 +37512,1091 @@
       "first_seen_date": "2026-10-02 12:07:57",
       "last_seen_date": "2026-10-03 11:54:28",
       "latest_published_date": "2026-09-29"
+    },
+    "wordleveltextunmixingviaevidencepreservingownershiproutingwithlanguagemodels": {
+      "title": "Word-Level Text Unmixing via Evidence-Preserving Ownership Routing with Language Models",
+      "paper_id": "arxiv-2610.06603v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "whatmattersforlatentreasoningwithflowmatching": {
+      "title": "What Matters for Latent Reasoning with Flow Matching",
+      "paper_id": "arxiv-2610.06666v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "vepagentbridgingcausaltransitionviatoolaugmentedreinforcementlearningforvideoeventprediction": {
+      "title": "VepAgent: Bridging Causal-Transition via Tool-Augmented Reinforcement Learning for Video Event Prediction",
+      "paper_id": "arxiv-2610.06293v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "transcopewhatthesoftwarehidesaboutllmtrainingdatathehardwarerevealsatscaleandacceleratorsmagnify": {
+      "title": "TranScope: What the Software Hides About LLM Training Data, the Hardware Reveals at Scale, and Accelerators Magnify",
+      "paper_id": "arxiv-2610.06848v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "testtimeadaptationofreasoningstrategieswithbayesiannonparametricmemory": {
+      "title": "Test-Time Adaptation of Reasoning Strategies with Bayesian Nonparametric Memory",
+      "paper_id": "arxiv-2610.06516v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "stagqconstraintdrivenmultiprecisionweightquantizationforllms": {
+      "title": "StagQ: Constraint-Driven Multi-Precision Weight Quantization for LLMs",
+      "paper_id": "arxiv-2610.05977v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "scalingdownthescalinglawsparameterefficiencyandcomputeoptimaltraininginresourceconstrainedlargelanguagemodels": {
+      "title": "Scaling Down the Scaling Laws: Parameter Efficiency and Compute-Optimal Training in Resource-Constrained Large Language Models",
+      "paper_id": "arxiv-2610.06387v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "rosarotationalsparseadaptationformemoryefficientfinetuning": {
+      "title": "RoSA: Rotational Sparse Adaptation for Memory-Efficient Fine-Tuning",
+      "paper_id": "arxiv-2610.06243v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "rewardstealingattackonlargelanguagemodels": {
+      "title": "Reward Stealing Attack on Large Language Models",
+      "paper_id": "arxiv-2610.06670v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "probabilisticraceandethnicitypredictionusinggroupspecificnamelists": {
+      "title": "Probabilistic Race and Ethnicity Prediction Using Group-Specific Name Lists",
+      "paper_id": "arxiv-2610.06273v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "origamigmigawarevmplacementwithaneighborhoodrestrictedbilpandlivemigration": {
+      "title": "OrigaMIG: MIG-Aware VM Placement with a Neighborhood-Restricted BILP and Live Migration",
+      "paper_id": "arxiv-2610.06646v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "ovaloutputawarelocalpagebasesforkvcacheretrieval": {
+      "title": "OVAL: Output-Aware Local Page Bases for KV Cache Retrieval",
+      "paper_id": "arxiv-2610.06686v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "medprunetopologyefficientmultimodalmultiagentcommunicationevolutionformedicalvqatasks": {
+      "title": "MedPrune: Topology-Efficient Multimodal Multi-Agent Communication Evolution for Medical VQA Tasks",
+      "paper_id": "arxiv-2610.06695v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "moltafinegrainedgpumemorysharingsystemforllmservingwithopportunisticfinetuning": {
+      "title": "MOLT: A Fine-Grained GPU Memory Sharing System for LLM Serving with Opportunistic Fine-Tuning",
+      "paper_id": "arxiv-2610.05748v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "mateadaptivelongandshorttermusermemoryforllmbasedrecommendation": {
+      "title": "MATE: Adaptive Long- and Short-Term User Memory for LLM-Based Recommendation",
+      "paper_id": "arxiv-2610.06050v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "lograscalingllmreinforcementlearningwithlowrankgradientsketches": {
+      "title": "LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches",
+      "paper_id": "arxiv-2610.06647v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "lightmtplightweightlatentmultitokenprediction": {
+      "title": "LightMTP: Lightweight Latent Multi-Token Prediction",
+      "paper_id": "arxiv-2610.06031v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "harnessingmultimodallargelanguagemodelsfortrainingfreehumanobjectinteractiondetection": {
+      "title": "Harnessing Multimodal Large Language Models for Training-Free Human-Object Interaction Detection",
+      "paper_id": "arxiv-2610.06394v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "fromtokenmaxtooutcomemaxhowyouuseaideterminesitsproductivity": {
+      "title": "From Token-Max to Outcome-Max: How You Use AI Determines Its Productivity",
+      "paper_id": "arxiv-2610.05697v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "finetuninga3bparameterllmonasmartphonecharacterizingsustainedtraining": {
+      "title": "Fine-Tuning a 3B-Parameter LLM on a Smartphone: Characterizing Sustained Training",
+      "paper_id": "arxiv-2610.06325v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "dosmalllanguagemodelslearntonegotiateacontrolledscalingstudyofrltrainedsellers": {
+      "title": "Do Small Language Models Learn to Negotiate? A Controlled Scaling Study of RL-Trained Sellers",
+      "paper_id": "arxiv-2610.06204v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "differentiablebitwidthscooptimizingpruningandquantizationviasvdforultraefficientllmcompression": {
+      "title": "Differentiable Bit-Widths: Co-optimizing Pruning and Quantization via SVD for Ultra-Efficient LLM Compression",
+      "paper_id": "arxiv-2610.06026v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "deferkvrethinkingevictiontimingforoneshotkvcachecompression": {
+      "title": "DeferKV: Rethinking Eviction Timing for One-Shot KV Cache Compression",
+      "paper_id": "arxiv-2610.06286v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "choosinganenergyefficientsoftwarearchitectureforbuildingsystemdiagnosticsupport": {
+      "title": "Choosing an energy-efficient software architecture for building system diagnostic support",
+      "paper_id": "arxiv-2610.06444v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "canagentharnessesandinferenceenginesheareachotherthehearprotocolforagenticllmserving": {
+      "title": "Can Agent Harnesses and Inference Engines Hear Each Other? The HEAR Protocol for Agentic LLM Serving",
+      "paper_id": "arxiv-2610.06597v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "cvifacriticalitydrivenvisualinterventionframeworkforgeometricdiagramunderstandinginmllms": {
+      "title": "CVIF: A Criticality-Driven Visual Intervention Framework for Geometric Diagram Understanding in MLLMs",
+      "paper_id": "arxiv-2610.06399v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "ciphermoebalancingefficiencyandroutingfidelityintrillionscalemoetraining": {
+      "title": "CIPHER-MoE: Balancing Efficiency and Routing Fidelity in Trillion-Scale MoE Training",
+      "paper_id": "arxiv-2610.05744v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "breakingthetieaclusterawareroutingframeworkforlargelanguagemodels": {
+      "title": "Breaking the Tie: A Cluster-Aware Routing Framework for Large Language Models",
+      "paper_id": "arxiv-2610.05982v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "beyondsemanticsimilarityperformanceandcostsofagenticretrievalforcomplextasks": {
+      "title": "Beyond Semantic Similarity: Performance and Costs of Agentic Retrieval for Complex Tasks",
+      "paper_id": "arxiv-2610.05750v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "benchmarkingjailbreakguardrailsforembodiedagents": {
+      "title": "Benchmarking Jailbreak Guardrails for Embodied Agents",
+      "paper_id": "arxiv-2610.06122v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "beforeagenttellstheliehasdeceptionalreadybeenrepresented": {
+      "title": "Before Agent Tells The Lie: Has Deception Already Been Represented?",
+      "paper_id": "arxiv-2610.06576v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "attentiontaxhandofftaxastylisedmodelofwhenmultiagentllmsystemshelp": {
+      "title": "Attention Tax, Handoff Tax: A Stylised Model of When Multi-Agent LLM Systems Help",
+      "paper_id": "arxiv-2610.06069v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "anosognosiainllmsprobingselfawarenessofquantizedcomputationalsubstrate": {
+      "title": "Anosognosia in LLMs: Probing Self-Awareness of Quantized Computational Substrate",
+      "paper_id": "arxiv-2610.06174v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "anevaluationofthesemanticunderstandingcapabilitiesoflargelanguagemodelsforwebattackpayloads": {
+      "title": "An Evaluation of the Semantic Understanding Capabilities of Large Language Models for Web Attack Payloads",
+      "paper_id": "arxiv-2610.06507v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-05"
+    },
+    "whichpreferencestotrainonendtoendmultiobjectivealignmentwithanadversarialpreferencedistribution": {
+      "title": "Which Preferences to Train On? End-to-End Multi-Objective Alignment with an Adversarial Preference Distribution",
+      "paper_id": "arxiv-2610.04845v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "understandingtheweightaveragingmechanisminllmtrainingforposttrainingquantization": {
+      "title": "Understanding the Weight Averaging Mechanism in LLM Training for Post-Training Quantization",
+      "paper_id": "arxiv-2610.05329v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "themachineuseofhumanbeings": {
+      "title": "The machine use of human beings",
+      "paper_id": "arxiv-2610.05462v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "tssplearningspeakerpreservingrepresentationsinaudiolargelanguagemodels": {
+      "title": "TS-SP: Learning Speaker-Preserving Representations in Audio Large Language Models",
+      "paper_id": "arxiv-2610.04887v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "specfoldfoldingmultibranchredundancyforfasterspeculativedecodingindiffusionlanguagemodels": {
+      "title": "SpecFold: Folding Multi-Branch Redundancy for Faster Speculative Decoding in Diffusion Language Models",
+      "paper_id": "arxiv-2610.04875v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "scoutsupplyawarecoldstartproactivequerysuggestionfortravelsearch": {
+      "title": "SCOUT: Supply-Aware Cold-Start Proactive Query Suggestion for Travel Search",
+      "paper_id": "arxiv-2610.05619v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "robustparameterefficientllmadaptationonanaloghardware": {
+      "title": "Robust Parameter-Efficient LLM Adaptation on Analog Hardware",
+      "paper_id": "arxiv-2610.05318v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "romodtemporalroutingmodulationviamixtureofexpertsforvideoanomalydetection": {
+      "title": "RoMod: Temporal Routing Modulation via Mixture-of-Experts for Video Anomaly Detection",
+      "paper_id": "arxiv-2610.05131v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "representationbehavioralignmentforexplainableweaklysupervisedvideoanomalydetection": {
+      "title": "Representation--Behavior Alignment for Explainable Weakly-Supervised Video Anomaly Detection",
+      "paper_id": "arxiv-2610.05129v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "nohindsightforllmfactcheckersmeasuringleakagechannelsinmisinformationdetection": {
+      "title": "No Hindsight for LLM Fact-Checkers: Measuring Leakage Channels in Misinformation Detection",
+      "paper_id": "arxiv-2610.04888v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "lookbeforeyouleapthermodynamicarbitrationofparametricandnonparametricknowledgeinllmagentsviaselfregulatingmemoryarchitectures": {
+      "title": "Look Before You Leap: Thermodynamic Arbitration of Parametric and Non-Parametric Knowledge in LLM Agents via Self-Regulating Memory Architectures",
+      "paper_id": "arxiv-2610.05223v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "llmbenchmarkingviarepresentationmultitasklearning": {
+      "title": "LLM Benchmarking via Representation Multi-task Learning",
+      "paper_id": "arxiv-2610.05613v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "llbpelinkedlistbasedgpuparallelbpetokenizer": {
+      "title": "LLBPE: Linked-List Based GPU-Parallel BPE Tokenizer",
+      "paper_id": "arxiv-2610.04951v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "hiddeninthecommentsacontextinjectionattacksurfaceincodellms": {
+      "title": "Hidden in the Comments: A Context-Injection Attack Surface in Code LLMs",
+      "paper_id": "arxiv-2610.05139v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "groupwisedistortionguaranteesforpreferencebasedalignment": {
+      "title": "Groupwise Distortion Guarantees for Preference-Based Alignment",
+      "paper_id": "arxiv-2610.05450v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "expandingllmreasoning": {
+      "title": "Expanding LLM Reasoning",
+      "paper_id": "arxiv-2610.05584v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "engrichenhancinggenerativerewardmodelingwithcritiquesfromhumans": {
+      "title": "EnGRICH: Enhancing Generative Reward Modeling with Critiques from Humans",
+      "paper_id": "arxiv-2610.05370v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "emorssmitigatingemotioninducedoverrefusalinlargelanguagemodels": {
+      "title": "EmoRSS: Mitigating Emotion-Induced Over-Refusal in Large Language Models",
+      "paper_id": "arxiv-2610.04998v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "dollmsunderstandsequentialstructureacontrolledstudyofinferenceandgeneration": {
+      "title": "Do LLMs Understand Sequential Structure? A Controlled Study of Inference and Generation",
+      "paper_id": "arxiv-2610.04977v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "communicationshapescollectiveinferenceinselfadaptingllmsocietiesevidencefrommafia": {
+      "title": "Communication Shapes Collective Inference in Self-Adapting LLM Societies: Evidence from Mafia",
+      "paper_id": "arxiv-2610.05041v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "codeforgemaexecutionverifiedmultiagentlearningwithlanguageconditionedloraformultilingualcodegeneration": {
+      "title": "CodeForge-MA: Execution-Verified Multi-Agent Learning with Language-Conditioned LoRA for Multilingual Code Generation",
+      "paper_id": "arxiv-2610.05481v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "characterizingparallelismstrategiesinllminferencefundamentalcomputecommunicationtradeoffs": {
+      "title": "Characterizing Parallelism Strategies in LLM Inference: Fundamental Compute-Communication Trade-offs",
+      "paper_id": "arxiv-2610.05305v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "buildingllmagentsystemsthedeeplearningwayfrommodulardesigntoarchitecturesearch": {
+      "title": "Building LLM Agent Systems the Deep Learning Way: From Modular Design to Architecture Search",
+      "paper_id": "arxiv-2610.04961v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "agentdiscoverautonomousdiscoverywithminimalsearchscaffolding": {
+      "title": "AgentDiscover: Autonomous Discovery with Minimal Search Scaffolding",
+      "paper_id": "arxiv-2610.05334v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "agentbehaviorascodeefficientandrobustllmagentswithprogrammaticspecifications": {
+      "title": "Agent Behavior as Code: Efficient and Robust LLM Agents with Programmatic Specifications",
+      "paper_id": "arxiv-2610.04824v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "ascentonlinetesttimetrainingoflonghorizonagentsviaselfdistillationofverifiedexperience": {
+      "title": "ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience",
+      "paper_id": "arxiv-2610.05303v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-04"
+    },
+    "understandingandmitigatinghallucinationescapeintoolusingllmagents": {
+      "title": "Understanding and Mitigating Hallucination Escape in Tool-Using LLM Agents",
+      "paper_id": "arxiv-2610.04409v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "stronghelpsweakdirectionalcrossmodalalignmenttransferinmultimodalllms": {
+      "title": "Strong Helps Weak: Directional Cross-Modal Alignment Transfer in Multi-modal LLMs",
+      "paper_id": "arxiv-2610.04580v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "steeringspeechlanguagemodelstrainingfreetaskspecializationviacontrastiveactivationaddition": {
+      "title": "Steering Speech-Language Models: Training-Free Task Specialization via Contrastive Activation Addition",
+      "paper_id": "arxiv-2610.04683v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "sayingnotknowingaggressivelyggufquantizedsmalllanguagemodelsstillwriterarewordstheycannolongerdefine": {
+      "title": "Saying, Not Knowing: Aggressively GGUF-Quantized Small Language Models Still Write Rare Words They Can No Longer Define",
+      "paper_id": "arxiv-2610.04403v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "seisselfevolvinginferencesystems": {
+      "title": "SEIS: Self-Evolving Inference Systems",
+      "paper_id": "arxiv-2610.04646v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "principledtopkselectionforlanguagemodelswithhybridgradients": {
+      "title": "Principled Top-$k$ Selection for Language Models with Hybrid Gradients",
+      "paper_id": "arxiv-2610.04162v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "practicalruntimeenforcementoffirstordertemporalrequirements": {
+      "title": "Practical Runtime Enforcement of First-Order Temporal Requirements",
+      "paper_id": "arxiv-2610.04611v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "playingsocialdeductiongameswithreinforcementfinetunedlargelanguagemodels": {
+      "title": "Playing social deduction games with reinforcement fine-tuned large language models",
+      "paper_id": "arxiv-2610.04261v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "phasegatephaseawarecpuretrievalschedulingforondevicellmsonunifiedmemory": {
+      "title": "PhaseGate: Phase-Aware CPU Retrieval Scheduling for On-Device LLMs on Unified Memory",
+      "paper_id": "arxiv-2610.04537v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "notallanswersarecontextuallypersuadableinferencedynamicsinlargelanguagemodelsundercontextualinfluence": {
+      "title": "Not All Answers Are Contextually Persuadable: Inference Dynamics in Large Language Models under Contextual Influence",
+      "paper_id": "arxiv-2610.04791v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "morevalueperkeyasymmetricsparseattentionforfasterllmdecoding": {
+      "title": "More Value per Key: Asymmetric Sparse Attention for Faster LLM Decoding",
+      "paper_id": "arxiv-2610.04753v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "languageconditionedtokenandreasoningefficiencyinlargelanguagemodelsapairedcrosslingualstudyprotocol": {
+      "title": "Language-Conditioned Token and Reasoning Efficiency in Large Language Models: A Paired Cross-Lingual Study Protocol",
+      "paper_id": "arxiv-2610.04295v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "inferoptconstrainedmultiobjectivesearchforllminferenceconfigurations": {
+      "title": "InferOpt: Constrained Multi-Objective Search for LLM Inference Configurations",
+      "paper_id": "arxiv-2610.04473v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "hierarchicalcreditassignmentforrlvronfusedgromovwassersteingeometry": {
+      "title": "Hierarchical Credit Assignment for RLVR on Fused Gromov-Wasserstein Geometry",
+      "paper_id": "arxiv-2610.04344v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "flashgazetrainingfreemultiscalepatchpruningforefficientvideounderstanding": {
+      "title": "FlashGaze: Training-Free Multi-Scale Patch Pruning For Efficient Video Understanding",
+      "paper_id": "arxiv-2610.04225v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "factorizeddelayedstreamsmodelingforllmbasedstreamingasr": {
+      "title": "Factorized Delayed Streams Modeling for LLM-based Streaming ASR",
+      "paper_id": "arxiv-2610.04333v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "extractingpersonasubspacesthroughiterativenullspaceprojectionformodulation": {
+      "title": "Extracting Persona Subspaces Through Iterative Nullspace Projection For Modulation",
+      "paper_id": "arxiv-2610.04676v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "cytrexexplainableaibasedcybersecuritythreatreasoningframeworkfordernetworks": {
+      "title": "CyTReX: Explainable AI-Based Cybersecurity Threat Reasoning Framework for DER Networks",
+      "paper_id": "arxiv-2610.04286v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "couplingnoisypairwiseknowledgetothedagposteriorforcausaldiscovery": {
+      "title": "Coupling Noisy Pairwise Knowledge to the DAG Posterior for Causal Discovery",
+      "paper_id": "arxiv-2610.04559v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "correctnessisadirectiongeometricanswerselectioninlanguagemodels": {
+      "title": "Correctness Is a Direction: Geometric Answer Selection in Language Models",
+      "paper_id": "arxiv-2610.04512v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "controlcomputegovernanceinagenticairanaiagentsasbothcontrollersandworkloads": {
+      "title": "Control-Compute Governance in Agentic AI-RAN: AI Agents as Both Controllers and Workloads",
+      "paper_id": "arxiv-2610.04578v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "conformalpredictionwithparaphraseawarescoringforllmuncertaintyquantification": {
+      "title": "Conformal Prediction with Paraphrase-Aware Scoring for LLM Uncertainty Quantification",
+      "paper_id": "arxiv-2610.04239v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "cleansecondorderllmtrainingatlinearmemorycostvianystrmsketching": {
+      "title": "Clean: Second-order LLM Training at Linear Memory Cost via Nyström Sketching",
+      "paper_id": "arxiv-2610.04204v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "causallyfairgenerationwithlargelanguagemodels": {
+      "title": "Causally Fair Generation with Large Language Models",
+      "paper_id": "arxiv-2610.04444v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "benchmarkingpsychologicaldynamicsingenerativeagents": {
+      "title": "Benchmarking Psychological Dynamics in Generative Agents",
+      "paper_id": "arxiv-2610.04246v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "barqbalancedcodebookrefinementforlowbitllmquantization": {
+      "title": "BARQ: Balanced Codebook Refinement for Low-Bit LLM Quantization",
+      "paper_id": "arxiv-2610.04490v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-03"
+    },
+    "venusrlafullydisaggregatedagenticrlsystemwithpriorityschedulingandscalableinteraction": {
+      "title": "VenusRL: A Fully Disaggregated Agentic RL System with Priority Scheduling and Scalable Interaction",
+      "paper_id": "arxiv-2610.03286v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "tojevornotevaluatingtheaccuracyandefficiencyofstructureddecisionmodelsforhatespeechmoderation": {
+      "title": "To Jev or Not? Evaluating the Accuracy and Efficiency of Structured Decision Models for Hate-Speech Moderation",
+      "paper_id": "arxiv-2610.03324v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "thegeometryofknowledgeaccessibilityinlargelanguagemodels": {
+      "title": "The Geometry of Knowledge Accessibility in Large Language Models",
+      "paper_id": "arxiv-2610.03052v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "thecostofahopbenchmarkingnlipanda2a": {
+      "title": "The Cost of a Hop: Benchmarking NLIP and A2A",
+      "paper_id": "arxiv-2610.04053v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "tailoringthequantizationspacefor1bitkvcachecompression": {
+      "title": "Tailoring the Quantization Space for 1-Bit KV Cache Compression",
+      "paper_id": "arxiv-2610.03027v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "structuredcompositionofverifiableatomicinsightsfortabletoreportgeneration": {
+      "title": "Structured Composition of Verifiable Atomic Insights for Table-to-Report Generation",
+      "paper_id": "arxiv-2610.03525v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "singlepassuncertaintyheadsforclaimlevelhallucinationdetectioninpersianmedicallanguagemodels": {
+      "title": "Single-Pass Uncertainty Heads for Claim-Level Hallucination Detection in Persian Medical Language Models",
+      "paper_id": "arxiv-2610.03482v2",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "servetwinabenchmarkvalidatedsimulatorfordistributedllmarchitectureexploration": {
+      "title": "ServeTwin: A Benchmark-Validated Simulator for Distributed LLM Architecture Exploration",
+      "paper_id": "arxiv-2610.02732v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "seraidsstructuredexperienceretrievalaugmentedintrusiondetectionwithsmalllanguagemodels": {
+      "title": "SERA-IDS: Structured Experience Retrieval-Augmented Intrusion Detection with Small Language Models",
+      "paper_id": "arxiv-2610.03999v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "retrievalaugmentedlargelanguagemodeldecisionmakingforautonomousdrivingguidedbychinesephilosophicalwisdom": {
+      "title": "Retrieval-Augmented Large Language Model Decision-Making for Autonomous Driving Guided by Chinese Philosophical Wisdom",
+      "paper_id": "arxiv-2610.03948v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "reliableselfevolutionwithimperfectproxyrewards": {
+      "title": "Reliable Self-Evolution with Imperfect Proxy Rewards",
+      "paper_id": "arxiv-2610.02975v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "relevantevidencedecodingforaudiovisualhallucinationmitigation": {
+      "title": "Relevant Evidence Decoding for Audio-Visual Hallucination Mitigation",
+      "paper_id": "arxiv-2610.02976v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "reasoningwithevidencenotmerelyrationalesverifiablepreferenceproofsforllmbasedrecommendation": {
+      "title": "Reasoning with Evidence, Not Merely Rationales: Verifiable Preference Proofs for LLM-Based Recommendation",
+      "paper_id": "arxiv-2610.02968v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "probabilisticalgorithmsforisingmachinesfromoptimizationtogenerativeai": {
+      "title": "Probabilistic Algorithms for Ising Machines from Optimization to Generative AI",
+      "paper_id": "arxiv-2610.03972v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "omniconfesselicitingtokenconfessionstomitigateomnimodalhallucination": {
+      "title": "OmniConfess: Eliciting Token Confessions to Mitigate Omni-Modal Hallucination",
+      "paper_id": "arxiv-2610.02999v2",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "olmodetectamultistageconfoundercontrolledbenchmarkformembershipinferenceonlargelanguagemodels": {
+      "title": "OLMo-Detect: A Multi-Stage, Confounder-Controlled Benchmark for Membership Inference on Large Language Models",
+      "paper_id": "arxiv-2610.02986v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "metropolishastingsdominatesimportanceresamplingforpolicycomposition": {
+      "title": "Metropolis-Hastings Dominates Importance Resampling for Policy Composition",
+      "paper_id": "arxiv-2610.03480v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "mofverifyafailureawareagenticharnessformofhypothesisverification": {
+      "title": "MOF-VERIFY: A Failure-Aware Agentic Harness for MOF Hypothesis Verification",
+      "paper_id": "arxiv-2610.03056v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "learningrobustpersonalizedpromptsforllmdrivensequentialrecommendation": {
+      "title": "Learning Robust Personalized Prompts for LLM-Driven Sequential Recommendation",
+      "paper_id": "arxiv-2610.03923v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "leaplearningefficientactionproposalsforllmagents": {
+      "title": "LEAP: Learning Efficient Action Proposals For LLM Agents",
+      "paper_id": "arxiv-2610.02670v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "jumpingthelineexploitinglengthpredictionsinllmscheduling": {
+      "title": "Jumping the Line: Exploiting Length Predictions in LLM Scheduling",
+      "paper_id": "arxiv-2610.03430v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "jovejointexecutionandverificationforresourceawarellmtaskgraphs": {
+      "title": "JOVE: Joint Execution and Verification for Resource-Aware LLM Task Graphs",
+      "paper_id": "arxiv-2610.03296v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "improvingatomicfactrecallviafocusedviewsinunstructuredknowledgeediting": {
+      "title": "Improving Atomic-Fact Recall via Focused Views in Unstructured Knowledge Editing",
+      "paper_id": "arxiv-2610.02772v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "hyperthinktexttoparameterhypernetworksforefficientreasoning": {
+      "title": "HyperThink: Text-to-Parameter Hypernetworks for Efficient Reasoning",
+      "paper_id": "arxiv-2610.03039v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "geoscaffoldlearningcompactgeometriclatentsviareconstructionforefficientvisionlanguagenavigation": {
+      "title": "GeoScaffold: Learning Compact Geometric Latents via Reconstruction for Efficient Vision-Language Navigation",
+      "paper_id": "arxiv-2610.02697v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "generaldecisionmodelsbenchmarkingandinsightsbeyondjev": {
+      "title": "General Decision Models: Benchmarking and Insights Beyond Jev",
+      "paper_id": "arxiv-2610.03935v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "frugalevotowardscostawarellmguidedprogramevolution": {
+      "title": "FrugalEvo: Towards Cost-Aware LLM-Guided Program Evolution",
+      "paper_id": "arxiv-2610.03675v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "fromrequirementstoattacktreesgroundedllmagentsfordesigntimesecurityreview": {
+      "title": "From Requirements to Attack Trees: Grounded LLM Agents for Design-Time Security Review",
+      "paper_id": "arxiv-2610.03820v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "frequencyisnotsensitivityidentifyingsafetysensitiveexpertsinsparsemoellm": {
+      "title": "Frequency Is Not Sensitivity Identifying Safety-Sensitive Experts in Sparse MoE LLM",
+      "paper_id": "arxiv-2610.02910v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "foresightplanningfutureperceptioninstreamingvlmswithoutretraining": {
+      "title": "Foresight: planning future perception in streaming VLMs without retraining",
+      "paper_id": "arxiv-2610.03123v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "followthewinnersconservativepolicyimprovementwiththecrossentropymethodforcriticfreerft": {
+      "title": "Follow the Winners: Conservative Policy Improvement with the Cross-Entropy Method for Critic-Free RFT",
+      "paper_id": "arxiv-2610.03361v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "explainablemolecularstructureinferencefromgcmswithdiffusionmodelsandllmreranking": {
+      "title": "Explainable Molecular Structure Inference from GC--MS with Diffusion Models and LLM Reranking",
+      "paper_id": "arxiv-2610.03066v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "engineeringsustainableagentsasystematiccomparisonofagenticllmsfordeveloperworkflows": {
+      "title": "Engineering Sustainable Agents: A Systematic Comparison of Agentic LLMs for Developer Workflows",
+      "paper_id": "arxiv-2610.03010v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "efficientreasoningtrainingdoesnotalwaysharmcotfaithfulnessandmonitorability": {
+      "title": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability",
+      "paper_id": "arxiv-2610.03509v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "edgeagentorchestratingondevicellminferenceforendusermultiagentsystemsoncpugpuunifiedmemoryarchitectures": {
+      "title": "EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures",
+      "paper_id": "arxiv-2610.03394v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "dynamicllmroutersareoftenmisguided": {
+      "title": "Dynamic LLM Routers are Often Misguided",
+      "paper_id": "arxiv-2610.02762v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "dynamicharnesssearchbuildingmultiagentsystemsperqueryviaprediction": {
+      "title": "Dynamic Harness Search: Building Multi-Agent Systems Per-Query via Prediction",
+      "paper_id": "arxiv-2610.04137v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "decouplingmemoryfromcontextstructuredmemoryfortokenefficienttesttimecontinuallearning": {
+      "title": "Decoupling Memory from Context: Structured Memory for Token-Efficient Test-Time Continual Learning",
+      "paper_id": "arxiv-2610.02687v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "d2kbenchcanllmagentsturnexpertdesignsintoefficientgpukernels": {
+      "title": "D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?",
+      "paper_id": "arxiv-2610.03226v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "createscoredomaintheoryinformedbayesianroutingforllmbasedcvscreening": {
+      "title": "CreateScore: Domain-Theory-Informed Bayesian Routing for LLM-Based CV Screening",
+      "paper_id": "arxiv-2610.02972v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "corruptedbutcorrectwhyvisionlanguagemodelslietothemselvesinternally": {
+      "title": "Corrupted but Correct: Why Vision-Language Models Lie to Themselves Internally",
+      "paper_id": "arxiv-2610.03445v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "collectivebiasmitigationviamodelroutingandcollaboration": {
+      "title": "Collective Bias Mitigation via Model Routing and Collaboration",
+      "paper_id": "arxiv-2610.03240v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "codaexploitingadmissionflexibilityforcodingagentserving": {
+      "title": "Coda: Exploiting Admission Flexibility for Coding-Agent Serving",
+      "paper_id": "arxiv-2610.03088v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "csircontextuallyandsociallyinformedrobotsforefficientpersongoalnavigation": {
+      "title": "CSIR: Contextually and Socially Informed Robots for Efficient Person Goal Navigation",
+      "paper_id": "arxiv-2610.02750v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "climbconfidenceguidedcomplementaryevidenceformultimodalretrievalaugmentedgeneration": {
+      "title": "CLIMB: Confidence-Guided Complementary Evidence for Multimodal Retrieval-Augmented Generation",
+      "paper_id": "arxiv-2610.03421v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "bitnestbitnestedspeculativedecodingformemoryefficientllminferenceacceleration": {
+      "title": "BitNest: Bit-Nested Speculative Decoding for Memory-Efficient LLM Inference Acceleration",
+      "paper_id": "arxiv-2610.02800v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "batchedspeechdecisionswithoutdecodingsingletokensupervisionletsafrozenllmhearbeyondthetranscript": {
+      "title": "Batched Speech Decisions Without Decoding: Single-Token Supervision Lets a Frozen LLM Hear Beyond the Transcript",
+      "paper_id": "arxiv-2610.02638v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "agenticresourceallocationforbatchmultiobjectivebayesianoptimizationinautonomousmaterialsdiscovery": {
+      "title": "Agentic Resource Allocation for Batch Multi-Objective Bayesian Optimization in Autonomous Materials Discovery",
+      "paper_id": "arxiv-2610.04134v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "adaptivemutualdistillationforbalancedmultitaskposttrainingoflargelanguagemodels": {
+      "title": "Adaptive Mutual Distillation for Balanced Multi-Task Post-Training of Large Language Models",
+      "paper_id": "arxiv-2610.02856v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "adaptivecoservingllmwatermarkingonmoderninferenceengines": {
+      "title": "Adaptive Co-Serving LLM Watermarking on Modern Inference Engines",
+      "paper_id": "arxiv-2610.03955v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "adastepadaptivestepcreditweightingforagenticreinforcementlearning": {
+      "title": "AdaStep: Adaptive Step Credit Weighting for Agentic Reinforcement Learning",
+      "paper_id": "arxiv-2610.03223v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-02"
+    },
+    "whenhistorymisleadsasymmetricmarginsupervisionforinstructionguidedllmgenerativerecommendation": {
+      "title": "When History Misleads: Asymmetric Margin Supervision for Instruction-Guided LLM Generative Recommendation",
+      "paper_id": "arxiv-2610.02600v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "whatdoesatokencostamixtureofagentsmeasurementofsufficientpertokencompute": {
+      "title": "What Does a Token Cost? A Mixture-of-Agents Measurement of Sufficient Per-Token Compute",
+      "paper_id": "arxiv-2610.02491v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "studentguidedteacherdistillationforefficientllmtaskroutingpositioningagainstjevstylesystem1classifiers": {
+      "title": "Student-Guided Teacher Distillation for Efficient LLM Task Routing: Positioning Against Jev-Style System-1 Classifiers",
+      "paper_id": "arxiv-2610.02516v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "promptedtodiscriminategeneralizingmaliciousinputprobesinthewild": {
+      "title": "Prompted to Discriminate: Generalizing Malicious-Input Probes in the Wild",
+      "paper_id": "arxiv-2610.02413v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "mitigatingprivatedataleakageinllmswithwhiteout": {
+      "title": "Mitigating Private Data Leakage in LLMs with Whiteout",
+      "paper_id": "arxiv-2610.02418v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "mirrormultipathquorumintegrityforllmmultiagentcommunication": {
+      "title": "MIRROR: Multipath Quorum Integrity for LLM Multi-Agent Communication",
+      "paper_id": "arxiv-2610.02349v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "llmasjevllmsarealreadyjevstyledecisionmodelswhenandhowtofinetunethem": {
+      "title": "LLM-as-Jev: LLMs Are Already Jev-Style Decision Models -- When and How to Fine-Tune Them",
+      "paper_id": "arxiv-2610.02076v2",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "improvingtheenergyefficiencyofthecodegeneratedbyllmsthrougheffectiveprompting": {
+      "title": "Improving the Energy-Efficiency of the Code Generated by LLMs through Effective Prompting",
+      "paper_id": "arxiv-2610.02571v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "hypothesisguideddiscoveryofcognitivealgorithmsviaprogramrefinement": {
+      "title": "Hypothesis-guided discovery of cognitive algorithms via program refinement",
+      "paper_id": "arxiv-2610.02523v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "fisherguidedsubmodulardataselectionforcontinualpretrainingoflargelanguagemodels": {
+      "title": "Fisher-Guided Submodular Data Selection for Continual Pre-Training of Large Language Models",
+      "paper_id": "arxiv-2610.02593v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "finegrainedemotionclassificationfrommobileappreviewsanempiricalstudywithlargelanguagemodels": {
+      "title": "Fine-Grained Emotion Classification from Mobile App Reviews: An Empirical Study with Large Language Models",
+      "paper_id": "arxiv-2610.03802v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "findialoglenseventextractionovermultipartydialogueformissedtradeidentificationinfinancialchatrooms": {
+      "title": "FinDialogLens: Event Extraction over Multi-Party Dialogue for Missed-Trade Identification in Financial Chatrooms",
+      "paper_id": "arxiv-2610.02455v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "choosingbeforeactingcomparativevalueestimationforlonghorizontooluseagents": {
+      "title": "Choosing Before Acting: Comparative Value Estimation for Long-Horizon Tool-Use Agents",
+      "paper_id": "arxiv-2610.02330v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "capabilityscalingdownlawsforllmcompression": {
+      "title": "Capability Scaling-Down Laws for LLM Compression",
+      "paper_id": "arxiv-2610.02462v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "beaverelasticgpusharingbetweenmlandlatencycriticalvranworkloads": {
+      "title": "Beaver: Elastic GPU Sharing between ML and Latency-Critical vRAN Workloads",
+      "paper_id": "arxiv-2610.02522v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "activationsparsitywithweightapproximationforfasterllmdecodingonoffloadedweights": {
+      "title": "Activation Sparsity with Weight Approximation for Faster LLM Decoding on Offloaded Weights",
+      "paper_id": "arxiv-2610.02598v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "apdmemagentcontrolledprogressivedisclosureforqueryadaptivelongtermmemory": {
+      "title": "APDMem: Agent-Controlled Progressive Disclosure for Query-Adaptive Long-Term Memory",
+      "paper_id": "arxiv-2610.02472v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
+    },
+    "aidriventhermalawaredatacentercapacityplanning": {
+      "title": "AI-driven Thermal-aware Data Center Capacity Planning",
+      "paper_id": "arxiv-2610.02442v1",
+      "first_seen_date": "2026-10-06 12:51:09",
+      "last_seen_date": "2026-10-06 12:51:09",
+      "latest_published_date": "2026-10-01"
     }
   },
   "daily_additions": {
@@ -37681,6 +38766,7 @@
     "2026-10-02": 127,
     "2026-10-03": 0,
     "2026-10-04": 0,
-    "2026-10-05": 0
+    "2026-10-05": 0,
+    "2026-10-06": 155
   }
 }
